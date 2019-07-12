@@ -1,1 +1,1 @@
-MsgBox "Deixa de ser besta, voce ja extraiu a rom, agora vc pode flashear ela.",vbInformation,"Presta atencao. "   
+MsgBox "Voce precisa baixar a stock rom.                                               Aguardo voce pressionar alguma tecla para que eu va para o download da stock rom.",vbInformation,"Epa, perai. "   
