@@ -5,17 +5,13 @@ title Noob Master v 7.0.0.0 Beta
 :: Função que corrige letras e acentos
 chcp 65001
 cls
-
 ::: Links 
 
 :: Link do repositorio Noob Master disponivel no GitHub
 set server=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/
-
 :: Link de onde é retirado o arquivo da stock rom !
 set server_stock=https://dl2018.sammobile.com/Pl9ZQiQnIiIwWCYkNVo2PkNYWD49KSAnUy02MUI3MyA7RhMaGUlOOyhDL0BDWSQgTlJbRFxGQFFfVAMWHxsMTk5ZWEZbREVY/J701MTVJU6CSF2_J701MTZTO6CSF1_ZTO.zip
-
 ::::::::::::::::::::::::: Links Twrp
-
 set Baguvix=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/jasmine/3.2.3-0.img
 set Hesoyan=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/jasmine/3.3.0-0.img
 set Uzumymw=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/jasmine/3.3.1-0.img
@@ -23,26 +19,29 @@ set Oneway=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/a
 set Runway=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/wayne/3.2.3-1.img
 set Kicogeco=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/wayne/3.3.0-0.img
 set Aezakmi=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/wayne/3.3.1.img
-
 :::::::::::::::::::::::::: Link patched boot 
-
 set PatchedOito=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/patched/10.0.8.0/10.0.8.0.img
 set PatchedNove=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/patched/10.0.9.0/10.0.9.0.img
 set PatchedDez=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/patched/10.0.10.0/10.0.10.0.img
-
-
 :::::::::::::::::::::::::: Link Stock Boot
-
 set StockBootOito=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/stockboot/10.0.8.0/10.0.8.0.img
 set StockBootNove=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/stockboot/10.0.9.0/10.0.9.0.img
 set StockBootDez=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/stockboot/10.0.10.0/10.0.10.0.img
+:::::::::::::::::::::::::: Gapps download
+set GappsMicro=https://ufpr.dl.sourceforge.net/project/noobmaster/NoobMaster/adb/file/gapps/gapps.zip
+
+:::::::::::::::::::::::::: Splash Download
+set =
+
 
 
 :: Seta valor do tamanho da tela 
-mode 120,30
+mode 120,35
 
 setlocal EnableDelayedExpansion
+
 :: Script que seta cores em linhas especificadas no script através do comando ( call :cortexto 02 )
+
 for /F "tokens=1,2 delims=#" %%a in ('"prompt #$H#$E# & echo on & for %%b in (1) do rem"') do (
   set "DEL=%%a"
 )
@@ -66,6 +65,64 @@ set fastboot="%cd%\adb\fastboot.exe"
 set "nome= Noob Master "
 :: Manter padrão de sequencia
 set "ver= 7.0.0.0 "
+
+:START
+color 03
+set inti=0
+set intk=10
+:STARTTITLE
+set /a inti+=1
+cls
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo                        █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+echo                        █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █
+echo                        █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █
+echo                        █   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █
+echo                        █                                                                  █
+echo                        ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+echo.
+echo                                             Seja bem vindo %username% !
+echo.
+echo                                                  ┌─────────────────────────────────┐
+echo                                                  │  bY: Rodrigo Pires da Silva     │
+echo                                                  └─────────────────────────────────┘
+echo.
+if %inti% LSS %intk% (
+      if "%inti%"=="1" (echo                   ▀▀▀▀▀▀▀▀▀▀▀▀▀) & (echo.            ) & (ping -n 1 127.0.0.1>nul) & (GOTO 1)
+      if "%inti%"=="2" (echo                   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀) & (echo.            ) & (ping -n 1 127.0.0.1>nul) & (GOTO 2)
+      if "%inti%"=="3" (echo                   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀) & (echo.            ) & (ping -n 1 127.0.0.1>nul) & (GOTO 3)
+      if "%inti%"=="4" (echo                   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀) & (echo.            ) & (ping -n 1 127.0.0.1>nul) & (GOTO 4)
+      if "%inti%"=="5" (echo                   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀) & (echo.            ) & (ping -n 1 127.0.0.1>nul) & (GOTO 5)
+      if "%inti%"=="6" (echo                   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀) & (echo.            ) & (ping -n 1 127.0.0.1>nul) & (GOTO 6)
+      if "%inti%"=="7" (echo                   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀) & (echo.            ) & (ping -n 1 127.0.0.1>nul) & (GOTO 7)
+)
+goto 8
+:1
+ping -n 1 127.0.0.1>nul
+GOTO STARTTITLE
+:2
+ping -n 1 127.0.0.1>nul
+GOTO STARTTITLE
+:3
+ping -n 1 127.0.0.1>nul
+GOTO STARTTITLE
+:4
+ping -n 1 127.0.0.1>nul
+GOTO STARTTITLE
+:5
+ping -n 1 127.0.0.1>nul
+GOTO STARTTITLE
+:6
+ping -n 1 127.0.0.1>nul
+GOTO STARTTITLE
+:7
+ping -n 2 127.0.0.1>nul
+
 :: Inicia menu principal
 :Menu
 title %nome% v%ver%
@@ -106,8 +163,10 @@ echo      │      ┌───────────────────�
 echo      ├──────┤ 6 ) STOCK BOOT ( REMOVE ROOT STOCK ROM )  ├────────────┤                                           │
 echo      │      └───────────────────────────────────────────┤  E) EXIT   └───────────────────────────────────────────┤
 echo      │      ┌───────────────────────────────────────────┤            ┌───────────────────────────────────────────┤
-echo      └──────┤                                           ├────────────┤ V ) VERIFICA RAIZ DE ARQUIVOS             │
+echo      └──────┤ 7 ) GAPPS MICRO 01/2019                   ├────────────┤ V ) VERIFICA RAIZ DE ARQUIVOS             │
 echo             └───────────────────────────────────────────┘            └───────────────────────────────────────────┘
+echo.
+echo.
 set nb=
 set /p "nb=Digite o numero da opção que deseja %username% > "
 :dec
@@ -117,6 +176,7 @@ set /p "nb=Digite o numero da opção que deseja %username% > "
  if '%nb%' == '4' goto Twrp
  if '%nb%' == '5' goto Patched
  if '%nb%' == '6' goto StockBoot
+ if '%nb%' == '7' goto GappsMicro
   
  if '%nb%' == 'V' goto VerAdb
  if '%nb%' == 'v' goto VerAdb
@@ -1876,7 +1936,7 @@ echo      │                                                                   
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
 echo.
-%fastboot% boot "%~dp0adb\file\twrp\wayne\3.3.0-0.img" || @echo "boot error" && goto TwrpKicogecoError
+%fastboot% boot "%~dp0\adb\file\twrp\wayne\3.3.0-0.img" || @echo "boot error" && goto TwrpKicogecoError
 echo.
 echo.
 echo.
@@ -1988,7 +2048,7 @@ echo      │                                                                   
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
 echo.
-%fastboot% flash recovery "%~dp0adb\file\twrp\wayne\3.3.0-0.img" || @echo "flash recovery error" && goto TwrpKicogecoError
+%fastboot% flash recovery "%~dp0\adb\file\twrp\wayne\3.3.0-0.img" || @echo "flash recovery error" && goto TwrpKicogecoError
 echo.
 echo.
 echo.
@@ -2061,7 +2121,7 @@ echo      │                                                                   
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
 echo.
-%fastboot% boot "%~dp0adb\file\twrp\wayne\3.3.1.img" || @echo "boot error" && goto TwrpAezakmiError
+%fastboot% boot "%~dp0\adb\file\twrp\wayne\3.3.1.img" || @echo "boot error" && goto TwrpAezakmiError
 echo.
 echo.
 echo.
@@ -2173,7 +2233,7 @@ echo      │                                                                   
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
 echo.
-%fastboot% flash recovery "%~dp0adb\file\twrp\wayne\3.3.1.img" || @echo "flash recovery error" && goto TwrpAezakmiError
+%fastboot% flash recovery "%~dp0\adb\file\twrp\wayne\3.3.1.img" || @echo "flash recovery error" && goto TwrpAezakmiError
 echo.
 echo.
 echo.
@@ -2332,7 +2392,7 @@ echo      │                                                                   
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
 echo.
-%fastboot% flash boot "%~dp0adb\file\patched\10.0.8.0\10.0.8.0.img" || @echo "flash recovery error" && goto PatchedOitoError
+%fastboot% flash boot "%~dp0\adb\file\patched\10.0.8.0\10.0.8.0.img" || @echo "flash recovery error" && goto PatchedOitoError
 echo.
 echo.
 echo.
@@ -2360,7 +2420,7 @@ echo      │                                                                   
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
 echo.
-%fastboot% boot "%~dp0adb\file\patched\10.0.8.0\10.0.8.0.img" || @echo "boot error" && goto PatchedOitoError
+%fastboot% boot "%~dp0\adb\file\patched\10.0.8.0\10.0.8.0.img" || @echo "boot error" && goto PatchedOitoError
 echo.
 echo.
 echo.
@@ -2515,7 +2575,7 @@ echo      │                                                                   
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
 echo.
-%fastboot% flash boot "%~dp0adb\file\patched\10.0.9.0\10.0.9.0.img" || @echo "flash recovery error" && goto PatchedNoveError
+%fastboot% flash boot "%~dp0\adb\file\patched\10.0.9.0\10.0.9.0.img" || @echo "flash recovery error" && goto PatchedNoveError
 echo.
 echo.
 echo.
@@ -2543,7 +2603,7 @@ echo      │                                                                   
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
 echo.
-%fastboot% boot "%~dp0adb\file\patched\10.0.9.0\10.0.9.0.img" || @echo "boot error" && goto PatchedNoveError
+%fastboot% boot "%~dp0\adb\file\patched\10.0.9.0\10.0.9.0.img" || @echo "boot error" && goto PatchedNoveError
 echo.
 echo.
 echo.
@@ -2698,7 +2758,7 @@ echo      │                                                                   
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
 echo.
-%fastboot% flash boot "%~dp0adb\file\patched\10.0.10.0\10.0.10.0.img" || @echo "flash recovery error" && goto PatchedDezError
+%fastboot% flash boot "%~dp0\adb\file\patched\10.0.10.0\10.0.10.0.img" || @echo "flash recovery error" && goto PatchedDezError
 echo.
 echo.
 echo.
@@ -2726,7 +2786,7 @@ echo      │                                                                   
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
 echo.
-%fastboot% boot "%~dp0adb\file\patched\10.0.10.0\10.0.10.0.img" || @echo "boot error" && goto PatchedDezError
+%fastboot% boot "%~dp0\adb\file\patched\10.0.10.0\10.0.10.0.img" || @echo "boot error" && goto PatchedDezError
 echo.
 echo.
 echo.
@@ -2922,7 +2982,7 @@ echo      │                                                                   
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
 echo.
-%fastboot% flash boot "%~dp0adb\file\stockboot\10.0.8.0\10.0.8.0.img" || @echo "flash recovery error" && goto StockBootOitoError
+%fastboot% flash boot "%~dp0\adb\file\stockboot\10.0.8.0\10.0.8.0.img" || @echo "flash recovery error" && goto StockBootOitoError
 echo.
 echo.
 echo.
@@ -2950,7 +3010,7 @@ echo      │                                                                   
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
 echo.
-%fastboot% boot "%~dp0adb\file\stockboot\10.0.8.0\10.0.8.0.img" || @echo "boot error" && goto StockBootOitoError
+%fastboot% boot "%~dp0\adb\file\stockboot\10.0.8.0\10.0.8.0.img" || @echo "boot error" && goto StockBootOitoError
 echo.
 echo.
 echo.
@@ -3105,7 +3165,7 @@ echo      │                                                                   
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
 echo.
-%fastboot% flash boot "%~dp0adb\file\stockboot\10.0.9.0\10.0.9.0.img" || @echo "flash recovery error" && goto StockBootNoveError
+%fastboot% flash boot "%~dp0\adb\file\stockboot\10.0.9.0\10.0.9.0.img" || @echo "flash recovery error" && goto StockBootNoveError
 echo.
 echo.
 echo.
@@ -3133,7 +3193,7 @@ echo      │                                                                   
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
 echo.
-%fastboot% boot "%~dp0adb\file\stockboot\10.0.9.0\10.0.9.0.img" || @echo "boot error" && goto StockBootNoveError
+%fastboot% boot "%~dp0\adb\file\stockboot\10.0.9.0\10.0.9.0.img" || @echo "boot error" && goto StockBootNoveError
 echo.
 echo.
 echo.
@@ -3288,7 +3348,7 @@ echo      │                                                                   
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
 echo.
-%fastboot% flash boot "%~dp0adb\file\stockboot\10.0.10.0\10.0.10.0.img" || @echo "flash recovery error" && goto StockBootDezError
+%fastboot% flash boot "%~dp0\adb\file\stockboot\10.0.10.0\10.0.10.0.img" || @echo "flash recovery error" && goto StockBootDezError
 echo.
 echo.
 echo.
@@ -3316,7 +3376,7 @@ echo      │                                                                   
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
 echo.
-%fastboot% boot "%~dp0adb\file\stockboot\10.0.10.0\10.0.10.0.img" || @echo "boot error" && goto StockBootDezError
+%fastboot% boot "%~dp0\adb\file\stockboot\10.0.10.0\10.0.10.0.img" || @echo "boot error" && goto StockBootDezError
 echo.
 echo.
 echo.
@@ -3363,3 +3423,157 @@ pause>nul
 echo.
 echo.
 goto StockBootDez
+:GappsMicro
+title Gapps Micro  ( 01/19 )
+color 03
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │      ┌───────────────────────────────────────────┐                                                        │
+echo      ├──────┤ 1 ) FLASH DO GAPPS MICRO                  │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 2 ) DOWNLOAD                              │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 3 ) DELETAR ARQUIVO                       │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 4 ) VERIFICAR ARQUIVO                     │                                                        │
+echo      │      └───────────────────────────────────────────┘                                                        │
+echo      │                                                                                                           │
+echo      │                                                                                                           │
+echo      │                                                               ┌───────────────────────────────────────────┤
+echo      └───────────────────────────────────────────────────────────────┤ E ) VOLTAR                                │
+echo                                                                      └───────────────────────────────────────────┘
+echo.
+if exist "%cd%\adb\file\gappsmicro\gappsmicro.zip" ( call :cortexto 0a " Ok, parece que o arquivo existe. " ) else ( call :cortexto 0c "Baixe o arquivo. " )
+echo.
+echo.
+set nb= 
+set /p "nb=Digite algo aqui %username% >"
+if '%nb%' == '1' goto GotoGappsMicro
+if '%nb%' == '2' goto DownGappsMicro
+if '%nb%' == '3' goto DelGappsMicro
+if '%nb%' == '4' goto VerGappsMicro
+if '%nb%' == 'E' goto Menu
+if '%nb%' == 'e' goto Menu
+goto GappsMicro
+:: Boot no Gapps 
+:GotoGappsMicro
+color 03
+title Servindo Gapps através do Adb Sideload
+if exist "%cd%\adb\file\gappsmicro\gappsmicro.zip" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto GappsMicro  )
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █  
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │                                                                                                           │
+echo      │           Flash do Gapps via Adb Sideload                                                                 │
+echo      │                                                                                                           │
+echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+echo.
+echo.
+%adb% sideload %cd%\adb\file\gappsmicro\gappsmicro.zip || @echo "sideload error" && goto GappsMicroError
+echo.
+echo.
+echo.
+echo Tecle qualquer coisa para voltar !
+echo.
+pause >nul
+goto GappsMicro
+:DownGappsMicro
+color 30
+title Download Gapps Micro
+if exist "%cd%\adb\file\gappsmicro\gappsmicro.zip" (  echo MsgBox "Pare de frescura, ce ja baixou o negocio e ta ai querendo baixar denovo, vai flashea isso ai rapa! ",16,"Vai canta seu bosta " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto GappsMicro ) else ( echo . )
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █   
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │                                                                                                           │
+echo      │                          Baixando Gapps aguarde...                                                        │
+echo      │                                                                                                           │
+echo      │               Eu vou te avisar quando o Download terminar, apenas aguarde e relaxa a ppk.                 │
+echo      │                                                                                                           │
+echo      │                                                                                                           │
+echo      │                                                                                                           │
+echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+echo.
+echo.
+mkdir adb\file\gappsmicro\
+Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%GappsMicro%', 'adb\file\gappsmicro\gappsmicro.zip') }"
+if exist "%cd%\adb\file\gappsmicro\gappsmicro.zip" ( echo. ) else (   echo MsgBox "Deu erro na parada, o arquivo nao foi baixado! ",16,"Deu erro, vishhh" >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto GappsMicro )
+echo.
+echo MsgBox "Ok, arquivo baixado ",16,"Vai canta seu bosta" >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+echo.
+goto GappsMicro
+:DelGappsMicro
+title Deletando Gapps 
+color 03
+cls
+if exist "%cd%\adb\file\gappsmicro\gappsmicro.zip" ( echo.) else ( echo MsgBox "Pare ome, o arquivo ja foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai." >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto GappsMicro )
+del adb\file\gappsmicro\gappsmicro.zip
+echo MsgBox "Ok, arquivo excluido ",16,"Excluir Gapps" >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto GappsMicro
+:VerGappsMicro
+cls
+start %cd%\adb\file\gappsmicro\
+goto GappsMicro
+:GappsMicroError
+title ERROOOOOOOOOOOOOOOOOOOOOOOOOOOooooo !
+color 40
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █  
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │                                                                                                           │
+echo      │           Errooooooooooooooooooooooooooooooooooooooooooooo.                                               │
+echo      │                                                                                                           │
+echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+echo.
+echo.
+echo.
+echo.
+echo.
+echo Deu erro, eu não sei direito o que pode ter acontecido, mas to aqui ! Posso te ajudar !
+echo.
+echo.
+echo.
+echo MsgBox " Deu erro amigo, clique em ok e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs  
+echo.
+echo.
+echo Pressione qualquer tecla para voltar !
+echo.
+echo.
+pause>nul
+echo.
+echo.
+goto GappsMicro
