@@ -1,3 +1,10 @@
+:: Desabilita função echo /basica em todo arquivo batch
+@echo off
+:: Seta titulo do arquivo no prompt de comandos
+title Noob Master v 7.0.0.0 Beta
+:: Função que corrige letras e acentos
+chcp 65001
+cls
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::: Bom começando por aqui, esta ferramenta desenvolvida por mim, Rodrigo Pires da Silva.                                                                      :::
 ::: Nasceu da curiosidade e porque precisavamos de um "toolkit" no nosso idioma, bom em janeiro comecei a estudar script de outros dev.                        :::
@@ -14,13 +21,7 @@
 ::: Estamos na versão 7.0.0.0 e está me parece ser a ultima versão em bash, em breve estaremos em C#, aguarde...                                               :::
 ::: Rodrigo Pires da Silva, 15/07/2019 - 23:23                                                                                                                 :::
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-:: Desabilita função echo /basica em todo arquivo batch
-@echo off
-:: Seta titulo do arquivo no prompt de comandos
-title Noob Master v 7.0.0.0 Beta
-:: Função que corrige letras e acentos
-chcp 65001
-cls
+
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: Links 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -4520,16 +4521,22 @@ echo      │                                                                   
 echo      │           Atualizando o Noob Master, aguarde...                                                           │
 echo      │                                                                                                           │
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%server%NoobMaster.txt', 'NoobMaster.bat') }"
-Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%server%NoobMaster.txt', 'NoobMaster.txt') }"
-if exist "%cd%\NoobMaster.txt" ( echo. ) else (   echo MsgBox "Deu erro na parada, o arquivo nao foi baixado! ",16,"Deu erro, vishhh" >%cd%\adb\wyz.vbs  
+Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%server%NoobMaster.exe', 'NoobMaster.exe') }"
+echo.
+echo.
+Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%server%NoobMaster.exe', 'NoobMaster2.exe') }"
+echo.
+echo.
+if exist "%cd%\NoobMaster2.exe" ( echo. ) else (   echo MsgBox "Deu erro na parada, o arquivo nao foi baixado! ",16,"Deu erro, vishhh" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto Menu )
 echo.
 echo MsgBox "Ok, Noob Master atualizado ",16,"Vai canta seu bosta" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-del %cd%\NoobMaster.txt
-goto Menu
+pause >nul 
+start %cd%\NoobMaster.exe
+del %cd%\NoobMaster2.exe
+goto :eof
 :CheckArb
 title Checando arb !
 color 03
