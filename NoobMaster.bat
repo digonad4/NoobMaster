@@ -159,18 +159,18 @@ echo      │   █                                                             
 echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
 echo      │      ┌───────────────────────────────────────────┐            ┌───────────────────────────────────────────┤
 echo      ├──────┤ 1 ) OPÇÕES PARA O BOOTLOADER              ├────────────┤ 8 ) FLASH SPLASH ( STOCK/CUSTOM )         │
-echo      │      └───────────────────────────────────────────┤  Mi A2/6X  └───────────────────────────────────────────┤
-echo      │      ┌───────────────────────────────────────────┤            ┌───────────────────────────────────────────┤
-echo      ├──────┤ 2 ) OPÇÕES DE ERASE (SYSTEM/VENDOR)       ├────────────┤                                           │
 echo      │      └───────────────────────────────────────────┤            └───────────────────────────────────────────┤
 echo      │      ┌───────────────────────────────────────────┤            ┌───────────────────────────────────────────┤
-echo      ├──────┤ 3 ) INSTALAÇÃO DA STOCK ROM ( A2 JASMINE )├────────────┤                                           │
+echo      ├──────┤ 2 ) OPÇÕES DE ERASE (SYSTEM/VENDOR)       ├────────────┤ 9 ) CHECAR ARB ( ANTI ROLL BACK )         │
 echo      │      └───────────────────────────────────────────┤            └───────────────────────────────────────────┤
 echo      │      ┌───────────────────────────────────────────┤            ┌───────────────────────────────────────────┤
-echo      ├──────┤ 4 ) TWRP (A2/6X )                         ├────────────┤                                           │
+echo      ├──────┤ 3 ) INSTALAÇÃO DA STOCK ROM ( A2 JASMINE )├────────────┤ 10 ) VA PARA EDL AGORA ( FASTBOOT )       │
 echo      │      └───────────────────────────────────────────┤            └───────────────────────────────────────────┤
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 4 ) TWRP (A2/6X )                         │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
 echo      │      ┌───────────────────────────────────────────┤            ┌───────────────────────────────────────────┤
-echo      ├──────┤ 5 ) PATCHED BOOT ( ROOT STOCK ROM )       ├────────────┤                                           │
+echo      ├──────┤ 5 ) PATCHED BOOT ( ROOT STOCK ROM )       │            │ Dispositivos suportados: MI A2 / 6X       │
 echo      │      └───────────────────────────────────────────┤            └───────────────────────────────────────────┤
 echo      │      ┌───────────────────────────────────────────┤            ┌───────────────────────────────────────────┤
 echo      ├──────┤ 6 ) STOCK BOOT ( REMOVE ROOT STOCK ROM )  ├────────────┤ A ) ATUALIZAR O NOOB MASTER               │
@@ -191,7 +191,8 @@ set /p "nb=Digite o numero da opção que deseja %username% > "
  if '%nb%' == '6' goto StockBoot
  if '%nb%' == '7' goto GappsMicro
  if '%nb%' == '8' goto Splash
- 
+ if '%nb%' == '9' goto CheckArb
+ if '%nb%' == '10' goto GoEdl
  :::: Variavel de teste
  if '%nb%' == 't' goto 
  if '%nb%' == 'T' goto 
@@ -4523,9 +4524,39 @@ Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%server%NoobMa
 Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%server%NoobMaster.bat', 'NoobMaster.txt') }"
 if exist "%cd%\NoobMaster.txt" ( echo. ) else (   echo MsgBox "Deu erro na parada, o arquivo nao foi baixado! ",16,"Deu erro, vishhh" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto goto Menu )
+goto Menu )
 echo.
 echo MsgBox "Ok, Noob Master atualizado ",16,"Vai canta seu bosta" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 del %cd%\NoobMaster.txt
+goto Menu
+:CheckArb
+title Checando arb !
+color 03
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █  
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │                                                                                                           │
+echo      │           Checando arb...                                                                                 │
+echo      │                                                                                                           │
+echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+echo.
+%fastboot% getvar anti 
+pause >nul 
+goto Menu
+:GoEdl
+cls
+%fastboot% oem edl  || @echo "oem edl error" && goto EdlError
+echo MsgBox "Ok, se desligou a tela nao se desespere, o modo EDL e assim mesmo. ",16,"Vai canta, guentai!" >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto Menu
+:EdlError
+cls
+echo MsgBox "Opa, nao consegui entrar em EDL, sertifique se de ter desbloquado o critical tambem e tente novamente... ",16,"Vai canta, guentai!" >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
 goto Menu
