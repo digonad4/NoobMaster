@@ -1,3 +1,19 @@
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::: Bom começando por aqui, esta ferramenta desenvolvida por mim, Rodrigo Pires da Silva.                                                                      :::
+::: Nasceu da curiosidade e porque precisavamos de um "toolkit" no nosso idioma, bom em janeiro comecei a estudar script de outros dev.                        :::
+::: Confesso que no começo eu copiei algumas funções exatamente como estavam no primeiro script que encontrei, fui estudando como funcionava e fui aprendendo. :::
+::: Hoje, o Noob Master tem um alcance limitado aos usuarios do Windows 10, por questões de Download automatico.                                               :::
+::: E para o usuario final não ter de baixar um zip de 1,5gb com os arquivos, que estão hospedado em nuvem e acessivel pelo script.                            :::
+::: Junto dos downloads estão todas as funções disponiveis através de comando por FASTBOOT/ADB.                                                                :::
+::: Voce encontra nesse Script as seguintes funções:                                                                                                           :::
+::: *** Desbloqueio e bloqueio de bootloader                                                                                                                   :::
+::: *** Download, extração e flash da stock rom através do FASTBOOT                                                                                            :::
+::: *** Download de todas as versões do Twrp e todas as funções disponiveis para jasmine e wayne ( wayne tem função Flash Recovery )                           :::
+::: *** Download e flash do patched boot e stock boot ( Root / UnRoot )                                                                                        :::
+::: Ele hoje possui uma pequena "inteligencia artificial" que lhe permite reconhecer se o arquivo está no seu devido lugar, assim evitando erros.              :::
+::: Estamos na versão 7.0.0.0 e está me parece ser a ultima versão em bash, em breve estaremos em C#, aguarde...                                               :::
+::: Rodrigo Pires da Silva, 15/07/2019 - 23:23                                                                                                                 :::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :: Desabilita função echo /basica em todo arquivo batch
 @echo off
 :: Seta titulo do arquivo no prompt de comandos
@@ -5,8 +21,9 @@ title Noob Master v 7.0.0.0 Beta
 :: Função que corrige letras e acentos
 chcp 65001
 cls
-::: Links 
-
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: Links 
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :: Link do repositorio Noob Master disponivel no GitHub
 set server=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/
 :: Link de onde é retirado o arquivo da stock rom !
@@ -29,20 +46,17 @@ set StockBootNove=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/m
 set StockBootDez=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/stockboot/10.0.10.0/10.0.10.0.img
 :::::::::::::::::::::::::: Gapps download
 set GappsMicro=https://ufpr.dl.sourceforge.net/project/noobmaster/NoobMaster/adb/file/gapps/gapps.zip
-
 :::::::::::::::::::::::::: Splash Download
 set SplashMIUI=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/splash/miui/splash.img
 set SplashOne=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/splash/one/splash.img
 set SplashAnonimous=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/splash/anonimous/splash.img
 set Splashmiui_white=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/splash/miui_white/splash.img
-
+:::::::::::::::::::::::::: Orange Fox Wayne 
+set Orange=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/Orange/unnoficial.img
 :: Seta valor do tamanho da tela 
 mode 120,35
-
 setlocal EnableDelayedExpansion
-
 :: Script que seta cores em linhas especificadas no script através do comando ( call :cortexto 02 )
-
 for /F "tokens=1,2 delims=#" %%a in ('"prompt #$H#$E# & echo on & for %%b in (1) do rem"') do (
   set "DEL=%%a"
 )
@@ -57,7 +71,6 @@ goto :eof
 for /F "tokens=1,2 delims=#" %%a in ('"prompt #$H#$E# & echo on & for %%b in (1) do rem"') do (
   set "DEL=%%a"
 )
-
 :: Seta adb e fastboot 
 pushd "%~dp0"
 set adb="%cd%\adb\adb.exe"
@@ -66,7 +79,6 @@ set fastboot="%cd%\adb\fastboot.exe"
 set "nome= Noob Master "
 :: Manter padrão de sequencia
 set "ver= 7.0.0.0 "
-
 :START
 color 03
 set inti=0
@@ -161,7 +173,7 @@ echo      │      ┌───────────────────�
 echo      ├──────┤ 5 ) PATCHED BOOT ( ROOT STOCK ROM )       ├────────────┤                                           │
 echo      │      └───────────────────────────────────────────┤            └───────────────────────────────────────────┤
 echo      │      ┌───────────────────────────────────────────┤            ┌───────────────────────────────────────────┤
-echo      ├──────┤ 6 ) STOCK BOOT ( REMOVE ROOT STOCK ROM )  ├────────────┤                                           │
+echo      ├──────┤ 6 ) STOCK BOOT ( REMOVE ROOT STOCK ROM )  ├────────────┤ A ) INSTALAR ADB ( CASO TENHA PROBLEMAS ) │
 echo      │      └───────────────────────────────────────────┤  E) EXIT   └───────────────────────────────────────────┤
 echo      │      ┌───────────────────────────────────────────┤            ┌───────────────────────────────────────────┤
 echo      └──────┤ 7 ) GAPPS MICRO 01/2019                   ├────────────┤ V ) VERIFICA RAIZ DE ARQUIVOS             │
@@ -181,16 +193,20 @@ set /p "nb=Digite o numero da opção que deseja %username% > "
  if '%nb%' == '8' goto Splash
  
  
- if '%nb%' == 'a' goto AttOta
- if '%nb%' == 'A' goto AttOta
+ 
+ :::: Variavel de teste
+ if '%nb%' == 't' goto Orange
+ if '%nb%' == 'T' goto Orange
+ 
+ 
+ 
+ if '%nb%' == 'a' goto InstallAdb
+ if '%nb%' == 'A' goto InstallAdb
  if '%nb%' == 'V' goto VerAdb
  if '%nb%' == 'v' goto VerAdb
  if '%nb%' == 'e' goto eof
  if '%nb%' == 'E' goto eof
-
 goto Menu
-
-
 :: Menu de bootloader
 :Bootloader
 title Menu Bootloader
@@ -1027,6 +1043,9 @@ echo      │      └───────────────────�
 echo      │                                                               ┌───────────────────────────────────────────┤
 echo      ├───────────────────────────────────────────────────────────────┤ 7 ) TWRP 3.3.1-0                          │
 echo      │                                                               └───────────────────────────────────────────┤
+echo      │                                                               ┌───────────────────────────────────────────┤
+echo      ├───────────────────────────────────────────────────────────────┤ 8 ) ORANGE FOX UNNOFICIAL                 │
+echo      │                                                               └───────────────────────────────────────────┤
 echo      │                                                                                                           │
 echo      │                                                                                                           │
 echo      │                                                               ┌───────────────────────────────────────────┤
@@ -1042,8 +1061,7 @@ set /p "nb=Digite o numero da opção que deseja %username% > "
  if '%nb%' == '5' goto TwrpRunway
  if '%nb%' == '6' goto TwrpKicogeco
  if '%nb%' == '7' goto TwrpAezakmi
-
- 
+ if '%nb%' == '8' goto Orange
  if '%nb%' == 'E' goto Menu
  if '%nb%' == 'e' goto Menu
 goto Twrp
@@ -1155,7 +1173,7 @@ goto Twrpbaguvix
 title Deletando Twrp 3.2.3-0
 color 03
 cls
-if exist "%cd%\adb\file\twrp\jasmine\3.2.3-0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo ja foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai." >%cd%\adb\wyz.vbs  
+if exist "%cd%\adb\file\twrp\jasmine\3.2.3-0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto Twrpbaguvix )
 del adb\file\twrp\jasmine\3.2.3-0.img
@@ -1164,6 +1182,9 @@ start %cd%\adb\wyz.vbs
 goto Twrpbaguvix
 :VerTwrpbaguvix
 cls
+if exist "%cd%\adb\file\twrp\jasmine\3.2.3-0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto Twrpbaguvix )
 start %cd%\adb\file\twrp\jasmine\
 goto Twrpbaguvix
 :TwrpbaguvixError
@@ -1309,7 +1330,7 @@ goto TwrpHesoyan
 title Deletando Twrp 3.3.0-0
 color 03
 cls
-if exist "%cd%\adb\file\twrp\jasmine\3.3.0-0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo ja foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai." >%cd%\adb\wyz.vbs  
+if exist "%cd%\adb\file\twrp\jasmine\3.3.0-0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto TwrpHesoyan )
 del adb\file\twrp\jasmine\3.3.0-0.img
@@ -1318,6 +1339,9 @@ start %cd%\adb\wyz.vbs
 goto TwrpHesoyan
 :VerTwrpHesoyan
 cls
+if exist "%cd%\adb\file\twrp\jasmine\3.3.0-0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto TwrpHesoyan )
 start %cd%\adb\file\twrp\jasmine\
 goto TwrpHesoyan
 :TwrpHesoyanError
@@ -1463,7 +1487,7 @@ goto TwrpUzumymw
 title Deletando Twrp 3.3.1-0
 color 03
 cls
-if exist "%cd%\adb\file\twrp\jasmine\3.3.1-0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo ja foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai." >%cd%\adb\wyz.vbs  
+if exist "%cd%\adb\file\twrp\jasmine\3.3.1-0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto TwrpUzumymw )
 del adb\file\twrp\jasmine\3.3.1-0.img
@@ -1472,6 +1496,9 @@ start %cd%\adb\wyz.vbs
 goto TwrpUzumymw
 :VerTwrpUzumymw
 cls
+if exist "%cd%\adb\file\twrp\jasmine\3.3.1-0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto TwrpUzumymw )
 start %cd%\adb\file\twrp\jasmine\
 goto TwrpUzumymw
 :TwrpUzumymwError
@@ -1619,7 +1646,7 @@ goto TwrpOneway
 title Deletando Twrp 3.2.3-0
 color 03
 cls
-if exist "%cd%\adb\file\twrp\wayne\3.2.3-0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo ja foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai." >%cd%\adb\wyz.vbs  
+if exist "%cd%\adb\file\twrp\wayne\3.2.3-0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto TwrpOneway )
 del adb\file\twrp\wayne\3.2.3-0.img
@@ -1628,6 +1655,9 @@ start %cd%\adb\wyz.vbs
 goto TwrpOneway
 :VerTwrpOneway
 cls
+if exist "%cd%\adb\file\twrp\wayne\3.2.3-0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto TwrpOneway )
 start %cd%\adb\file\twrp\wayne\
 goto TwrpOneway
 :TwrpOnewayError
@@ -1803,7 +1833,7 @@ goto TwrpRunway
 title Deletando Twrp 3.2.3-1
 color 03
 cls
-if exist "%cd%\adb\file\twrp\wayne\3.2.3-1.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo ja foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai." >%cd%\adb\wyz.vbs  
+if exist "%cd%\adb\file\twrp\wayne\3.2.3-1.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto TwrpRunway )
 del adb\file\twrp\wayne\3.2.3-1.img
@@ -1812,6 +1842,9 @@ start %cd%\adb\wyz.vbs
 goto TwrpRunway
 :VerTwrpRunway
 cls
+if exist "%cd%\adb\file\twrp\wayne\3.2.3-1.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto TwrpRunway )
 start %cd%\adb\file\twrp\wayne\
 goto TwrpRunway
 :TwrpRunwayError
@@ -1987,7 +2020,7 @@ goto TwrpKicogeco
 title Deletando Twrp 3.3.0-0
 color 03
 cls
-if exist "%cd%\adb\file\twrp\wayne\3.3.0-0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo ja foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai." >%cd%\adb\wyz.vbs  
+if exist "%cd%\adb\file\twrp\wayne\3.3.0-0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto TwrpKicogeco )
 del adb\file\twrp\wayne\3.3.0-0.img
@@ -1996,6 +2029,9 @@ start %cd%\adb\wyz.vbs
 goto TwrpKicogeco
 :VerTwrpKicogeco
 cls
+if exist "%cd%\adb\file\twrp\wayne\3.3.0-0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto TwrpKicogeco )
 start %cd%\adb\file\twrp\wayne\
 goto TwrpKicogeco
 :TwrpKicogecoError
@@ -2101,7 +2137,6 @@ if '%nb%' == '2' goto DownTwrpAezakmi
 if '%nb%' == '3' goto DelTwrpAezakmi
 if '%nb%' == '4' goto VerTwrpAezakmi
 if '%nb%' == '5' goto FlashTwrpAezakmi
-
 if '%nb%' == 'E' goto Twrp
 if '%nb%' == 'e' goto Twrp
 goto TwrpAezakmi
@@ -2172,7 +2207,7 @@ goto TwrpAezakmi
 title Deletando Twrp 3.3.1
 color 03
 cls
-if exist "%cd%\adb\file\twrp\wayne\3.3.1.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo ja foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai." >%cd%\adb\wyz.vbs  
+if exist "%cd%\adb\file\twrp\wayne\3.3.1.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto TwrpAezakmi )
 del adb\file\twrp\wayne\3.3.1.img
@@ -2181,6 +2216,9 @@ start %cd%\adb\wyz.vbs
 goto TwrpAezakmi
 :VerTwrpAezakmi
 cls
+if exist "%cd%\adb\file\twrp\wayne\3.3.1.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto TwrpAezakmi )
 start %cd%\adb\file\twrp\wayne\
 goto TwrpAezakmi
 :TwrpAezakmiError
@@ -2246,8 +2284,194 @@ echo Pressione qualquer tecla para voltar
 echo.
 pause >nul
 goto TwrpAezakmi
+:Orange
+title Orange wayne Versão UNNOFICIAL !
+color 03
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │      ┌───────────────────────────────────────────┐                                                        │
+echo      ├──────┤ 1 ) BOOT NO ORANGEFOX UNNOFICIAL          │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 2 ) DOWNLOAD                              │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 3 ) DELETAR                               │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 4 ) VERIFICAR ARQUIVO                     │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 5 ) FLASH DO ORANGEFOX UNNOFICIAL WAYNE   │                                                        │
+echo      │      └───────────────────────────────────────────┘                                                        │
+echo      │                                                               ┌───────────────────────────────────────────┤
+echo      └───────────────────────────────────────────────────────────────┤ E ) VOLTAR                                │
+echo                                                                      └───────────────────────────────────────────┘
+echo.
+if exist "%cd%\adb\file\Orange\wayne\unnoficial.img" ( call :cortexto 0a " Ok, parece que o arquivo existe. " ) else ( call :cortexto 0c "Baixe o arquivo. " )
+echo.
+echo.
+set nb= 
+set /p "nb=Digite algo aqui %username% >"
+if '%nb%' == '1' goto GotoOrange
+if '%nb%' == '2' goto DownOrange
+if '%nb%' == '3' goto DelOrange
+if '%nb%' == '4' goto VerOrange
+if '%nb%' == '5' goto FlashOrange
 
-
+if '%nb%' == 'E' goto Menu
+if '%nb%' == 'e' goto Menu
+goto Orange
+:: Boot no Orange 
+:GotoOrange
+color 03
+title Boot no Orange unnoficial wayne
+if exist "%cd%\adb\file\Orange\wayne\unnoficial.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto Orange  )
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █  
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │                                                                                                           │
+echo      │           Boot no Orange wayne unnoficial                                                                 │
+echo      │                                                                                                           │
+echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+echo.
+echo.
+%fastboot% boot "%~dp0\adb\file\Orange\wayne\unnoficial.img" || @echo "boot error" && goto OrangeError
+echo.
+echo.
+echo.
+echo Pressione qualquer tecla para voltar
+echo.
+pause >nul
+goto Orange
+:DownOrange
+color 30
+title Download Orange unnoficial wayne
+if exist "%cd%\adb\file\Orange\wayne\unnoficial.img" (  echo MsgBox "Pare de frescura, ce ja baixou o negocio e ta ai querendo baixar denovo, vai flashea isso ai rapa! ",16,"Vai canta seu bosta " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto Orange ) else ( echo . )
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █   
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │                                                                                                           │
+echo      │                          Baixando Orange wayne unnoficial aguarde...                                      │
+echo      │                                                                                                           │
+echo      │               Eu vou te avisar quando o Download terminar, apenas aguarde e relaxa a ppk.                 │
+echo      │                                                                                                           │
+echo      │                                                                                                           │
+echo      │                                                                                                           │
+echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+echo.
+echo.
+mkdir adb\file\Orange\wayne\
+Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%Orange%', 'adb\file\Orange\wayne\unnoficial.img') }"
+if exist "%cd%\adb\file\Orange\wayne\unnoficial.img" ( echo. ) else (   echo MsgBox "Deu erro na parada, o arquivo nao foi baixado! ",16,"Deu erro, vishhh" >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto Orange )
+echo.
+echo MsgBox "Ok, arquivo baixado ",16,"Vai canta seu bosta" >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+echo.
+goto Orange
+:DelOrange
+title Deletando Orange unnoficial
+color 03
+cls
+if exist "%cd%\adb\file\Orange\wayne\unnoficial.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto Orange )
+del adb\file\Orange\wayne\unnoficial.img
+echo MsgBox "Ok, arquivo excluido ",16,"Excluir Orange" >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto Orange
+:VerOrange
+cls
+if exist "%cd%\adb\file\Orange\wayne\unnoficial.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo ja foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto Orange )
+start %cd%\adb\file\Orange\wayne\
+goto Orange
+:OrangeError
+title ERROOOOOOOOOOOOOOOOOOOOOOOOOOOooooo !
+color 40
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █  
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │                                                                                                           │
+echo      │           Errooooooooooooooooooooooooooooooooooooooooooooo.                                               │
+echo      │                                                                                                           │
+echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+echo.
+echo.
+echo.
+echo.
+echo.
+echo Deu erro, eu não sei direito o que pode ter acontecido, mas to aqui ! Posso te ajudar !
+echo.
+echo.
+echo.
+echo MsgBox " Deu erro amigo, clique em ok e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs  
+echo.
+echo.
+echo Pressione qualquer tecla para voltar !
+echo.
+echo.
+pause>nul
+echo.
+echo.
+goto Orange
+:FlashOrange
+color 03
+title Flash do Orange unnoficial wayne
+if exist "%cd%\adb\file\Orange\wayne\unnoficial.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto Orange  )
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █  
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │                                                                                                           │
+echo      │           Flash do Orange wayne unnoficial                                                                │
+echo      │                                                                                                           │
+echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+echo.
+echo.
+%fastboot% flash recovery "%~dp0\adb\file\Orange\wayne\unnoficial.img" || @echo "flash recovery error" && goto OrangeError
+echo.
+echo.
+echo.
+echo Pressione qualquer tecla para voltar
+echo.
+pause >nul
+goto Orange
 :Patched
 title Patched boot para root na stock rom !
 color 03
@@ -2370,7 +2594,7 @@ goto PatchedOito
 title Deletando Patched boot 10.0.8.0
 color 03
 cls
-if exist "%cd%\adb\file\patched\10.0.8.0\10.0.8.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo ja foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai." >%cd%\adb\wyz.vbs  
+if exist "%cd%\adb\file\patched\10.0.8.0\10.0.8.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto PatchedOito )
 del adb\file\patched\10.0.8.0\10.0.8.0.img
@@ -2435,6 +2659,9 @@ pause >nul
 goto PatchedOito
 :VerPatchedOito
 cls
+if exist "%cd%\adb\file\patched\10.0.8.0\10.0.8.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto PatchedOito )
 start %cd%\adb\file\patched\10.0.8.0\
 goto PatchedOito
 :PatchedOitoError
@@ -2553,7 +2780,7 @@ goto PatchedNove
 title Deletando Patched boot 10.0.9.0
 color 03
 cls
-if exist "%cd%\adb\file\patched\10.0.9.0\10.0.9.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo ja foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai." >%cd%\adb\wyz.vbs  
+if exist "%cd%\adb\file\patched\10.0.9.0\10.0.9.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto PatchedNove )
 del adb\file\patched\10.0.9.0\10.0.9.0.img
@@ -2618,6 +2845,9 @@ pause >nul
 goto PatchedNove
 :VerPatchedNove
 cls
+if exist "%cd%\adb\file\patched\10.0.9.0\10.0.9.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto PatchedNove )
 start %cd%\adb\file\patched\10.0.9.0\
 goto PatchedNove
 :PatchedNoveError
@@ -2736,7 +2966,7 @@ goto PatchedDez
 title Deletando Patched boot 10.0.10.0
 color 03
 cls
-if exist "%cd%\adb\file\patched\10.0.10.0\10.0.10.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo ja foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai." >%cd%\adb\wyz.vbs  
+if exist "%cd%\adb\file\patched\10.0.10.0\10.0.10.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto PatchedDez )
 del adb\file\patched\10.0.10.0\10.0.10.0.img
@@ -2801,6 +3031,9 @@ pause >nul
 goto PatchedDez
 :VerPatchedDez
 cls
+if exist "%cd%\adb\file\patched\10.0.10.0\10.0.10.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto PatchedDez )
 start %cd%\adb\file\patched\10.0.10.0\
 goto PatchedDez
 :PatchedDezError
@@ -2960,7 +3193,7 @@ goto StockBootOito
 title Deletando STOCK boot 10.0.8.0
 color 03
 cls
-if exist "%cd%\adb\file\stockboot\10.0.8.0\10.0.8.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo ja foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai." >%cd%\adb\wyz.vbs  
+if exist "%cd%\adb\file\stockboot\10.0.8.0\10.0.8.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto StockBootOito )
 del adb\file\stockboot\10.0.8.0\10.0.8.0.img
@@ -3025,6 +3258,9 @@ pause >nul
 goto StockBootOito
 :VerStockBootOito
 cls
+if exist "%cd%\adb\file\stockboot\10.0.8.0\10.0.8.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto StockBootOito )
 start %cd%\adb\file\stockboot\10.0.8.0\
 goto StockBootOito
 :StockBootOitoError
@@ -3143,7 +3379,7 @@ goto StockBootNove
 title Deletando STOCK boot 10.0.9.0
 color 03
 cls
-if exist "%cd%\adb\file\stockboot\10.0.9.0\10.0.9.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo ja foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai." >%cd%\adb\wyz.vbs  
+if exist "%cd%\adb\file\stockboot\10.0.9.0\10.0.9.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto StockBootNove )
 del adb\file\stockboot\10.0.9.0\10.0.9.0.img
@@ -3208,6 +3444,9 @@ pause >nul
 goto StockBootNove
 :VerStockBootNove
 cls
+if exist "%cd%\adb\file\stockboot\10.0.9.0\10.0.9.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto StockBootNove )
 start %cd%\adb\file\stockboot\10.0.9.0\
 goto StockBootNove
 :StockBootNoveError
@@ -3326,7 +3565,7 @@ goto StockBootDez
 title Deletando STOCK boot 10.0.10.0
 color 03
 cls
-if exist "%cd%\adb\file\stockboot\10.0.10.0\10.0.10.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo ja foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai." >%cd%\adb\wyz.vbs  
+if exist "%cd%\adb\file\stockboot\10.0.10.0\10.0.10.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto StockBootDez )
 del adb\file\stockboot\10.0.10.0\10.0.10.0.img
@@ -3391,6 +3630,9 @@ pause >nul
 goto StockBootDez
 :VerStockBootDez
 cls
+if exist "%cd%\adb\file\stockboot\10.0.10.0\10.0.10.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto StockBootDez )
 start %cd%\adb\file\stockboot\10.0.10.0\
 goto StockBootDez
 :StockBootDezError
@@ -3536,7 +3778,7 @@ goto GappsMicro
 title Deletando Gapps 
 color 03
 cls
-if exist "%cd%\adb\file\gappsmicro\gappsmicro.zip" ( echo.) else ( echo MsgBox "Pare ome, o arquivo ja foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai." >%cd%\adb\wyz.vbs  
+if exist "%cd%\adb\file\gappsmicro\gappsmicro.zip" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto GappsMicro )
 del adb\file\gappsmicro\gappsmicro.zip
@@ -3545,6 +3787,9 @@ start %cd%\adb\wyz.vbs
 goto GappsMicro
 :VerGappsMicro
 cls
+if exist "%cd%\adb\file\gappsmicro\gappsmicro.zip" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto GappsMicro )
 start %cd%\adb\file\gappsmicro\
 goto GappsMicro
 :GappsMicroError
@@ -3582,31 +3827,6 @@ pause>nul
 echo.
 echo.
 goto GappsMicro
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 :Splash
 title Menu seleciona Splash!
 color 03
@@ -3726,7 +3946,7 @@ goto SplashOne
 title Deletando Splash Android One Stock
 color 03
 cls
-if exist "%cd%\adb\file\splash\one\splash.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo ja foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai." >%cd%\adb\wyz.vbs  
+if exist "%cd%\adb\file\splash\one\splash.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto SplashOne )
 del adb\file\splash\one\splash.img
@@ -3767,6 +3987,9 @@ pause >nul
 goto SplashOne
 :VerSplashOne
 cls
+if exist "%cd%\adb\file\splash\one\splash.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo ja foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto SplashOne )
 start %cd%\adb\file\splash\one\
 goto SplashOne
 :SplashOneError
@@ -3883,7 +4106,7 @@ goto SplashMIUI
 title Deletando Splash Android MIUI Stock
 color 03
 cls
-if exist "%cd%\adb\file\splash\MIUI\splash.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo ja foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai." >%cd%\adb\wyz.vbs  
+if exist "%cd%\adb\file\splash\MIUI\splash.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto SplashMIUI )
 del adb\file\splash\MIUI\splash.img
@@ -3922,8 +4145,12 @@ echo PressiMIUI qualquer tecla para voltar
 echo.
 pause >nul
 goto SplashMIUI
+Pare ome, o arquivo ja foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? 
 :VerSplashMIUI
 cls
+if exist "%cd%\adb\file\splash\MIUI\splash.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo ja foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto SplashMIUI )
 start %cd%\adb\file\splash\MIUI\
 goto SplashMIUI
 :SplashMIUIError
@@ -4040,7 +4267,7 @@ goto Splashmiui_white
 title Deletando Splash Android miui_white 
 color 03
 cls
-if exist "%cd%\adb\file\splash\miui_white\splash.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo ja foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai." >%cd%\adb\wyz.vbs  
+if exist "%cd%\adb\file\splash\miui_white\splash.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto Splashmiui_white )
 del adb\file\splash\miui_white\splash.img
@@ -4081,6 +4308,9 @@ pause >nul
 goto Splashmiui_white
 :VerSplashmiui_white
 cls
+if exist "%cd%\adb\file\splash\miui_white\splash.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo ja foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto Splashmiui_white )
 start %cd%\adb\file\splash\miui_white\
 goto Splashmiui_white
 :Splashmiui_whiteError
@@ -4197,7 +4427,7 @@ goto SplashAnonimous
 title Deletando Splash Android Anonimous 
 color 03
 cls
-if exist "%cd%\adb\file\splash\Anonimous\splash.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo ja foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai." >%cd%\adb\wyz.vbs  
+if exist "%cd%\adb\file\splash\Anonimous\splash.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto SplashAnonimous )
 del adb\file\splash\Anonimous\splash.img
@@ -4238,6 +4468,9 @@ pause >nul
 goto SplashAnonimous
 :VerSplashAnonimous
 cls
+if exist "%cd%\adb\file\splash\Anonimous\splash.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo ja foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto SplashAnonimous )
 start %cd%\adb\file\splash\Anonimous\
 goto SplashAnonimous
 :SplashAnonimousError
