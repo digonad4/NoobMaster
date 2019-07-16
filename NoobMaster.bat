@@ -4520,12 +4520,12 @@ echo      │           Atualizando o Noob Master, aguarde...                   
 echo      │                                                                                                           │
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%server%NoobMaster.bat', 'NoobMaster.bat') }"
-Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%server%NoobMaster.bat', 'NoobMaster.bat2') }"
-if exist "%cd%\NoobMaster.bat2" ( echo. ) else (   echo MsgBox "Deu erro na parada, o arquivo nao foi baixado! ",16,"Deu erro, vishhh" >%cd%\adb\wyz.vbs  
+Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%server%NoobMaster.bat', 'NoobMaster2.bat') }"
+if exist "%cd%\NoobMaster2.bat" ( echo. ) else (   echo MsgBox "Deu erro na parada, o arquivo nao foi baixado! ",16,"Deu erro, vishhh" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto goto Menu )
 echo.
 echo MsgBox "Ok, Noob Master atualizado ",16,"Vai canta seu bosta" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-del %cd%\NoobMaster.bat2
+del %cd%\NoobMaster2.bat
 goto Menu
