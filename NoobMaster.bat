@@ -205,6 +205,18 @@ set /p "nb=Digite o numero da opção que deseja %username% > "
  if '%nb%' == 'e' goto eof
  if '%nb%' == 'E' goto eof
 goto Menu
+:AttOta
+cls
+if exist "%cd%\NoobMaster_OTA.exe" ( echo . ) else ( echo MsgBox "O arquivo NoobMaster_OTA.exe nao existe ou foi removido, baixe o novamente",16,"Atencao! " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs 
+goto Menu )
+start %cd%\NoobMaster_OTA.exe
+echo
+echo
+echo
+echo
+echo
+goto MENU
 :: Menu de bootloader
 :Bootloader
 title Menu Bootloader
@@ -4506,36 +4518,6 @@ pause>nul
 echo.
 echo.
 goto SplashAnonimous
-:AttOta
-title Atualizando Noob Master, aguarde !
-color 30
-cls
-echo.
-echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
-echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
-echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █  
-echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
-echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
-echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
-echo      │                                                                                                           │
-echo      │           Atualizando o Noob Master, aguarde...                                                           │
-echo      │                                                                                                           │
-echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%server%NoobMaster.exe', 'NoobMasterr.exe') }"
-echo.
-echo.
-echo.
-if exist "%cd%\NoobMasterr.exe" ( echo. ) else (   echo MsgBox "Deu erro na parada, o arquivo nao foi baixado! ",16,"Deu erro, vishhh" >%cd%\adb\wyz.vbs  
-start %cd%\adb\wyz.vbs
-goto Menu )
-echo.
-echo MsgBox "Ok, Noob Master atualizado ",16,"Vai canta seu bosta" >%cd%\adb\wyz.vbs  
-start %cd%\adb\wyz.vbs
-ren NoobMaster.exe Apague.exe
-ren NoobMasterr.exe NoobMaster.exe
-del %cd%\Apague.exe
-start %cd%\NoobMaster.exe
-goto :eof
 :CheckArb
 title Checando arb !
 color 03
