@@ -1,36 +1,3 @@
-::[Bat To Exe Converter]
-::
-::YAwzoRdxOk+EWAjk
-::fBw5plQjdCyDJGyX8VAjFAlbSBaLAE+1EbsQ5+n//NaLrUoSa+wwd43k17WdNOUB1VOzSpA66U5or/QFDxRWMBuoYW8=
-::YAwzuBVtJxjWCl3EqQJgSA==
-::ZR4luwNxJguZRRnk
-::Yhs/ulQjdF+5
-::cxAkpRVqdFKZSDk=
-::cBs/ulQjdF+5
-::ZR41oxFsdFKZSDk=
-::eBoioBt6dFKZSDk=
-::cRo6pxp7LAbNWATEpCI=
-::egkzugNsPRvcWATEpCI=
-::dAsiuh18IRvcCxnZtBJQ
-::cRYluBh/LU+EWAnk
-::YxY4rhs+aU+IeA==
-::cxY6rQJ7JhzQF1fEqQJnZksaHErSXA==
-::ZQ05rAF9IBncCkqN+0xwdVsDLA==
-::ZQ05rAF9IAHYFVzEqQIeJxRWYQWRKG6oZg==
-::eg0/rx1wNQPfEVWB+kM9LVsJDCqNM2n6K7QP/O3pjw==
-::fBEirQZwNQPfEVWB+kM9LVsJDCqvLgs=
-::cRolqwZ3JBvQF1fEqQIeJxRWDCmDL3+/FPUI5+f35OOT4l0cRuN/Vaab++bOJaBF0gWsNZwsxXdTls5MCVtPfwula099yQ==
-::dhA7uBVwLU+EWHeL+0BwBRpHWAGQXA==
-::YQ03rBFzNR3SWATE2k0/Klt5TReWOXn6Zg==
-::dhAmsQZ3MwfNWATExk00OhJTQ0SyNXm/FfUY6ajI5uaRoy0=
-::ZQ0/vhVqMQ3MEVWAtB9wSA==
-::Zg8zqx1/OA3MEVWAtB9wSA==
-::dhA7pRFwIByZRRnk
-::Zh4grVQjdCyDJGyX8VAjFAlbSBaLAE+/Fb4I5/jHweWIoGAcR/Y6arP11buMDeEA/kD2Sbgi2Xh3mdgYCQkWewquDg==
-::YB416Ek+ZG8=
-::
-::
-::978f952a14a936cc963da21a135fa983
 :: Desabilita função echo /basica em todo arquivo batch
 @echo off
 :: Seta titulo do arquivo no prompt de comandos
@@ -4554,20 +4521,20 @@ echo      │                                                                   
 echo      │           Atualizando o Noob Master, aguarde...                                                           │
 echo      │                                                                                                           │
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%server%NoobMaster.exe', 'NoobMaster.exe') }"
+Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%server%NoobMaster.exe', 'NoobMasterr.exe') }"
 echo.
 echo.
-Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%server%NoobMaster.exe', 'NoobMaster2.exe') }"
 echo.
-echo.
-if exist "%cd%\NoobMaster2.exe" ( echo. ) else (   echo MsgBox "Deu erro na parada, o arquivo nao foi baixado! ",16,"Deu erro, vishhh" >%cd%\adb\wyz.vbs  
+if exist "%cd%\NoobMasterr.exe" ( echo. ) else (   echo MsgBox "Deu erro na parada, o arquivo nao foi baixado! ",16,"Deu erro, vishhh" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto Menu )
 echo.
 echo MsgBox "Ok, Noob Master atualizado ",16,"Vai canta seu bosta" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
+ren NoobMaster.exe Apague.exe
+ren NoobMasterr.exe NoobMaster.exe
+del %cd%\Apague.exe
 start %cd%\NoobMaster.exe
-del %cd%\NoobMaster2.exe
 goto :eof
 :CheckArb
 title Checando arb !
