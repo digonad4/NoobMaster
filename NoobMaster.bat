@@ -41,10 +41,12 @@ set Aezakmi=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/
 set PatchedOito=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/patched/10.0.8.0/10.0.8.0.img
 set PatchedNove=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/patched/10.0.9.0/10.0.9.0.img
 set PatchedDez=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/patched/10.0.10.0/10.0.10.0.img
+set PatchedDoze=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/patched/10.0.12.0/10.0.12.0.img
 :::::::::::::::::::::::::: Link Stock Boot
 set StockBootOito=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/stockboot/10.0.8.0/10.0.8.0.img
 set StockBootNove=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/stockboot/10.0.9.0/10.0.9.0.img
 set StockBootDez=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/stockboot/10.0.10.0/10.0.10.0.img
+set StockBootDoze=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/stockboot/10.0.12.0/10.0.12.0.img
 :::::::::::::::::::::::::: Gapps download
 set GappsMicro=https://ufpr.dl.sourceforge.net/project/noobmaster/NoobMaster/adb/file/gapps/gapps.zip
 :::::::::::::::::::::::::: Splash Download
@@ -207,7 +209,7 @@ set /p "nb=Digite o numero da opção que deseja %username% > "
 goto Menu
 :AttOta
 cls
-if exist "%cd%\NoobMaster_OTA.exe" ( echo . ) else ( echo MsgBox "O arquivo NoobMaster_OTA.exe nao existe ou foi removido, baixe o novamente",16,"Atencao! " >%cd%\adb\wyz.vbs  
+if exist "%cd%\NoobMaster_OTA.exe" ( echo . ) else ( echo MsgBox "O arquivo nao existe ou foi removido, baixe o novamente",16,"Atencao! " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs 
 goto Menu )
 start %cd%\NoobMaster_OTA.exe
@@ -2501,10 +2503,10 @@ echo      ├──────┤ 2 ) PATCHED BOOT 10.0.9.0                 │
 echo      │      └───────────────────────────────────────────┤                                                        │
 echo      │      ┌───────────────────────────────────────────┤                                                        │
 echo      ├──────┤ 3 ) PATCHED BOOT 10.0.10.0                │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 4 ) PATCHED BOOT 10.0.12.0                │                                                        │
 echo      │      └───────────────────────────────────────────┘                                                        │
-echo      │                                                                                                           │
-echo      │                                                                                                           │
-echo      │                                                                                                           │
 echo      │                                                                                                           │
 echo      │                                                                                                           │
 echo      │                                                                                                           │
@@ -2519,6 +2521,7 @@ set /p "nb=Digite uma opção aqui >"
 if '%nb%' == '1' goto PatchedOito
 if '%nb%' == '2' goto PatchedNove
 if '%nb%' == '3' goto PatchedDez
+if '%nb%' == '4' goto PatchedDoze
 
 if '%nb%' == 'E' goto Menu
 if '%nb%' == 'e' goto Menu
@@ -3081,6 +3084,192 @@ pause>nul
 echo.
 echo.
 goto PatchedDez
+:PatchedDoze
+title Patched Boot 10.0.12.0 !
+color 03
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │      ┌───────────────────────────────────────────┐                                                        │
+echo      ├──────┤ 1 ) BOOT NO PATCHED BOOT 10.0.12.0        │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 2 ) DOWNLOAD PATCHED BOOT 10.0.12.0       │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 3 ) DELETAR ARQUIVO                       │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 4 ) VERIFICAR ARQUIVO                     │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 5 ) FLASH DO PATCHED BOOT 10.0.12.0       │                                                        │
+echo      │      └───────────────────────────────────────────┘                                                        │
+echo      │                                                               ┌───────────────────────────────────────────┤
+echo      └───────────────────────────────────────────────────────────────┤ E ) VOLTAR                                │
+echo                                                                      └───────────────────────────────────────────┘
+echo.
+if exist "%cd%\adb\file\patched\10.0.12.0\10.0.12.0.img" ( call :cortexto 0a " Ok, parece que o arquivo existe. " ) else ( call :cortexto 0c "Baixe o arquivo. " )
+echo.
+echo.
+set nb= 
+set /p "nb=Digite algo aqui %username% >"
+if '%nb%' == '1' goto GotoPatchedDoze
+if '%nb%' == '2' goto DownPatchedDoze
+if '%nb%' == '3' goto DelPatchedDoze
+if '%nb%' == '4' goto VerPatchedDoze
+if '%nb%' == '5' goto FlashPatchedDoze
+if '%nb%' == 'E' goto Patched
+if '%nb%' == 'e' goto Patched
+goto PatchedDoze
+:DownPatchedDoze
+color 30
+title Download patched boot 10.0.12.0!
+if exist "%cd%\adb\file\patched\10.0.12.0\10.0.12.0.img" (  echo MsgBox "Pare de frescura, ce ja baixou o negocio e ta ai querendo baixar denovo, vai flashea isso ai rapa! ",16,"Vai canta seu bosta " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto PatchedDoze ) else ( echo . )
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █   
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │                                                                                                           │
+echo      │                          Baixando patched boot da versão 10.0.12.0...                                     │
+echo      │                                                                                                           │
+echo      │               Eu vou te avisar quando o Download terminar, apenas aguarde e relaxa a ppk.                 │
+echo      │                                                                                                           │
+echo      │                                                                                                           │
+echo      │                                                                                                           │
+echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+echo.
+echo.
+mkdir adb\file\patched\10.0.12.0\
+Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%PatchedDoze%', 'adb\file\patched\10.0.12.0\10.0.12.0.img') }"
+if exist "%cd%\adb\file\patched\10.0.12.0\10.0.12.0.img" ( echo. ) else (   echo MsgBox "Deu erro na parada, o arquivo nao foi baixado! ",16,"Deu erro, vishhh" >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto PatchedDoze )
+echo.
+echo MsgBox "Ok, arquivo baixado ",16,"Vai canta seu bosta" >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+echo.
+goto PatchedDoze
+:DelPatchedDoze
+title Deletando Patched boot 10.0.12.0
+color 03
+cls
+if exist "%cd%\adb\file\patched\10.0.12.0\10.0.12.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo ja foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai." >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto PatchedDoze )
+del adb\file\patched\10.0.12.0\10.0.12.0.img
+echo MsgBox "Ok, arquivo excluido ",16,"Excluir patched" >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto PatchedDoze
+:FlashPatchedDoze
+color 03
+title Flash do Patched boot 10.0.12.0
+if exist "%cd%\adb\file\patched\10.0.12.0\10.0.12.0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto PatchedDoze  )
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █  
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │                                                                                                           │
+echo      │           Flash do patched boot 10.0.12.0                                                                 │
+echo      │                                                                                                           │
+echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+echo.
+echo.
+%fastboot% flash boot "%~dp0adb\file\patched\10.0.12.0\10.0.12.0.img" || @echo "flash recovery error" && goto PatchedDozeError
+echo.
+echo.
+echo.
+echo Pressione qualquer tecla para voltar
+echo.
+pause >nul
+goto PatchedDoze
+:GotoPatchedDoze
+color 03
+title Boot no patched boot 10.0.12.0
+if exist "%cd%\adb\file\patched\10.0.12.0\10.0.12.0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto PatchedDoze  )
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █  
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │                                                                                                           │
+echo      │           Boot do patched boot 10.0.12.0                                                                  │
+echo      │                                                                                                           │
+echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+echo.
+echo.
+%fastboot% boot "%~dp0adb\file\patched\10.0.12.0\10.0.12.0.img" || @echo "boot error" && goto PatchedDozeError
+echo.
+echo.
+echo.
+echo Pressione qualquer tecla para voltar
+echo.
+pause >nul
+goto PatchedDoze
+:VerPatchedDoze
+cls
+if exist "%cd%\adb\file\patched\10.0.12.0\10.0.12.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto PatchedDoze )
+start %cd%\adb\file\patched\10.0.12.0\
+goto PatchedDoze
+:PatchedDozeError
+title ERROOOOOOOOOOOOOOOOOOOOOOOOOOOooooo !
+color 40
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █  
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │                                                                                                           │
+echo      │           Errooooooooooooooooooooooooooooooooooooooooooooo.                                               │
+echo      │                                                                                                           │
+echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+echo.
+echo.
+echo.
+echo.
+echo.
+echo Deu erro, eu não sei direito o que pode ter acontecido, mas to aqui ! Posso te ajudar !
+echo.
+echo.
+echo.
+echo MsgBox " Deu erro amigo, clique em ok e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs  
+echo.
+echo.
+echo Pressione qualquer tecla para voltar !
+echo.
+echo.
+pause>nul
+echo.
+echo.
+goto PatchedDoze
 :StockBoot
 title Stock boot para a stock rom !
 color 03
@@ -3100,10 +3289,10 @@ echo      ├──────┤ 2 ) STOCK BOOT 10.0.9.0                   │
 echo      │      └───────────────────────────────────────────┤                                                        │
 echo      │      ┌───────────────────────────────────────────┤                                                        │
 echo      ├──────┤ 3 ) STOCK BOOT 10.0.10.0                  │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 4 ) STOCK BOOT 10.0.12.0                  │                                                        │
 echo      │      └───────────────────────────────────────────┘                                                        │
-echo      │                                                                                                           │
-echo      │                                                                                                           │
-echo      │                                                                                                           │
 echo      │                                                                                                           │
 echo      │                                                                                                           │
 echo      │                                                                                                           │
@@ -3118,6 +3307,7 @@ set /p "nb=Digite uma opção aqui >"
 if '%nb%' == '1' goto StockBootOito
 if '%nb%' == '2' goto StockBootNove
 if '%nb%' == '3' goto StockBootDez
+if '%nb%' == '4' goto StockBootDoze
 
 if '%nb%' == 'E' goto Menu
 if '%nb%' == 'e' goto Menu
@@ -3680,6 +3870,192 @@ pause>nul
 echo.
 echo.
 goto StockBootDez
+:StockBootDoze
+title STOCK Boot 10.0.12.0 !
+color 03
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │      ┌───────────────────────────────────────────┐                                                        │
+echo      ├──────┤ 1 ) BOOT NO STOCK BOOT 10.0.12.0          │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 2 ) DOWNLOAD STOCK BOOT 10.0.12.0         │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 3 ) DELETAR ARQUIVO                       │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 4 ) VERIFICAR ARQUIVO                     │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 5 ) FLASH DO STOCK BOOT 10.0.12.0         │                                                        │
+echo      │      └───────────────────────────────────────────┘                                                        │
+echo      │                                                               ┌───────────────────────────────────────────┤
+echo      └───────────────────────────────────────────────────────────────┤ E ) VOLTAR                                │
+echo                                                                      └───────────────────────────────────────────┘
+echo.
+if exist "%cd%\adb\file\stockboot\10.0.12.0\10.0.12.0.img" ( call :cortexto 0a " Ok, parece que o arquivo existe. " ) else ( call :cortexto 0c "Baixe o arquivo. " )
+echo.
+echo.
+set nb= 
+set /p "nb=Digite algo aqui %username% >"
+if '%nb%' == '1' goto GotoStockBootDoze
+if '%nb%' == '2' goto DownStockBootDoze
+if '%nb%' == '3' goto DelStockBootDoze
+if '%nb%' == '4' goto VerStockBootDoze
+if '%nb%' == '5' goto FlashStockBootDoze
+if '%nb%' == 'E' goto StockBoot
+if '%nb%' == 'e' goto StockBoot
+goto StockBootDoze
+:DownStockBootDoze
+color 30
+title Download STOCK boot 10.0.12.0!
+if exist "%cd%\adb\file\stockboot\10.0.12.0\10.0.12.0.img" (  echo MsgBox "Pare de frescura, ce ja baixou o negocio e ta ai querendo baixar denovo, vai flashea isso ai rapa! ",16,"Vai canta seu bosta " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto StockBootDoze ) else ( echo . )
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █   
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │                                                                                                           │
+echo      │                          Baixando STOCK boot da versão 10.0.12.0...                                       │
+echo      │                                                                                                           │
+echo      │               Eu vou te avisar quando o Download terminar, apenas aguarde e relaxa a ppk.                 │
+echo      │                                                                                                           │
+echo      │                                                                                                           │
+echo      │                                                                                                           │
+echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+echo.
+echo.
+mkdir adb\file\stockboot\10.0.12.0\
+Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%StockBootDoze%', 'adb\file\stockboot\10.0.12.0\10.0.12.0.img') }"
+if exist "%cd%\adb\file\stockboot\10.0.12.0\10.0.12.0.img" ( echo. ) else (   echo MsgBox "Deu erro na parada, o arquivo nao foi baixado! ",16,"Deu erro, vishhh" >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto StockBootDoze )
+echo.
+echo MsgBox "Ok, arquivo baixado ",16,"Vai canta seu bosta" >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+echo.
+goto StockBootDoze
+:DelStockBootDoze
+title Deletando STOCK boot 10.0.12.0
+color 03
+cls
+if exist "%cd%\adb\file\stockboot\10.0.12.0\10.0.12.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo ja foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai." >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto StockBootDoze )
+del adb\file\stockboot\10.0.12.0\10.0.12.0.img
+echo MsgBox "Ok, arquivo excluido ",16,"Excluir STOCK" >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto StockBootDoze
+:FlashStockBootDoze
+color 03
+title Flash do STOCK boot 10.0.12.0
+if exist "%cd%\adb\file\stockboot\10.0.12.0\10.0.12.0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto StockBootDoze  )
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █  
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │                                                                                                           │
+echo      │           Flash do STOCK boot 10.0.12.0                                                                   │
+echo      │                                                                                                           │
+echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+echo.
+echo.
+%fastboot% flash boot "%~dp0adb\file\stockboot\10.0.12.0\10.0.12.0.img" || @echo "flash recovery error" && goto StockBootDozeError
+echo.
+echo.
+echo.
+echo Pressione qualquer tecla para voltar
+echo.
+pause >nul
+goto StockBootDoze
+:GotoStockBootDoze
+color 03
+title Boot no STOCK boot 10.0.12.0
+if exist "%cd%\adb\file\stockboot\10.0.12.0\10.0.12.0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto StockBootDoze  )
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █  
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │                                                                                                           │
+echo      │           Boot do STOCK boot 10.0.12.0                                                                    │
+echo      │                                                                                                           │
+echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+echo.
+echo.
+%fastboot% boot "%~dp0adb\file\stockboot\10.0.12.0\10.0.12.0.img" || @echo "boot error" && goto StockBootDozeError
+echo.
+echo.
+echo.
+echo Pressione qualquer tecla para voltar
+echo.
+pause >nul
+goto StockBootDoze
+:VerStockBootDoze
+cls
+if exist "%cd%\adb\file\stockboot\10.0.12.0\10.0.12.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto StockBootDoze )
+start %cd%\adb\file\stockboot\10.0.12.0\
+goto StockBootDoze
+:StockBootDozeError
+title ERROOOOOOOOOOOOOOOOOOOOOOOOOOOooooo !
+color 40
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █  
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │                                                                                                           │
+echo      │           Errooooooooooooooooooooooooooooooooooooooooooooo.                                               │
+echo      │                                                                                                           │
+echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+echo.
+echo.
+echo.
+echo.
+echo.
+echo Deu erro, eu não sei direito o que pode ter acontecido, mas to aqui ! Posso te ajudar !
+echo.
+echo.
+echo.
+echo MsgBox " Deu erro amigo, clique em ok e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs  
+echo.
+echo.
+echo Pressione qualquer tecla para voltar !
+echo.
+echo.
+pause>nul
+echo.
+echo.
+goto StockBootDoze
 :GappsMicro
 title Gapps Micro  ( 01/19 )
 color 03
