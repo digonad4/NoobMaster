@@ -1,1 +1,1 @@
-MsgBox "O arquivo nao existe ou foi removido, baixe o novamente",16,"Atencao "   
+MsgBox "Voce precisa baixar a stock rom.                                               Aguardo voce pressionar alguma tecla para que eu va para o download da stock rom.",vbInformation,"Epa, perai. "   
