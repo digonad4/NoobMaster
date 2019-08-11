@@ -1,4 +1,4 @@
-:: Desabilita função echo /basica em todo arquivo batch
+﻿:: Desabilita função echo /basica em todo arquivo batch
 @echo off
 :: Seta titulo do arquivo no prompt de comandos
 title Noob Master v 7.0.0.0 Beta
@@ -28,7 +28,7 @@ cls
 :: Link do repositorio Noob Master disponivel no GitHub
 set server=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/
 :: Link de onde é retirado o arquivo da stock rom !
-set server_stock=https://dl2018.sammobile.com/Pl9ZQiQnIiIwWCYkNVo2PkNYWD49KSAnUy02MUI3MyA7RhMaGUlOOyhDL0BDWSQgTlJbRFxGQFFfVAMWHxsMTk5ZWEZbREVY/J701MTVJU6CSF2_J701MTZTO6CSF1_ZTO.zip
+set server_stock=http://bigota.d.miui.com/V10.0.9.0.PDIMIXM/jasmine_global_images_V10.0.9.0.PDIMIXM_20190513.0000.00_9.0_bbaa8993fe.tgz
 ::::::::::::::::::::::::: Links Twrp
 set Baguvix=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/jasmine/3.2.3-0.img
 set Hesoyan=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/jasmine/3.3.0-0.img
@@ -48,7 +48,7 @@ set StockBootNove=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/m
 set StockBootDez=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/stockboot/10.0.10.0/10.0.10.0.img
 set StockBootDoze=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/stockboot/10.0.12.0/10.0.12.0.img
 :::::::::::::::::::::::::: Gapps download
-set GappsMicro=https://ufpr.dl.sourceforge.net/project/noobmaster/NoobMaster/adb/file/gapps/gapps.zip
+set GappsMicro=https://phoenixnap.dl.sourceforge.net/project/noobmaster/NoobMaster/adb/file/gapps/gapps.zip
 :::::::::::::::::::::::::: Splash Download
 set SplashMIUI=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/splash/miui/splash.img
 set SplashOne=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/splash/one/splash.img
@@ -167,11 +167,11 @@ echo      │      ┌───────────────────�
 echo      ├──────┤ 2 ) OPÇÕES DE ERASE (SYSTEM/VENDOR)       ├────────────┤ 9 ) CHECAR ARB ( ANTI ROLL BACK )         │
 echo      │      └───────────────────────────────────────────┤            └───────────────────────────────────────────┤
 echo      │      ┌───────────────────────────────────────────┤            ┌───────────────────────────────────────────┤
-echo      ├──────┤ 3 ) INSTALAÇÃO DA STOCK ROM ( A2 JASMINE )├────────────┤ 10 ) VA PARA EDL AGORA ( FASTBOOT )       │
+echo      ├──────┤ 3 ) INSTALAÇÃO DA STOCK ROM ( A2 JASMINE )├────────────┤ 10 ) MENU REBOOT/BOOTLOADER ( FASTBOOT )  │
 echo      │      └───────────────────────────────────────────┤            └───────────────────────────────────────────┤
-echo      │      ┌───────────────────────────────────────────┤                                                        │
-echo      ├──────┤ 4 ) TWRP (A2/6X )                         │                                                        │
-echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤            ┌───────────────────────────────────────────┤
+echo      ├──────┤ 4 ) TWRP (A2/6X )                         ├────────────┤ 11 ) CRIE SEU PRÓPRIO SPLASH              │
+echo      │      └───────────────────────────────────────────┤            └───────────────────────────────────────────┤
 echo      │      ┌───────────────────────────────────────────┤            ┌───────────────────────────────────────────┤
 echo      ├──────┤ 5 ) PATCHED BOOT ( ROOT STOCK ROM )       │            │ Dispositivos suportados: MI A2 / 6X       │
 echo      │      └───────────────────────────────────────────┤            └───────────────────────────────────────────┤
@@ -195,11 +195,8 @@ set /p "nb=Digite o numero da opção que deseja %username% > "
  if '%nb%' == '7' goto GappsMicro
  if '%nb%' == '8' goto Splash
  if '%nb%' == '9' goto CheckArb
- if '%nb%' == '10' goto GoEdl
- :::: Variavel de teste
- if '%nb%' == 't' goto 
- if '%nb%' == 'T' goto 
-  
+ if '%nb%' == '10' goto GotoFastboot
+ if '%nb%' == '11' goto GenerateSplash
  if '%nb%' == 'a' goto AttOta
  if '%nb%' == 'A' goto AttOta
  if '%nb%' == 'V' goto VerAdb
@@ -382,7 +379,7 @@ echo.
 echo.
 echo.
 echo MsgBox "Parece que vc ja desbloqueou o bootloader! ",16,"Erro">%cd%\adb\wyz.vbs 
-start %cd%\adb\wyz.vbs 
+start %cd%\adb\.vbs 
 echo.
 echo.
 echo Tecle qualquer tecla para voltar para o Menu de Bootloader !
@@ -4913,14 +4910,257 @@ echo.
 %fastboot% getvar anti 
 pause >nul 
 goto Menu
+:: Menu de bootloader
+:GotoFastboot
+title Menu Reboot !
+color 03
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █  
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │      ┌───────────────────────────────────────────┐                                                        │
+echo      ├──────┤ 1 ) Va para EDL                           │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 2 ) Renicie novamente em FASTBOOT         │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 3 ) Reinicie o systema                    │                                                        │
+echo      │      └───────────────────────────────────────────┘                                                        │
+echo      │                                                                                                           │
+echo      │                                                                                                           │
+echo      │                                                                                                           │
+echo      │                                                                                                           │
+echo      │                                                                                                           │
+echo      │                                                                                                           │
+echo      │                                                                                                           │
+echo      │                                                                                                           │
+echo      │                                                                                                           │
+echo      │                                                               ┌───────────────────────────────────────────┤
+echo      └───────────────────────────────────────────────────────────────┤ E ) VOLTAR                                │
+echo                                                                      └───────────────────────────────────────────┘
+set nb=
+set /p "nb=DIGITE A OPÇÃO QUE DESEJA > "
+ if '%nb%' == '1' goto GoEdl
+ if '%nb%' == '2' goto GoFastboot
+ if '%nb%' == '3' goto GoReboot
+ if '%nb%' == 'e' goto Menu
+ if '%nb%' == 'E' goto Menu
 :GoEdl
 cls
 %fastboot% oem edl  || @echo "oem edl error" && goto EdlError
 echo MsgBox "Ok, se desligou a tela nao se desespere, o modo EDL e assim mesmo. ",16,"Vai canta, guentai!" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto Menu
+goto GotoFastboot
 :EdlError
 cls
-echo MsgBox "Opa, nao consegui entrar em EDL, sertifique se de ter desbloquado o critical tambem e tente novamente... ",16,"Vai canta, guentai!" >%cd%\adb\wyz.vbs  
+echo MsgBox "Opa, nao consegui entrar em EDL, certifique se de ter desbloquado o critical tambem e tente novamente... ",16,"Vai canta, guentai!" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto Menu
+goto GotoFastboot
+:GoFastboot
+cls
+%fastboot% reboot bootloader  || @echo "reboot bootloader error" && goto FastbootError
+echo MsgBox "Ok, estou fazendo seu device Reiniciar em FASTBOOT ",16,"Vai canta, guentai!" >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto GotoFastboot
+:FastbootError
+cls
+echo MsgBox "Opa, nao consegui reiniciar em fastboot, tente novamente... ",16,"Vai canta, guentai!" >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto GotoFastboot
+:GoReboot
+cls
+%fastboot% reboot || @echo "reboot error" && goto RebootError
+echo MsgBox "Ok, agora seu celular ira reniciar. ",16,"Vai canta, guentai!" >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto GotoFastboot
+:RebootError
+cls
+echo MsgBox "Opa, nao consegui reiniciar atraves do fastboot, tente novamente. ",16,"Vai canta, guentai!" >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto GotoFastboot
+:: Gerador de splash customizado
+:GenerateSplash
+title Gerador de Splash Customizado
+color 03
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █  
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │      ┌───────────────────────────────────────────┐                                                        │
+echo      ├──────┤ 1 ) Edite os arq. BMP para gerar o splash │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 2 ) Gerar Splash Customizado              │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 3 ) Flash do Splash Customizado           │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 4 ) Deletar arquivo criado                │                                                        │
+echo      │      └───────────────────────────────────────────┘                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 5 ) Reboot system                         │                                                        │
+echo      │      └───────────────────────────────────────────┘                                                        │
+echo      │                                                                                                           │
+echo      │                                                                                                           │
+echo      │                                                                                                           │
+echo      │                                                               ┌───────────────────────────────────────────┤
+echo      └───────────────────────────────────────────────────────────────┤ E ) VOLTAR                                │
+echo                                                                      └───────────────────────────────────────────┘
+echo.
+echo.
+if exist %cd%\adb\file\splash\newsplash\newsplash.img ( call :cortexto 0a "Ok, parece que o arquivo existe " ) else (  call :cortexto 04 "Nenhum arquivo foi criado ainda." )
+echo.
+echo.
+set nb=
+set /p "nb=DIGITE A OPÇÃO QUE DESEJA > "
+ if '%nb%' == '1' goto EditBMP
+ if '%nb%' == '2' goto GerSplash
+ if '%nb%' == '3' goto FlashNewSplash
+ if '%nb%' == '4' goto DelSplashCus
+ if '%nb%' == '5' goto RebootSystem
+ if '%nb%' == 'e' goto Menu
+ if '%nb%' == 'E' goto Menu
+goto GenerateSplash
+:DelSplashCus
+del adb\file\splash\newsplash\newsplash.img
+if exist %cd%\adb\file\splash\newsplash\newsplash.img ( echo. ) else ( echo MsgBox "O arquivo foi deletado ! ",16,"Basta voce crialo denovo." >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs )
+goto GenerateSplash
+:EditBMP
+if exist %cd%\adb\file\splash\newsplash\img\1.bmp ( echo. ) else (echo MsgBox "O arquivo foi deletado ou nunca foi baixado, vou baixalo para voce ",16,"Aguarde." >%cd%\adb\wyz.vbs  
+start %cd%\wyz.vbs
+goto Download )
+if exist %cd%\adb\file\splash\newsplash\img\2.bmp ( echo. ) else ( echo MsgBox "O arquivo foi deletado ou nunca foi baixado, vou baixalo para voce ",16,"Aguarde." >%cd%\adb\wyz.vbs  
+start %cd%\wyz.vbs
+goto Download )
+if exist %cd%\adb\file\splash\newsplash\img\3.bmp ( echo. ) else ( echo MsgBox "O arquivo foi deletado ou nunca foi baixado, vou baixalo para voce ",16,"Aguarde." >%cd%\adb\wyz.vbs  
+start %cd%\wyz.vbs
+goto Download )
+if exist %cd%\adb\file\splash\newsplash\img\4.bmp ( echo. ) else ( echo MsgBox "O arquivo foi deletado ou nunca foi baixado, vou baixalo para voce ",16,"Aguarde." >%cd%\adb\wyz.vbs  
+start %cd%\wyz.vbs
+goto Download )
+start adb\file\splash\newsplash\img\
+goto GenerateSplash
+:GerSplash
+title Criando splash customizado !
+if exist %cd%\adb\file\splash\newsplash\empty.img ( echo. ) else (echo MsgBox "O arquivo foi deletado ou nunca foi baixado, vou baixalo para voce ",16,"Aguarde." >%cd%\adb\wyz.vbs  
+start %cd%\wyz.vbs
+goto Download )
+if exist %cd%\adb\file\splash\newsplash\header.img ( echo. ) else (echo MsgBox "O arquivo foi deletado ou nunca foi baixado, vou baixalo para voce ",16,"Aguarde." >%cd%\adb\wyz.vbs  
+start %cd%\wyz.vbs
+goto Download )
+if exist %cd%\adb\file\splash\newsplash\img\1.bmp ( echo. ) else (echo MsgBox "O arquivo foi deletado ou nunca foi baixado, vou baixalo para voce ",16,"Aguarde." >%cd%\adb\wyz.vbs  
+start %cd%\wyz.vbs
+goto Download )
+if exist %cd%\adb\file\splash\newsplash\img\2.bmp ( echo. ) else ( echo MsgBox "O arquivo foi deletado ou nunca foi baixado, vou baixalo para voce ",16,"Aguarde." >%cd%\adb\wyz.vbs  
+start %cd%\wyz.vbs
+goto Download )
+if exist %cd%\adb\file\splash\newsplash\img\3.bmp ( echo. ) else ( echo MsgBox "O arquivo foi deletado ou nunca foi baixado, vou baixalo para voce ",16,"Aguarde." >%cd%\adb\wyz.vbs  
+start %cd%\wyz.vbs
+goto Download )
+if exist %cd%\adb\file\splash\newsplash\img\4.bmp ( echo. ) else ( echo MsgBox "O arquivo foi deletado ou nunca foi baixado, vou baixalo para voce ",16,"Aguarde." >%cd%\adb\wyz.vbs  
+start %cd%\wyz.vbs
+goto Download )
+if exist %cd%\adb\file\splash\newsplash\newsplash.img (
+ echo MsgBox "O arquivo ja existe, exclua o arquivo ja existente ! ",16,"Calma que vai dar certo " >%cd%\adb\wyz.vbs  
+start %cd%\wyz.vbs
+goto GenerateSplash  )
+color 03
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █  
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │                                                                                                           │
+echo      │           Gerando splash customizado, observe                                                             │
+echo      │                                                                                                           │
+echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+echo.
+copy /b %cd%\adb\file\splash\newsplash\header.img+%cd%\adb\file\splash\newsplash\img\1.bmp+%cd%\adb\file\splash\newsplash\empty.img+%cd%\adb\file\splash\newsplash\img\2.bmp+%cd%\adb\file\splash\newsplash\img\3.bmp+%cd%\adb\file\splash\newsplash\img\4.bmp+%cd%\adb\file\splash\newsplash\empty.img %cd%\adb\file\splash\newsplash\newsplash.img
+echo.
+echo.
+if exist %cd%\adb\file\splash\newsplash\newsplash.img (
+ echo MsgBox "O arquivo foi criado, que legal ! ",16,"TOOOOOOOPPPPP " >%cd%\adb\wyz.vbs  
+start %cd%\wyz.vbs
+) else ( echo MsgBox "Pare ome, o arquivo nem foi criado, nao tem nada aqui.",16,"Tu excluiu o arquivo carai ? " >%cd%\adb\wyz.vbs  
+start %cd%\wyz.vbs
+)
+pause>nul
+goto GenerateSplash
+:FlashNewSplash
+if exist %cd%\adb\file\splash\newsplash\newsplash.img ( echo. ) else ( echo MsgBox "Pare ome, o arquivo nem foi criado, nao tem nada aqui, selecione primeiro a opcao numero 2 ) Gerar Splash Customizado .",16,"Tu nem crio o arquivo ainda... " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs 
+goto GenerateSplash )
+title Flash do splash customizado 
+color 03
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █  
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │                                                                                                           │
+echo      │           Flash do splash customizado, aguarde                                                            │
+echo      │                                                                                                           │
+echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+echo.
+echo.
+%fastboot% flash splash "%~dp0\adb\file\splash\newsplash\newsplash.img" || @echo "flash splash error" && goto SplashCusError
+echo.
+echo.
+pause>nul
+goto GenerateSplash
+:RebootSystem
+%fastboot% reboot 
+goto GenerateSplash
+:Download
+title Download dos arquivos necessarios para personalizar seu splash.
+cls
+color 30
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █   
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │                                                                                                           │
+echo      │                          Baixando Splash Customizador Noob Master                                         │
+echo      │                                                                                                           │
+echo      │               Eu vou te avisar quando o Download terminar, apenas aguarde e relaxa a ppk.                 │
+echo      │                                                                                                           │
+echo      │                                                                                                           │
+echo      │                                                                                                           │
+echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+echo.
+echo.
+mkdir adb\file\splash\newsplash\
+mkdir adb\file\splash\newsplash\img\
+Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%server%adb/file/splash/newsplash/empty.img', 'adb\file\splash\newsplash\empty.img') }"
+Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%server%adb/file/splash/newsplash/header.img', 'adb\file\splash\newsplash\header.img') }"
+Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%server%adb/file/splash/newsplash/img/1.bmp', 'adb\file\splash\newsplash\img\1.bmp') }"
+Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%server%adb/file/splash/newsplash/img/2.bmp', 'adb\file\splash\newsplash\img\2.bmp') }"
+Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%server%adb/file/splash/newsplash/img/3.bmp', 'adb\file\splash\newsplash\img\3.bmp') }"
+Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%server%adb/file/splash/newsplash/img/4.bmp', 'adb\file\splash\newsplash\img\4.bmp') }"
+echo.
+if exist %cd%\adb\file\splash\newsplash\empty.img ( echo Ok, arquivos baixados. ) else ( echo MsgBox "Os arquivos nao foram baixados. ",16,"Tente novamente..." >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs )
+echo MsgBox "Ok, arquivos baixados, agora selecione novamente a opcao para gerar seu splash  ",16,"Vai canta seu bosta" >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+echo.
+goto GenerateSplash
