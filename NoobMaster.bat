@@ -1,3 +1,36 @@
+::[Bat To Exe Converter]
+::
+::YAwzoRdxOk+EWAjk
+::fBw5plQjdCyDJGyX8VAjFAlbSBaLAE+/Fb4I5/jHweWIoGAcR/Y6arCKlL2NL4A=
+::YAwzuBVtJxjWCl3EqQJgSA==
+::ZR4luwNxJguZRRnk
+::Yhs/ulQjdF+5
+::cxAkpRVqdFKZSjk=
+::cBs/ulQjdF+5
+::ZR41oxFsdFKZSDk=
+::eBoioBt6dFKZSDk=
+::cRo6pxp7LAbNWATEpCI=
+::egkzugNsPRvcWATEpCI=
+::dAsiuh18IRvcCxnZtBJQ
+::cRYluBh/LU+EWAnk
+::YxY4rhs+aU+IeA==
+::cxY6rQJ7JhzQF1fEqQJnZksaHErXXA==
+::ZQ05rAF9IBncCkqN+0xwdVsDAlTMbCXvZg==
+::ZQ05rAF9IAHYFVzEqQIeJxRWDCmDL3+/FNU=
+::eg0/rx1wNQPfEVWB+kM9LVsJDGQ=
+::fBEirQZwNQPfEVWB+kM9LVsJDGQ=
+::cRolqwZ3JBvQF1fEqQITJxVATRCNfGi1C/UY7fv+4fyIrlsYUO0tOIrWmvnQYPRd50CrW5ki1Fdbi98JHjoKHg==
+::dhA7uBVwLU+EWDk=
+::YQ03rBFzNR3SWATElA==
+::dhAmsQZ3MwfNWATExk00OhJTQ0SyNXm/FfUY6ajI5uaRoy0=
+::ZQ0/vhVqMQ3MEVWAtB9wSA==
+::Zg8zqx1/OA3MEVWAtB9wSA==
+::dhA7pRFwIByZRRnk
+::Zh4grVQjdCyDJGyX8VAjFAlbSBaLAE+/Fb4I5/jHweWIoA0wVfErfZ2V36yLQA==
+::YB416Ek+ZG8=
+::
+::
+::978f952a14a936cc963da21a135fa983
 ﻿:: Desabilita função echo /basica em todo arquivo batch
 @echo off
 :: Seta titulo do arquivo no prompt de comandos
@@ -987,6 +1020,7 @@ echo                    Estou baixando o Adb para que tudo funcione corretamente
 echo.
 echo                               Fique tranquilo, vou te avisar quando acabar !
 mkdir adb
+Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%server%adb/wyz.vbs', 'adb\wyz.vbs') }"
 Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%server%adb/adb.exe', 'adb\adb.exe') }"
 Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%server%adb/rleimager.exe', 'adb\rleimager.exe') }"
 Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%server%adb/AdbWinUsbApi.dll', 'adb\AdbWinUsbApi.dll') }"
@@ -999,7 +1033,6 @@ echo MsgBox "Ok, o Adb foi baixado! ",vbInformation,"Agora vai :) " >%cd%\adb\wy
 start %cd%\adb\wyz.vbs
 echo.
 goto Menu
-
 :: SEM PAUSA, VÁ DIRETO PARA O MENU DE VERIFICAÇÃO DE ARQUIVOS
 :VerAdb
 title Verificando existencia dos arquivos do ADB
