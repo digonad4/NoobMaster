@@ -5,7 +5,7 @@ title Noob Master v 7.0.0.0 Beta
 :: Função que corrige letras e acentos
 chcp 65001
 cls
-set server=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master
+set server=https://raw.githubusercontent.com/devrodrigopires/NoobMasterJasmine/master
 :: Seta valor do tamanho da tela 
 mode 120,35
 setlocal EnableDelayedExpansion

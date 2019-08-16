@@ -1,7 +1,7 @@
 ﻿:: Desabilita função echo /basica em todo arquivo batch
 @echo off
 :: Seta titulo do arquivo no prompt de comandos
-title Noob Master v 7.0.0.0 Beta
+title Noob Master v 7.0.0.5
 :: Função que corrige letras e acentos
 chcp 65001
 cls
@@ -21,7 +21,6 @@ cls
 ::: Estamos na versão 7.0.0.0 e está me parece ser a ultima versão em bash, em breve estaremos em C#, aguarde...                                               :::
 ::: Rodrigo Pires da Silva, 15/07/2019 - 23:23                                                                                                                 :::
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: Links 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -30,7 +29,7 @@ set server=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/
 :: Link de onde é retirado o arquivo da stock rom !
 set server_stock=http://bigota.d.miui.com/V10.0.9.0.PDIMIXM/jasmine_global_images_V10.0.9.0.PDIMIXM_20190513.0000.00_9.0_bbaa8993fe.tgz
 ::::::::::::::::::::::::: Links Twrp
-set Baguvix=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/jasmine/3.2.3-0.img
+set Baguvix=https://raw.githubusercontent.com/devrodrigopires//NoobMaster//master/adb/file/twrp/jasmine/3.2.3-0.img
 set Hesoyan=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/jasmine/3.3.0-0.img
 set Uzumymw=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/jasmine/3.3.1-0.img
 set Oneway=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/wayne/3.2.3-0.img
@@ -42,11 +41,13 @@ set PatchedOito=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/mas
 set PatchedNove=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/patched/10.0.9.0/10.0.9.0.img
 set PatchedDez=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/patched/10.0.10.0/10.0.10.0.img
 set PatchedDoze=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/patched/10.0.12.0/10.0.12.0.img
+set PatchedTreze=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/patched/10.0.13.0/10.0.13.0.img
 :::::::::::::::::::::::::: Link Stock Boot
 set StockBootOito=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/stockboot/10.0.8.0/10.0.8.0.img
 set StockBootNove=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/stockboot/10.0.9.0/10.0.9.0.img
 set StockBootDez=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/stockboot/10.0.10.0/10.0.10.0.img
 set StockBootDoze=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/stockboot/10.0.12.0/10.0.12.0.img
+set StockBootTreze=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/stockboot/10.0.13.0/10.0.13.0.img
 :::::::::::::::::::::::::: Gapps download
 set GappsMicro=https://phoenixnap.dl.sourceforge.net/project/noobmaster/NoobMaster/adb/file/gapps/gapps.zip
 :::::::::::::::::::::::::: Splash Download
@@ -81,7 +82,7 @@ set fastboot="%cd%\adb\fastboot.exe"
 :: No maximo 14 caracteres
 set "nome= Noob Master "
 :: Manter padrão de sequencia
-set "ver= 7.0.0.0 "
+set "ver= 7.0.0.5 "
 :START
 color 03
 set inti=0
@@ -2503,10 +2504,10 @@ echo      ├──────┤ 3 ) PATCHED BOOT 10.0.10.0                │
 echo      │      └───────────────────────────────────────────┤                                                        │
 echo      │      ┌───────────────────────────────────────────┤                                                        │
 echo      ├──────┤ 4 ) PATCHED BOOT 10.0.12.0                │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 5 ) PATCHED BOOT 10.0.13.0                │                                                        │
 echo      │      └───────────────────────────────────────────┘                                                        │
-echo      │                                                                                                           │
-echo      │                                                                                                           │
-echo      │                                                                                                           │
 echo      │                                                               ┌───────────────────────────────────────────┤
 echo      └───────────────────────────────────────────────────────────────┤ E ) VOLTAR                                │
 echo                                                                      └───────────────────────────────────────────┘
@@ -2519,7 +2520,7 @@ if '%nb%' == '1' goto PatchedOito
 if '%nb%' == '2' goto PatchedNove
 if '%nb%' == '3' goto PatchedDez
 if '%nb%' == '4' goto PatchedDoze
-
+if '%nb%' == '5' goto PatchedTreze
 if '%nb%' == 'E' goto Menu
 if '%nb%' == 'e' goto Menu
 goto Patched
@@ -3267,6 +3268,192 @@ pause>nul
 echo.
 echo.
 goto PatchedDoze
+:PatchedTreze
+title Patched Boot 10.0.13.0 !
+color 03
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │      ┌───────────────────────────────────────────┐                                                        │
+echo      ├──────┤ 1 ) BOOT NO PATCHED BOOT 10.0.13.0        │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 2 ) DOWNLOAD PATCHED BOOT 10.0.13.0       │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 3 ) DELETAR ARQUIVO                       │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 4 ) VERIFICAR ARQUIVO                     │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 5 ) FLASH DO PATCHED BOOT 10.0.13.0       │                                                        │
+echo      │      └───────────────────────────────────────────┘                                                        │
+echo      │                                                               ┌───────────────────────────────────────────┤
+echo      └───────────────────────────────────────────────────────────────┤ E ) VOLTAR                                │
+echo                                                                      └───────────────────────────────────────────┘
+echo.
+if exist "%cd%\adb\file\patched\10.0.13.0\10.0.13.0.img" ( call :cortexto 0a " Ok, parece que o arquivo existe. " ) else ( call :cortexto 0c "Baixe o arquivo. " )
+echo.
+echo.
+set nb= 
+set /p "nb=Digite algo aqui %username% >"
+if '%nb%' == '1' goto GotoPatchedTreze
+if '%nb%' == '2' goto DownPatchedTreze
+if '%nb%' == '3' goto DelPatchedTreze
+if '%nb%' == '4' goto VerPatchedTreze
+if '%nb%' == '5' goto FlashPatchedTreze
+if '%nb%' == 'E' goto Patched
+if '%nb%' == 'e' goto Patched
+goto PatchedTreze
+:DownPatchedTreze
+color 30
+title Download patched boot 10.0.13.0!
+if exist "%cd%\adb\file\patched\10.0.13.0\10.0.13.0.img" (  echo MsgBox "Pare de frescura, ce ja baixou o negocio e ta ai querendo baixar denovo, vai flashea isso ai rapa! ",16,"Vai canta seu bosta " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto PatchedTreze ) else ( echo . )
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █   
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │                                                                                                           │
+echo      │                          Baixando patched boot da versão 10.0.13.0...                                     │
+echo      │                                                                                                           │
+echo      │               Eu vou te avisar quando o Download terminar, apenas aguarde e relaxa a ppk.                 │
+echo      │                                                                                                           │
+echo      │                                                                                                           │
+echo      │                                                                                                           │
+echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+echo.
+echo.
+mkdir adb\file\patched\10.0.13.0\
+Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%PatchedTreze%', 'adb\file\patched\10.0.13.0\10.0.13.0.img') }"
+if exist "%cd%\adb\file\patched\10.0.13.0\10.0.13.0.img" ( echo. ) else (   echo MsgBox "Deu erro na parada, o arquivo nao foi baixado! ",16,"Deu erro, vishhh" >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto PatchedTreze )
+echo.
+echo MsgBox "Ok, arquivo baixado ",16,"Vai canta seu bosta" >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+echo.
+goto PatchedTreze
+:DelPatchedTreze
+title Deletando Patched boot 10.0.13.0
+color 03
+cls
+if exist "%cd%\adb\file\patched\10.0.13.0\10.0.13.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto PatchedTreze )
+del adb\file\patched\10.0.13.0\10.0.13.0.img
+echo MsgBox "Ok, arquivo excluido ",16,"Excluir patched" >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto PatchedTreze
+:FlashPatchedTreze
+color 03
+title Flash do Patched boot 10.0.13.0
+if exist "%cd%\adb\file\patched\10.0.13.0\10.0.13.0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto PatchedTreze  )
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █  
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │                                                                                                           │
+echo      │           Flash do patched boot 10.0.13.0                                                                 │
+echo      │                                                                                                           │
+echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+echo.
+echo.
+%fastboot% flash boot "%~dp0\adb\file\patched\10.0.13.0\10.0.13.0.img" || @echo "flash recovery error" && goto PatchedTrezeError
+echo.
+echo.
+echo.
+echo Pressione qualquer tecla para voltar
+echo.
+pause >nul
+goto PatchedTreze
+:GotoPatchedTreze
+color 03
+title Boot no patched boot 10.0.13.0
+if exist "%cd%\adb\file\patched\10.0.13.0\10.0.13.0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto PatchedTreze  )
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █  
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │                                                                                                           │
+echo      │           Boot do patched boot 10.0.13.0                                                                  │
+echo      │                                                                                                           │
+echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+echo.
+echo.
+%fastboot% boot "%~dp0\adb\file\patched\10.0.13.0\10.0.13.0.img" || @echo "boot error" && goto PatchedTrezeError
+echo.
+echo.
+echo.
+echo Pressione qualquer tecla para voltar
+echo.
+pause >nul
+goto PatchedTreze
+:VerPatchedTreze
+cls
+if exist "%cd%\adb\file\patched\10.0.13.0\10.0.13.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto PatchedTreze )
+start %cd%\adb\file\patched\10.0.13.0\
+goto PatchedTreze
+:PatchedTrezeError
+title ERROOOOOOOOOOOOOOOOOOOOOOOOOOOooooo !
+color 40
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █  
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │                                                                                                           │
+echo      │           Errooooooooooooooooooooooooooooooooooooooooooooo.                                               │
+echo      │                                                                                                           │
+echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+echo.
+echo.
+echo.
+echo.
+echo.
+echo Deu erro, eu não sei direito o que pode ter acontecido, mas to aqui ! Posso te ajudar !
+echo.
+echo.
+echo.
+echo MsgBox " Deu erro amigo, clique em ok e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs  
+echo.
+echo.
+echo Pressione qualquer tecla para voltar !
+echo.
+echo.
+pause>nul
+echo.
+echo.
+goto PatchedTreze
 :StockBoot
 title Stock boot para a stock rom !
 color 03
@@ -3289,10 +3476,10 @@ echo      ├──────┤ 3 ) STOCK BOOT 10.0.10.0                  │
 echo      │      └───────────────────────────────────────────┤                                                        │
 echo      │      ┌───────────────────────────────────────────┤                                                        │
 echo      ├──────┤ 4 ) STOCK BOOT 10.0.12.0                  │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 5 ) STOCK BOOT 10.0.13.0                  │                                                        │
 echo      │      └───────────────────────────────────────────┘                                                        │
-echo      │                                                                                                           │
-echo      │                                                                                                           │
-echo      │                                                                                                           │
 echo      │                                                               ┌───────────────────────────────────────────┤
 echo      └───────────────────────────────────────────────────────────────┤ E ) VOLTAR                                │
 echo                                                                      └───────────────────────────────────────────┘
@@ -3305,7 +3492,7 @@ if '%nb%' == '1' goto StockBootOito
 if '%nb%' == '2' goto StockBootNove
 if '%nb%' == '3' goto StockBootDez
 if '%nb%' == '4' goto StockBootDoze
-
+if '%nb%' == '5' goto StockBootTreze
 if '%nb%' == 'E' goto Menu
 if '%nb%' == 'e' goto Menu
 goto StockBoot
@@ -4053,6 +4240,192 @@ pause>nul
 echo.
 echo.
 goto StockBootDoze
+:StockBootTreze
+title STOCK Boot 10.0.13.0 !
+color 03
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │      ┌───────────────────────────────────────────┐                                                        │
+echo      ├──────┤ 1 ) BOOT NO STOCK BOOT 10.0.13.0          │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 2 ) DOWNLOAD STOCK BOOT 10.0.13.0         │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 3 ) DELETAR ARQUIVO                       │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 4 ) VERIFICAR ARQUIVO                     │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 5 ) FLASH DO STOCK BOOT 10.0.13.0         │                                                        │
+echo      │      └───────────────────────────────────────────┘                                                        │
+echo      │                                                               ┌───────────────────────────────────────────┤
+echo      └───────────────────────────────────────────────────────────────┤ E ) VOLTAR                                │
+echo                                                                      └───────────────────────────────────────────┘
+echo.
+if exist "%cd%\adb\file\stockboot\10.0.13.0\10.0.13.0.img" ( call :cortexto 0a " Ok, parece que o arquivo existe. " ) else ( call :cortexto 0c "Baixe o arquivo. " )
+echo.
+echo.
+set nb= 
+set /p "nb=Digite algo aqui %username% >"
+if '%nb%' == '1' goto GotoStockBootTreze
+if '%nb%' == '2' goto DownStockBootTreze
+if '%nb%' == '3' goto DelStockBootTreze
+if '%nb%' == '4' goto VerStockBootTreze
+if '%nb%' == '5' goto FlashStockBootTreze
+if '%nb%' == 'E' goto StockBoot
+if '%nb%' == 'e' goto StockBoot
+goto StockBootTreze
+:DownStockBootTreze
+color 30
+title Download STOCK boot 10.0.13.0!
+if exist "%cd%\adb\file\stockboot\10.0.13.0\10.0.13.0.img" (  echo MsgBox "Pare de frescura, ce ja baixou o negocio e ta ai querendo baixar denovo, vai flashea isso ai rapa! ",16,"Vai canta seu bosta " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto StockBootTreze ) else ( echo . )
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █   
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │                                                                                                           │
+echo      │                          Baixando STOCK boot da versão 10.0.13.0...                                       │
+echo      │                                                                                                           │
+echo      │               Eu vou te avisar quando o Download terminar, apenas aguarde e relaxa a ppk.                 │
+echo      │                                                                                                           │
+echo      │                                                                                                           │
+echo      │                                                                                                           │
+echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+echo.
+echo.
+mkdir adb\file\stockboot\10.0.13.0\
+Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%StockBootTreze%', 'adb\file\stockboot\10.0.13.0\10.0.13.0.img') }"
+if exist "%cd%\adb\file\stockboot\10.0.13.0\10.0.13.0.img" ( echo. ) else (   echo MsgBox "Deu erro na parada, o arquivo nao foi baixado! ",16,"Deu erro, vishhh" >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto StockBootTreze )
+echo.
+echo MsgBox "Ok, arquivo baixado ",16,"Vai canta seu bosta" >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+echo.
+goto StockBootTreze
+:DelStockBootTreze
+title Deletando STOCK boot 10.0.13.0
+color 03
+cls
+if exist "%cd%\adb\file\stockboot\10.0.13.0\10.0.13.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo ja foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai." >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto StockBootTreze )
+del adb\file\stockboot\10.0.13.0\10.0.13.0.img
+echo MsgBox "Ok, arquivo excluido ",16,"Excluir STOCK" >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto StockBootTreze
+:FlashStockBootTreze
+color 03
+title Flash do STOCK boot 10.0.13.0
+if exist "%cd%\adb\file\stockboot\10.0.13.0\10.0.13.0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto StockBootTreze  )
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █  
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │                                                                                                           │
+echo      │           Flash do STOCK boot 10.0.13.0                                                                   │
+echo      │                                                                                                           │
+echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+echo.
+echo.
+%fastboot% flash boot "%~dp0adb\file\stockboot\10.0.13.0\10.0.13.0.img" || @echo "flash recovery error" && goto StockBootTrezeError
+echo.
+echo.
+echo.
+echo Pressione qualquer tecla para voltar
+echo.
+pause >nul
+goto StockBootTreze
+:GotoStockBootTreze
+color 03
+title Boot no STOCK boot 10.0.13.0
+if exist "%cd%\adb\file\stockboot\10.0.13.0\10.0.13.0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto StockBootTreze  )
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █  
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │                                                                                                           │
+echo      │           Boot do STOCK boot 10.0.13.0                                                                    │
+echo      │                                                                                                           │
+echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+echo.
+echo.
+%fastboot% boot "%~dp0adb\file\stockboot\10.0.13.0\10.0.13.0.img" || @echo "boot error" && goto StockBootTrezeError
+echo.
+echo.
+echo.
+echo Pressione qualquer tecla para voltar
+echo.
+pause >nul
+goto StockBootTreze
+:VerStockBootTreze
+cls
+if exist "%cd%\adb\file\stockboot\10.0.13.0\10.0.13.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto StockBootTreze )
+start %cd%\adb\file\stockboot\10.0.13.0\
+goto StockBootTreze
+:StockBootTrezeError
+title ERROOOOOOOOOOOOOOOOOOOOOOOOOOOooooo !
+color 40
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █  
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │                                                                                                           │
+echo      │           Errooooooooooooooooooooooooooooooooooooooooooooo.                                               │
+echo      │                                                                                                           │
+echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+echo.
+echo.
+echo.
+echo.
+echo.
+echo Deu erro, eu não sei direito o que pode ter acontecido, mas to aqui ! Posso te ajudar !
+echo.
+echo.
+echo.
+echo MsgBox " Deu erro amigo, clique em ok e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs  
+echo.
+echo.
+echo Pressione qualquer tecla para voltar !
+echo.
+echo.
+pause>nul
+echo.
+echo.
+goto StockBootTreze
 :GappsMicro
 title Gapps Micro  ( 01/19 )
 color 03
