@@ -390,7 +390,6 @@ pause>nul
 echo.
 echo.
 goto Bootloader
-
 :: Menu de Erase
 :Erase
 title Menu Erase 
@@ -5323,6 +5322,7 @@ set /p "nb=DIGITE A OPÇÃO QUE DESEJA > "
  if '%nb%' == '3' goto GoReboot
  if '%nb%' == 'e' goto Menu
  if '%nb%' == 'E' goto Menu
+ goto GotoFastboot
 :GoEdl
 cls
 %fastboot% oem edl  || @echo "oem edl error" && goto EdlError
