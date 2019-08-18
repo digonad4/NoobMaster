@@ -1,1 +1,1 @@
-MsgBox "Voce precisa baixar a stock rom.                                               Aguardo voce pressionar alguma tecla para que eu va para o download da stock rom.",vbInformation,"Epa, perai. "   
+MsgBox "Ok, arquivo baixado ",16,"Vai canta seu bosta"   
