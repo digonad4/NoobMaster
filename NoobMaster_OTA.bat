@@ -1,4 +1,3 @@
-:: Desabilita função echo /basica em todo arquivo batch
 @echo off
 :: Seta titulo do arquivo no prompt de comandos
 title Noob Master v 7.0.0.5 Beta
@@ -26,17 +25,25 @@ echo      │   █                                                             
 echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
 echo      │                                                                                                           │
 echo      │                                                                                                           │
-echo      │           Atualizando o Noob Master, aguarde...                                                           │
-echo      │           Caso apareçam linhas vermelhas abaixo, feche o Noob Master principal.                           │
+echo      │                                                                                                           │
+echo      │                                                                                                           │
+echo      │      pt -     Atualizando o Noob Master, aguarde...                                                       │
+echo      │      pt -     Caso apareçam linhas vermelhas abaixo, feche o Noob Master principal.                       │
+echo      │                                                                                                           │
+echo      │                                                                                                           │
+echo      │                                                                                                           │
+echo      │      En -     Updating Noob Master, please wait ...                                                       │
+echo      │      En -     If red lines appear below, close the NoobMaster.exe                                         │
 echo      │                                                                                                           │
 echo      │                                                                                                           │
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+echo.
 Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%server%/NoobMaster.exe', 'NoobMaster.exe') }"
 Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%server%/NoobMaster.exe', 'NoobMasterr.exe') }"
 echo.
 echo.
 echo.
-if exist "%cd%\NoobMasterr.exe" ( echo. ) else (   echo MsgBox "Deu erro na parada, o arquivo nao foi baixado! ",16,"Deu erro, vishhh" >%cd%\adb\wyz.vbs  
+if exist "%cd%\NoobMasterr.exe" ( echo. ) else (   echo MsgBox "Deu erro na parada, o arquivo nao foi baixado! ",16,"ERRO" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto Menu )
 echo.
