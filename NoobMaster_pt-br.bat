@@ -185,7 +185,6 @@ echo.
 echo.
 set nb=
 set /p "nb=Digite o numero da opção que deseja %username% > "
-:dec
  if '%nb%' == '1' goto Bootloader
  if '%nb%' == '2' goto Erase
  if '%nb%' == '3' goto StockRom

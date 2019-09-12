@@ -1,1 +1,1 @@
-MsgBox "O arquivo nao existe ou foi removido, baixe o novamente",16,"Atencao "   
+MsgBox "Ok, if you turned off the screen do not despair, the EDL mode and anyway.",16,"It's gonna be okay "   
