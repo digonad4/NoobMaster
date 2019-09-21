@@ -1,1 +1,1 @@
-MsgBox "Ok, if you turned off the screen do not despair, the EDL mode and anyway.",16,"It's gonna be okay "   
+MsgBox "Deu erro na parada, o arquivo nao foi baixado ",16,"Deu erro, vishhh"   
