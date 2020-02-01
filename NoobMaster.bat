@@ -6,7 +6,7 @@ chcp 65001
 cls
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::: Bom começando por aqui, esta ferramenta desenvolvida por mim, Rodrigo Pires da Silva.                                                                      :::
-::: Nasceu da curiosidade e porque precisavamos de um "toolkit" no nosso idioma, bom em janeiro comecei a estudar script de outros dev.                        :::
+::: Nasceu da curiosidade e porque precisavamos de um toolkit no nosso idioma, bom em janeiro comecei a estudar script de outros dev.                        :::
 ::: Confesso que no começo eu copiei algumas funções exatamente como estavam no primeiro script que encontrei, fui estudando como funcionava e fui aprendendo. :::
 ::: Hoje, o Noob Master tem um alcance limitado aos usuarios do Windows 10, por questões de Download automatico.                                               :::
 ::: E para o usuario final não ter de baixar um zip de 1,5gb com os arquivos, que estão hospedado em nuvem e acessivel pelo script.                            :::
@@ -16,7 +16,7 @@ cls
 ::: *** Download, extração e flash da stock rom através do FASTBOOT                                                                                            :::
 ::: *** Download de todas as versões do Twrp e todas as funções disponiveis para jasmine e wayne ( wayne tem função Flash Recovery )                           :::
 ::: *** Download e flash do patched boot e stock boot ( Root / UnRoot )                                                                                        :::
-::: Ele hoje possui uma pequena "inteligencia artificial" que lhe permite reconhecer se o arquivo está no seu devido lugar, assim evitando erros.              :::
+::: Ele hoje possui uma pequena i nteligencia artificial que lhe permite reconhecer se o arquivo está no seu devido lugar, assim evitando erros.              :::
 ::: Estamos na versão 7.0.0.0 e está me parece ser a ultima versão em bash, em breve estaremos em C#, aguarde...                                               :::
 ::: Rodrigo Pires da Silva, 15/07/2019 - 23:23                                                                                                                 :::
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
