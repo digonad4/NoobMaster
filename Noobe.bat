@@ -1,18 +1,11 @@
- @ECHO OFF
- mode 120,35
+@ECHO OFF
+mode 120,35
 
- @ECHO OFF
-  SETLOCAL ENABLEDELAYEDEXPANSION
+   SETLOCAL ENABLEDELAYEDEXPANSION
 
   SET time_start=%time%
-<<<<<<< HEAD
   SET time_choice_wait=20
-  SET script_ver=7.2
-=======
-  SET time_choice_wait=5
-  SET script_ver=8.2
-  SET script_nM= Noob Master  
->>>>>>> 2860a7069af3cb238c2d415408638e60c6a14019
+  SET script_ver=1.00
   SET script_name=%~n0
   SET server_url=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/
 
@@ -28,83 +21,10 @@
   IF %__deploy_mode% EQU 1 GOTO :EOF
   IF %auto_update_compare% EQU 1 CALL :SCRIPT_COMPARE_VER
 
-  :SCRIPT_MISSING_CFG
-  ECHO Creating new %script_name%.conf file...
-  ECHO __deploy_mode=0                   > "%script_name_cfg%"
-  ECHO repository_base_url=%server_url% >> "%script_name_cfg%"
-  ECHO auto_update_compare=1                >> "%script_name_cfg%"
-  ECHO auto_update_download=1               >> "%script_name_cfg%"
-  ECHO Update %script_name%.conf as needed, then save and close to continue.
-  ECHO Waiting for notepad to close...
-  NOTEPAD "%script_name_cfg%"
-  GOTO :EOF
-
-  :SCRIPT_COMPARE_VER
-  ECHO Please wait while script versions are compared...
-  Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%server_url%%script_name%.current.ver', '%script_name_latest_ver%') }"
-  IF NOT EXIST "%script_name_latest_ver%" GOTO END
-  SET /p script_latest_ver= < "%script_name_latest_ver%"
-  IF %script_ver% EQU %script_latest_ver% CALL :SCRIPT_COMPARE_VER_SAME
-  IF %script_ver% NEQ %script_latest_ver% CALL :SCRIPT_COMPARE_VER_DIFF
-  GOTO :EOF
-
-  :SCRIPT_COMPARE_VER_SAME
-  ECHO Versions are both %script_name% v%script_ver%
-  GOTO :EOF
-
-  :SCRIPT_COMPARE_VER_DIFF
-  ECHO Current Version:%script_ver% ^| Server Version:%script_latest_ver%
-  IF %auto_update_download% EQU 1 GOTO SCRIPT_DOWNLOAD_SCRIPT
-  ECHO.
-  ECHO Would you like to download the latest %script_name% v%script_latest_ver%?
-  ECHO Defaulting to N in %time_choice_wait% seconds...
-  CHOICE /C YN /T %time_choice_wait% /D N
-  IF ERRORLEVEL 2 GOTO SCRIPT_DOWNLOAD_NOTHING
-  IF ERRORLEVEL 1 GOTO SCRIPT_DOWNLOAD_SCRIPT
-  IF ERRORLEVEL 0 GOTO SCRIPT_DOWNLOAD_NOTHING
-
-  :SCRIPT_DOWNLOAD_SCRIPT
-  ECHO Please wait while script downloads...
-  Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%server_url%%script_name%.bat', '%script_name_bat%') }"
-  ECHO Script Updated to v%script_latest_ver%^^!
-  REM User must exit script. Current batch is stale.
-  GOTO :END
-
-  :SCRIPT_DOWNLOAD_NOTHING
-  GOTO :EOF
 
 
 
-  :END
-  SET time_end=%time%
-  ECHO.
-  ECHO Script started:%time_start%
-  ECHO Script ended  :%time_end%
-  :END_AGAIN
-  pause
-  ECHO.
-  ECHO Please close this window
-  ECHO.
-  GOTO END_AGAIN
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  :SCRIPT_MAIN
 cls
 set server=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/
 set server_stock=https://bigota.d.miui.com/V10.0.10.0.PDIMIXM/jasmine_global_images_V10.0.10.0.PDIMIXM_20190611.0000.00_9.0_9e6473956a.tgz
@@ -738,9 +658,9 @@ goto StockRom
 title Baixando os arquivos que farão a extração da rom stock !
 color 30
 cls
-echo.	
-echo.				Baixando arquivos necessários para extração!
-echo.							Aguarde !
+echo. 
+echo.       Baixando arquivos necessários para extração!
+echo.             Aguarde !
 echo.
 timeout 3 > nul
 mkdir adb\7Zip\
@@ -851,59 +771,59 @@ if exist "%cd%\adb\stock\system.img" ( echo . ) else ( goto AvisoDownloadStock)
 cls
 echo.
 echo.
-echo.			Vamos aos erase !
+echo.     Vamos aos erase !
 echo.
 echo.
 timeout 2 > nul
-		%fastboot% erase system_a || @echo "erase system_a error" && goto FlashStockError
-		%fastboot% erase system_b || @echo "erase system_a error" && goto FlashStockError
-		%fastboot% erase vendor_a || @echo "erase vendor_a error" && goto FlashStockError
-		%fastboot% erase vendor_b || @echo "erase vendor_a error" && goto FlashStockError
-		%fastboot% erase cache
-		%fastboot% erase userdata
-		%fastboot% -w 
+    %fastboot% erase system_a || @echo "erase system_a error" && goto FlashStockError
+    %fastboot% erase system_b || @echo "erase system_a error" && goto FlashStockError
+    %fastboot% erase vendor_a || @echo "erase vendor_a error" && goto FlashStockError
+    %fastboot% erase vendor_b || @echo "erase vendor_a error" && goto FlashStockError
+    %fastboot% erase cache
+    %fastboot% erase userdata
+    %fastboot% -w 
 cls
-		%fastboot%  flash bluetooth_a "%~dp0\adb\stock\bluetooth.img" || @echo "Flash bluetooth_a error" && goto FlashStockError
-		%fastboot%  flash bluetooth_b "%~dp0\adb\stock\bluetooth.img" || @echo "Flash bluetooth_b error" && goto FlashStockError
-		%fastboot%  flash devcfg_a "%~dp0\adb\stock\devcfg.img" || @echo "Flash devcfg_a error" && goto FlashStockError
-		%fastboot%  flash devcfg_b "%~dp0\adb\stock\devcfg.img" || @echo "Flash devcfg_b error" && goto FlashStockError
-		%fastboot%  flash dsp_a "%~dp0\adb\stock\dsp.img" || @echo "Flash dsp_a error" && goto FlashStockError
-		%fastboot%  flash dsp_b "%~dp0\adb\stock\dsp.img" || @echo "Flash dsp_b error" && goto FlashStockError
-		%fastboot%  flash modem_a "%~dp0\adb\stock\modem.img" || @echo "Flash modem_a error" && goto FlashStockError
-		%fastboot%  flash modem_b "%~dp0\adb\stock\modem.img" || @echo "Flash modem_b error" && goto FlashStockError
-		%fastboot%  flash xbl_a "%~dp0\adb\stock\xbl.img" || @echo "Flash xbl_a error" && goto FlashStockError
-		%fastboot%  flash xbl_b "%~dp0\adb\stock\xbl.img" || @echo "Flash xbl_b error" && goto FlashStockError
-		%fastboot%  flash pmic_a "%~dp0\adb\stock\pmic.img" || @echo "Flash pmic_a error" && goto FlashStockError
-		%fastboot%  flash pmic_b "%~dp0\adb\stock\pmic.img" || @echo "Flash pmic_b error" && goto FlashStockError
-		%fastboot%  flash rpm_a "%~dp0\adb\stock\rpm.img" || @echo "Flash rpm_a error" && goto FlashStockError
-		%fastboot%  flash rpm_b "%~dp0\adb\stock\rpm.img" || @echo "Flash rpm_b error" && goto FlashStockError
-		%fastboot%  flash tz_a "%~dp0\adb\stock\tz.img" || @echo "Flash tz_a error" && goto FlashStockError
-		%fastboot%  flash tz_b "%~dp0\adb\stock\tz.img" || @echo "Flash tz_b error" && goto FlashStockError
-		%fastboot%  flash hyp_a "%~dp0\adb\stock\hyp.img" || @echo "Flash hyp_a error" && goto FlashStockError
-		%fastboot%  flash hyp_b "%~dp0\adb\stock\hyp.img" || @echo "Flash hyp_b error" && goto FlashStockError
-		%fastboot%  flash keymaster_a "%~dp0\adb\stock\keymaster.img" || @echo "Flash keymaster_a error" && goto FlashStockError
-		%fastboot%  flash keymaster_b "%~dp0\adb\stock\keymaster.img" || @echo "Flash keymaster_b error" && goto FlashStockError
-		%fastboot%  flash cmnlib64_a "%~dp0\adb\stock\cmnlib64.img" || @echo "Flash cmnlib64_a error" && goto FlashStockError
-		%fastboot%  flash cmnlib64_b "%~dp0\adb\stock\cmnlib64.img" || @echo "Flash cmnlib64_b error" && goto FlashStockError
-		%fastboot%  flash cmnlib_a "%~dp0\adb\stock\cmnlib.img" || @echo "Flash cmnlib_a error" && goto FlashStockError
-		%fastboot%  flash cmnlib_b "%~dp0\adb\stock\cmnlib.img" || @echo "Flash cmnlib_b error" && goto FlashStockError
-		%fastboot%  flash abl_a "%~dp0\adb\stock\abl.elf" || @echo "Flash abl_a error" && goto FlashStockError
-		%fastboot%  flash abl_b "%~dp0\adb\stock\abl.elf" || @echo "Flash abl_b error" && goto FlashStockError
-		%fastboot%  flash boot_a "%~dp0\adb\stock\boot.img" || @echo "Flash boot_a error" && goto FlashStockError
-		%fastboot%  flash boot_b "%~dp0\adb\stock\boot.img" || @echo "Flash boot_b error" && goto FlashStockError
-		%fastboot%  flash system_a "%~dp0\adb\stock\system.img" || @echo "Flash system_a error" && goto FlashStockError
-		%fastboot%  flash system_b "%~dp0\adb\stock\system.img" || @echo "Flash system_b error" && goto FlashStockError
-		%fastboot%  flash vendor_a "%~dp0\adb\stock\vendor.img" || @echo "Flash vendor_a error" && goto FlashStockError
-		%fastboot%  flash vendor_b "%~dp0\adb\stock\vendor.img" || @echo "Flash vendor_b error" && goto FlashStockError
-		%fastboot%  flash mdtp_a "%~dp0\adb\stock\mdtp.img" || @echo "Flash mdtp_a error" && goto FlashStockError
-		%fastboot%  flash mdtp_b "%~dp0\adb\stock\mdtp.img" || @echo "Flash mdtp_b error" && goto FlashStockError
-		%fastboot%  flash splash "%~dp0\adb\stock\splash.img" || @echo "Flash splash error" && goto FlashStockError
-		%fastboot%  flash mdtpsecapp_a "%~dp0\adb\stock\mdtpsecapp.img" || @echo "Flash mdtpsecapp_a error" && goto FlashStockError
-		%fastboot%  flash mdtpsecapp_b "%~dp0\adb\stock\mdtpsecapp.img" || @echo "Flash mdtpsecapp_b error" && goto FlashStockError
-		%fastboot%  flash storsec "%~dp0\adb\stock\storsec.mbn" || @echo "Flash storsec error" && goto FlashStockError
-		%fastboot% reboot-bootloader
-		%fastboot% -w
-		%fastboot% reboot 
+    %fastboot%  flash bluetooth_a "%~dp0\adb\stock\bluetooth.img" || @echo "Flash bluetooth_a error" && goto FlashStockError
+    %fastboot%  flash bluetooth_b "%~dp0\adb\stock\bluetooth.img" || @echo "Flash bluetooth_b error" && goto FlashStockError
+    %fastboot%  flash devcfg_a "%~dp0\adb\stock\devcfg.img" || @echo "Flash devcfg_a error" && goto FlashStockError
+    %fastboot%  flash devcfg_b "%~dp0\adb\stock\devcfg.img" || @echo "Flash devcfg_b error" && goto FlashStockError
+    %fastboot%  flash dsp_a "%~dp0\adb\stock\dsp.img" || @echo "Flash dsp_a error" && goto FlashStockError
+    %fastboot%  flash dsp_b "%~dp0\adb\stock\dsp.img" || @echo "Flash dsp_b error" && goto FlashStockError
+    %fastboot%  flash modem_a "%~dp0\adb\stock\modem.img" || @echo "Flash modem_a error" && goto FlashStockError
+    %fastboot%  flash modem_b "%~dp0\adb\stock\modem.img" || @echo "Flash modem_b error" && goto FlashStockError
+    %fastboot%  flash xbl_a "%~dp0\adb\stock\xbl.img" || @echo "Flash xbl_a error" && goto FlashStockError
+    %fastboot%  flash xbl_b "%~dp0\adb\stock\xbl.img" || @echo "Flash xbl_b error" && goto FlashStockError
+    %fastboot%  flash pmic_a "%~dp0\adb\stock\pmic.img" || @echo "Flash pmic_a error" && goto FlashStockError
+    %fastboot%  flash pmic_b "%~dp0\adb\stock\pmic.img" || @echo "Flash pmic_b error" && goto FlashStockError
+    %fastboot%  flash rpm_a "%~dp0\adb\stock\rpm.img" || @echo "Flash rpm_a error" && goto FlashStockError
+    %fastboot%  flash rpm_b "%~dp0\adb\stock\rpm.img" || @echo "Flash rpm_b error" && goto FlashStockError
+    %fastboot%  flash tz_a "%~dp0\adb\stock\tz.img" || @echo "Flash tz_a error" && goto FlashStockError
+    %fastboot%  flash tz_b "%~dp0\adb\stock\tz.img" || @echo "Flash tz_b error" && goto FlashStockError
+    %fastboot%  flash hyp_a "%~dp0\adb\stock\hyp.img" || @echo "Flash hyp_a error" && goto FlashStockError
+    %fastboot%  flash hyp_b "%~dp0\adb\stock\hyp.img" || @echo "Flash hyp_b error" && goto FlashStockError
+    %fastboot%  flash keymaster_a "%~dp0\adb\stock\keymaster.img" || @echo "Flash keymaster_a error" && goto FlashStockError
+    %fastboot%  flash keymaster_b "%~dp0\adb\stock\keymaster.img" || @echo "Flash keymaster_b error" && goto FlashStockError
+    %fastboot%  flash cmnlib64_a "%~dp0\adb\stock\cmnlib64.img" || @echo "Flash cmnlib64_a error" && goto FlashStockError
+    %fastboot%  flash cmnlib64_b "%~dp0\adb\stock\cmnlib64.img" || @echo "Flash cmnlib64_b error" && goto FlashStockError
+    %fastboot%  flash cmnlib_a "%~dp0\adb\stock\cmnlib.img" || @echo "Flash cmnlib_a error" && goto FlashStockError
+    %fastboot%  flash cmnlib_b "%~dp0\adb\stock\cmnlib.img" || @echo "Flash cmnlib_b error" && goto FlashStockError
+    %fastboot%  flash abl_a "%~dp0\adb\stock\abl.elf" || @echo "Flash abl_a error" && goto FlashStockError
+    %fastboot%  flash abl_b "%~dp0\adb\stock\abl.elf" || @echo "Flash abl_b error" && goto FlashStockError
+    %fastboot%  flash boot_a "%~dp0\adb\stock\boot.img" || @echo "Flash boot_a error" && goto FlashStockError
+    %fastboot%  flash boot_b "%~dp0\adb\stock\boot.img" || @echo "Flash boot_b error" && goto FlashStockError
+    %fastboot%  flash system_a "%~dp0\adb\stock\system.img" || @echo "Flash system_a error" && goto FlashStockError
+    %fastboot%  flash system_b "%~dp0\adb\stock\system.img" || @echo "Flash system_b error" && goto FlashStockError
+    %fastboot%  flash vendor_a "%~dp0\adb\stock\vendor.img" || @echo "Flash vendor_a error" && goto FlashStockError
+    %fastboot%  flash vendor_b "%~dp0\adb\stock\vendor.img" || @echo "Flash vendor_b error" && goto FlashStockError
+    %fastboot%  flash mdtp_a "%~dp0\adb\stock\mdtp.img" || @echo "Flash mdtp_a error" && goto FlashStockError
+    %fastboot%  flash mdtp_b "%~dp0\adb\stock\mdtp.img" || @echo "Flash mdtp_b error" && goto FlashStockError
+    %fastboot%  flash splash "%~dp0\adb\stock\splash.img" || @echo "Flash splash error" && goto FlashStockError
+    %fastboot%  flash mdtpsecapp_a "%~dp0\adb\stock\mdtpsecapp.img" || @echo "Flash mdtpsecapp_a error" && goto FlashStockError
+    %fastboot%  flash mdtpsecapp_b "%~dp0\adb\stock\mdtpsecapp.img" || @echo "Flash mdtpsecapp_b error" && goto FlashStockError
+    %fastboot%  flash storsec "%~dp0\adb\stock\storsec.mbn" || @echo "Flash storsec error" && goto FlashStockError
+    %fastboot% reboot-bootloader
+    %fastboot% -w
+    %fastboot% reboot 
 cls
 title Deu certo !
 echo.
@@ -5339,23 +5259,18 @@ echo MsgBox "Ok, arquivos baixados, agora selecione novamente a opcao para gerar
 start %cd%\adb\wyz.vbs
 echo.
 goto GenerateSplash
-  GOTO END
-
+ 
 
 
 
   :SCRIPT_MISSING_CFG
-  echo.
-  echo.
-  ECHO                         Criando o arquivo %script_name%.conf ...
-  echo.
-  echo.
+  ECHO Creating new %script_name%.conf file...
   ECHO __deploy_mode=0                   > "%script_name_cfg%"
   ECHO repository_base_url=%server_url% >> "%script_name_cfg%"
   ECHO auto_update_compare=1                >> "%script_name_cfg%"
   ECHO auto_update_download=1               >> "%script_name_cfg%"
-  ECHO             Update %script_name%.conf as needed, then save and close to continue.
-  ECHO             Feche o bloco de notas...
+  ECHO Update %script_name%.conf as needed, then save and close to continue.
+  ECHO Waiting for notepad to close...
   NOTEPAD "%script_name_cfg%"
   GOTO :EOF
 
@@ -5363,15 +5278,7 @@ goto GenerateSplash
 
 
   :SCRIPT_COMPARE_VER
-  echo.
-  echo.
-  echo.
-  echo.
-  ECHO                         Aguarde em quanto eu comparo as versoes...
-  echo.
-  echo.
-  echo.
-  echo.
+  ECHO Please wait while script versions are compared...
   Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%server_url%%script_name%.current.ver', '%script_name_latest_ver%') }"
   IF NOT EXIST "%script_name_latest_ver%" GOTO END
   SET /p script_latest_ver= < "%script_name_latest_ver%"
@@ -5380,49 +5287,42 @@ goto GenerateSplash
   GOTO :EOF
 
   :SCRIPT_COMPARE_VER_SAME
-  ECHO                         Versions are both %script_name% v%script_ver%
+  ECHO Versions are both %script_name% v%script_ver%
   GOTO :EOF
 
   :SCRIPT_COMPARE_VER_DIFF
-  ECHO                         Current Version:%script_ver% ^| Server Version:%script_latest_ver%
+  ECHO Current Version:%script_ver% ^| Server Version:%script_latest_ver%
   IF %auto_update_download% EQU 1 GOTO SCRIPT_DOWNLOAD_SCRIPT
   ECHO.
-  ECHO                         Would you like to download the latest %script_name% v%script_latest_ver%?
-  ECHO                         Defaulting to N in %time_choice_wait% seconds...
+  ECHO Would you like to download the latest %script_name% v%script_latest_ver%?
+  ECHO Defaulting to N in %time_choice_wait% seconds...
   CHOICE /C YN /T %time_choice_wait% /D N
   IF ERRORLEVEL 2 GOTO SCRIPT_DOWNLOAD_NOTHING
   IF ERRORLEVEL 1 GOTO SCRIPT_DOWNLOAD_SCRIPT
   IF ERRORLEVEL 0 GOTO SCRIPT_DOWNLOAD_NOTHING
 
   :SCRIPT_DOWNLOAD_SCRIPT
-  echo.
-  echo.
-  ECHO                         Por favor aguarde, estou fazendo o download da atualizacao...
-  echo.
-  echo.
+  ECHO Please wait while script downloads...
   Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%server_url%%script_name%.bat', '%script_name_bat%') }"
-  
-  echo.
-  echo.
-  ECHO                         Noob Master atualizado para a versao v%script_latest_ver%^^!
-  
-  echo.
-  echo.
-
+  ECHO Script Updated to v%script_latest_ver%^^!
   REM User must exit script. Current batch is stale.
-  
   GOTO :END
 
   :SCRIPT_DOWNLOAD_NOTHING
   GOTO :EOF
 
 
+
   :END
   SET time_end=%time%
   ECHO.
+  ECHO Script started:%time_start%
+  ECHO Script ended  :%time_end%
   :END_AGAIN
+  pause
   ECHO.
-  ECHO                         Tecle algo para continuar ou aguarde.
+  ECHO Please close this window
   ECHO.
-  timeout 3 > nul 
-  GOTO SCRIPT_MAIN
+  GOTO END_AGAIN
+
+
