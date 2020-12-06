@@ -1,20 +1,31 @@
  @ECHO OFF
-
+ mode 120,35
   SETLOCAL ENABLEDELAYEDEXPANSION
-
   SET time_start=%time%
   SET time_choice_wait=5
-  SET script_ver=1
+  SET script_ver=7.2
+  SET script_nM= Noob Master  
   SET script_name=%~n0
   SET server_url=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/
 
   SET script_name_bat=%~dp0%script_name%.bat
   SET script_name_cfg=%~dp0%script_name%.conf
   SET script_name_latest_ver=%~dp0%script_name%.latest.ver
-
-  ECHO %script_name% v%script_ver%
+              
+  echo.
+  echo.
+  echo.
+  echo.
+  echo.
+  echo                        %script_nM% v%script_ver%
+  echo.
+  echo.
   ECHO %script_ver% > %script_name%.current.ver
-
+  echo.
+  echo.
+  echo.
+  echo.
+  echo.
   IF NOT EXIST "%script_name_cfg%" CALL :SCRIPT_MISSING_CFG
   FOR /f "delims=" %%x IN (%script_name%.conf) DO (SET "%%x")
   IF %__deploy_mode% EQU 1 GOTO :EOF
@@ -22,7 +33,6 @@
 
   :SCRIPT_MAIN
 cls
-chcp 65001
 set server=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/
 set server_stock=https://bigota.d.miui.com/V10.0.10.0.PDIMIXM/jasmine_global_images_V10.0.10.0.PDIMIXM_20190611.0000.00_9.0_9e6473956a.tgz
 set Baguvix=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/jasmine/3.2.3-0.img
@@ -46,8 +56,6 @@ set SplashOne=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/maste
 set SplashAnonimous=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/splash/anonimous/splash.img
 set Splashmiui_white=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/splash/miui_white/splash.img
 set Orange=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/Orange/unnoficial.img
-mode 120,35
-setlocal EnableDelayedExpansion
 for /F "tokens=1,2 delims=#" %%a in ('"prompt #$H#$E# & echo on & for %%b in (1) do rem"') do (
   set "DEL=%%a"
 )
@@ -66,9 +74,8 @@ pushd "%~dp0"
 set adb="%cd%\adb\adb.exe"
 set fastboot="%cd%\adb\fastboot.exe"
 set "nome= Noob Master "
-set "ver= 7.0.1.4 "
 :Menu
-title %nome% v%ver%
+title %nome% v%script_ver%
 color 03
  if exist "%cd%\adb\fastboot.exe"     (echo.) else (goto Adb )
  if exist "%cd%\adb\adb.exe"          (echo.) else (goto Adb )
@@ -80,33 +87,31 @@ color 03
  if exist "%cd%\adb\unins000.exe"     (echo.) else (goto Adb )
 cls
 echo.
-echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █
-echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █
-echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
-echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
-echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
-echo      │      ┌───────────────────────────────────────────┐            ┌───────────────────────────────────────────┤
-echo      ├──────┤ 1 ) OPÇÕES PARA O BOOTLOADER              ├────────────┤ 8 ) FLASH SPLASH ( STOCK/CUSTOM )         │
-echo      │      └───────────────────────────────────────────┤            └───────────────────────────────────────────┤
-echo      │      ┌───────────────────────────────────────────┤            ┌───────────────────────────────────────────┤
-echo      ├──────┤ 2 ) OPÇÕES DE ERASE (SYSTEM/VENDOR)       ├────────────┤ 9 ) CHECAR ARB ( ANTI ROLL BACK )         │
-echo      │      └───────────────────────────────────────────┤            └───────────────────────────────────────────┤
-echo      │      ┌───────────────────────────────────────────┤            ┌───────────────────────────────────────────┤
-echo      ├──────┤ 3 ) INSTALAÇÃO DA STOCK ROM ( A2 JASMINE )├────────────┤ 10 ) MENU REBOOT/BOOTLOADER ( FASTBOOT )  │
-echo      │      └───────────────────────────────────────────┤            └───────────────────────────────────────────┤
-echo      │      ┌───────────────────────────────────────────┤            ┌───────────────────────────────────────────┤
-echo      ├──────┤ 4 ) TWRP (A2/6X )                         ├────────────┤ 11 ) CRIE SEU PRÓPRIO SPLASH              │
-echo      │      └───────────────────────────────────────────┤            └───────────────────────────────────────────┤
-echo      │      ┌───────────────────────────────────────────┤            ┌───────────────────────────────────────────┤
-echo      ├──────┤ 5 ) PATCHED BOOT ( ROOT STOCK ROM )       │            │ Dispositivos suportados: MI A2 / 6X       │
-echo      │      └───────────────────────────────────────────┤            └───────────────────────────────────────────┤
-echo      │      ┌───────────────────────────────────────────┤            ┌───────────────────────────────────────────┤
-echo      ├──────┤ 6 ) STOCK BOOT ( REMOVE ROOT STOCK ROM )  ├────────────┤ A ) ATUALIZAR O NOOB MASTER               │
-echo      │      └───────────────────────────────────────────┤  E) EXIT   └───────────────────────────────────────────┤
-echo      │      ┌──────────────────────────────────────────┤            ┌───────────────────────────────────────────┤
-echo      └──────┤ 7 ) GAPPS MICRO 01/2019                   ├────────────┤ V ) VERIFICA RAIZ DE ARQUIVOS             │
-echo             └───────────────────────────────────────────┘            └───────────────────────────────────────────┘
+echo.
+echo.
+echo            Noob Master v%script_ver%                                          by Rodrigo Pires da Silva
+echo.
+echo.
+echo.
+echo.
+echo      1 ) OPCOES PARA O BOOTLOADER
+echo      2 ) OPCOES DE ERASE (SYSTEM/VENDOR)  
+echo      3 ) INSTALACAO DA STOCK ROM ( A2 JASMINE )
+echo      4 ) TWRP (A2/6X )
+echo      5 ) PATCHED BOOT ( ROOT STOCK ROM )
+echo      6 ) STOCK BOOT ( REMOVE ROOT STOCK ROM ) 
+echo      7 ) GAPPS MICRO 01/2019 
+echo      8 ) FLASH SPLASH ( STOCK/CUSTOM ) 
+echo      9 ) CHECAR ARB ( ANTI ROLL BACK ) 
+echo      10 ) MENU REBOOT/BOOTLOADER ( FASTBOOT ) 
+echo      11 ) CRIE SEU PROPRIO SPLASH 
+echo.
+echo      A ) ATUALIZAR O NOOB MASTER
+echo      V ) VERIFICA RAIZ DE ARQUIVOS 
+echo.
+echo      E) EXIT
+echo.
+echo.
 echo.
 echo.
 set nb=
@@ -5267,13 +5272,17 @@ goto GenerateSplash
 
 
   :SCRIPT_MISSING_CFG
-  ECHO Creating new %script_name%.conf file...
+  echo.
+  echo.
+  ECHO                         Criando o arquivo %script_name%.conf ...
+  echo.
+  echo.
   ECHO __deploy_mode=0                   > "%script_name_cfg%"
   ECHO repository_base_url=%server_url% >> "%script_name_cfg%"
   ECHO auto_update_compare=1                >> "%script_name_cfg%"
   ECHO auto_update_download=1               >> "%script_name_cfg%"
-  ECHO Update %script_name%.conf as needed, then save and close to continue.
-  ECHO Waiting for notepad to close...
+  ECHO             Update %script_name%.conf as needed, then save and close to continue.
+  ECHO             Feche o bloco de notas...
   NOTEPAD "%script_name_cfg%"
   GOTO :EOF
 
@@ -5281,7 +5290,15 @@ goto GenerateSplash
 
 
   :SCRIPT_COMPARE_VER
-  ECHO Please wait while script versions are compared...
+  echo.
+  echo.
+  echo.
+  echo.
+  ECHO                         Aguarde em quanto eu comparo as versoes...
+  echo.
+  echo.
+  echo.
+  echo.
   Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%server_url%%script_name%.current.ver', '%script_name_latest_ver%') }"
   IF NOT EXIST "%script_name_latest_ver%" GOTO END
   SET /p script_latest_ver= < "%script_name_latest_ver%"
@@ -5290,25 +5307,37 @@ goto GenerateSplash
   GOTO :EOF
 
   :SCRIPT_COMPARE_VER_SAME
-  ECHO Versions are both %script_name% v%script_ver%
+  ECHO                         Versions are both %script_name% v%script_ver%
   GOTO :EOF
 
   :SCRIPT_COMPARE_VER_DIFF
-  ECHO Current Version:%script_ver% ^| Server Version:%script_latest_ver%
+  ECHO                         Current Version:%script_ver% ^| Server Version:%script_latest_ver%
   IF %auto_update_download% EQU 1 GOTO SCRIPT_DOWNLOAD_SCRIPT
   ECHO.
-  ECHO Would you like to download the latest %script_name% v%script_latest_ver%?
-  ECHO Defaulting to N in %time_choice_wait% seconds...
+  ECHO                         Would you like to download the latest %script_name% v%script_latest_ver%?
+  ECHO                         Defaulting to N in %time_choice_wait% seconds...
   CHOICE /C YN /T %time_choice_wait% /D N
   IF ERRORLEVEL 2 GOTO SCRIPT_DOWNLOAD_NOTHING
   IF ERRORLEVEL 1 GOTO SCRIPT_DOWNLOAD_SCRIPT
   IF ERRORLEVEL 0 GOTO SCRIPT_DOWNLOAD_NOTHING
 
   :SCRIPT_DOWNLOAD_SCRIPT
-  ECHO Please wait while script downloads...
+  echo.
+  echo.
+  ECHO                         Por favor aguarde, estou fazendo o download da atualizacao...
+  echo.
+  echo.
   Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%server_url%%script_name%.bat', '%script_name_bat%') }"
-  ECHO Noob Master atualizado para a versao v%script_latest_ver%^^!
+  
+  echo.
+  echo.
+  ECHO                         Noob Master atualizado para a versao v%script_latest_ver%^^!
+  
+  echo.
+  echo.
+
   REM User must exit script. Current batch is stale.
+  
   GOTO :END
 
   :SCRIPT_DOWNLOAD_NOTHING
@@ -5318,11 +5347,9 @@ goto GenerateSplash
   :END
   SET time_end=%time%
   ECHO.
-  ECHO Atualizacao iniciada em   :%time_start%
-  ECHO Atualizacao finalizada em :%time_end%
   :END_AGAIN
-  pause
   ECHO.
-  ECHO Tecle algo para continuar.
+  ECHO                         Tecle algo para continuar.
   ECHO.
+  timeout > 3
   GOTO SCRIPT_MAIN
