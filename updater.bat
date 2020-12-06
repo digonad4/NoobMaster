@@ -4,7 +4,7 @@
 
   SET time_start=%time%
   SET time_choice_wait=5
-  SET script_ver=2
+  SET script_ver=1
   SET script_name=%~n0
   SET server_url=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/
 
@@ -5313,7 +5313,6 @@ goto GenerateSplash
 
   :SCRIPT_DOWNLOAD_NOTHING
   GOTO :EOF
-
 
 
   :END
