@@ -1,33 +1,8 @@
 @echo off
-:: Seta titulo do arquivo no prompt de comandos
-title Noob Master v 7.0.1.4
-:: Função que corrige letras e acentos
 chcp 65001
 cls
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-::: Bom começando por aqui, esta ferramenta desenvolvida por mim, Rodrigo Pires da Silva.                                                                      :::
-::: Nasceu da curiosidade e porque precisavamos de um toolkit no nosso idioma, bom em janeiro comecei a estudar script de outros dev.                        :::
-::: Confesso que no começo eu copiei algumas funções exatamente como estavam no primeiro script que encontrei, fui estudando como funcionava e fui aprendendo. :::
-::: Hoje, o Noob Master tem um alcance limitado aos usuarios do Windows 10, por questões de Download automatico.                                               :::
-::: E para o usuario final não ter de baixar um zip de 1,5gb com os arquivos, que estão hospedado em nuvem e acessivel pelo script.                            :::
-::: Junto dos downloads estão todas as funções disponiveis através de comando por FASTBOOT/ADB.                                                                :::
-::: Voce encontra nesse Script as seguintes funções:                                                                                                           :::
-::: *** Desbloqueio e bloqueio de bootloader                                                                                                                   :::
-::: *** Download, extração e flash da stock rom através do FASTBOOT                                                                                            :::
-::: *** Download de todas as versões do Twrp e todas as funções disponiveis para jasmine e wayne ( wayne tem função Flash Recovery )                           :::
-::: *** Download e flash do patched boot e stock boot ( Root / UnRoot )                                                                                        :::
-::: Ele hoje possui uma pequena i nteligencia artificial que lhe permite reconhecer se o arquivo está no seu devido lugar, assim evitando erros.              :::
-::: Estamos na versão 7.0.0.0 e está me parece ser a ultima versão em bash, em breve estaremos em C#, aguarde...                                               :::
-::: Rodrigo Pires da Silva, 15/07/2019 - 23:23                                                                                                                 :::
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: Links 
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-:: Link do repositorio Noob Master disponivel no GitHub
 set server=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/
-:: Link de onde é retirado o arquivo da stock rom !
 set server_stock=https://bigota.d.miui.com/V10.0.10.0.PDIMIXM/jasmine_global_images_V10.0.10.0.PDIMIXM_20190611.0000.00_9.0_9e6473956a.tgz
-::::::::::::::::::::::::: Links Twrp
 set Baguvix=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/jasmine/3.2.3-0.img
 set Hesoyan=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/jasmine/3.3.0-0.img
 set Uzumymw=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/jasmine/3.3.1-0.img
@@ -35,29 +10,22 @@ set Oneway=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/a
 set Runway=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/wayne/3.2.3-1.img
 set Kicogeco=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/wayne/3.3.0-0.img
 set Aezakmi=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/wayne/3.3.1.img
-:::::::::::::::::::::::::: Link patched boot 
 set PatchedDez=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/patched/10.0.10.0/10.0.10.0.img
 set PatchedDoze=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/patched/10.0.12.0/10.0.12.0.img
 set PatchedTreze=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/patched/10.0.13.0/10.0.13.0.img
 set PatchedQuatorze=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/patched/10.0.14.0/10.0.14.0.img
-:::::::::::::::::::::::::: Link Stock Boot
 set StockBootDez=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/stockboot/10.0.10.0/10.0.10.0.img
 set StockBootDoze=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/stockboot/10.0.12.0/10.0.12.0.img
 set StockBootTreze=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/stockboot/10.0.13.0/10.0.13.0.img
 set StockBootQuatorze=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/stockboot/10.0.14.0/10.0.14.0.img
-:::::::::::::::::::::::::: Gapps download
 set GappsMicro=https://phoenixnap.dl.sourceforge.net/project/noobmaster/NoobMaster/adb/file/gapps/gapps.zip
-:::::::::::::::::::::::::: Splash Download
 set SplashMIUI=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/splash/miui/splash.img
 set SplashOne=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/splash/one/splash.img
 set SplashAnonimous=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/splash/anonimous/splash.img
 set Splashmiui_white=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/splash/miui_white/splash.img
-:::::::::::::::::::::::::: Orange Fox Wayne 
 set Orange=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/Orange/unnoficial.img
-:: Seta valor do tamanho da tela 
 mode 120,35
 setlocal EnableDelayedExpansion
-:: Script que seta cores em linhas especificadas no script através do comando ( call :cortexto 02 )
 for /F "tokens=1,2 delims=#" %%a in ('"prompt #$H#$E# & echo on & for %%b in (1) do rem"') do (
   set "DEL=%%a"
 )
@@ -72,76 +40,14 @@ goto :eof
 for /F "tokens=1,2 delims=#" %%a in ('"prompt #$H#$E# & echo on & for %%b in (1) do rem"') do (
   set "DEL=%%a"
 )
-:: Seta adb e fastboot 
 pushd "%~dp0"
 set adb="%cd%\adb\adb.exe"
 set fastboot="%cd%\adb\fastboot.exe"
-:: No maximo 14 caracteres
 set "nome= Noob Master "
-:: Manter padrão de sequencia
 set "ver= 7.0.1.4 "
-:START
-color 03
-set inti=0
-set intk=10
-:STARTTITLE
-set /a inti+=1
-cls
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo                        █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-echo                        █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █
-echo                        █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █
-echo                        █   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █
-echo                        █                                                                  █
-echo                        ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-echo.
-echo                                             Seja bem vindo %username% !
-echo.
-echo                                                  ┌─────────────────────────────────┐
-echo                                                  │  bY: Rodrigo Pires da Silva     │
-echo                                                  └─────────────────────────────────┘
-echo.
-if %inti% LSS %intk% (
-      if "%inti%"=="1" (echo                   ▀▀▀▀▀▀▀▀▀▀▀▀▀) & (echo.            ) & (ping -n 1 127.0.0.1>nul) & (GOTO 1)
-      if "%inti%"=="2" (echo                   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀) & (echo.            ) & (ping -n 1 127.0.0.1>nul) & (GOTO 2)
-      if "%inti%"=="3" (echo                   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀) & (echo.            ) & (ping -n 1 127.0.0.1>nul) & (GOTO 3)
-      if "%inti%"=="4" (echo                   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀) & (echo.            ) & (ping -n 1 127.0.0.1>nul) & (GOTO 4)
-      if "%inti%"=="5" (echo                   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀) & (echo.            ) & (ping -n 1 127.0.0.1>nul) & (GOTO 5)
-      if "%inti%"=="6" (echo                   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀) & (echo.            ) & (ping -n 1 127.0.0.1>nul) & (GOTO 6)
-      if "%inti%"=="7" (echo                   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀) & (echo.            ) & (ping -n 1 127.0.0.1>nul) & (GOTO 7)
-)
-goto 8
-:1
-ping -n 1 127.0.0.1>nul
-GOTO STARTTITLE
-:2
-ping -n 1 127.0.0.1>nul
-GOTO STARTTITLE
-:3
-ping -n 1 127.0.0.1>nul
-GOTO STARTTITLE
-:4
-ping -n 1 127.0.0.1>nul
-GOTO STARTTITLE
-:5
-ping -n 1 127.0.0.1>nul
-GOTO STARTTITLE
-:6
-ping -n 1 127.0.0.1>nul
-GOTO STARTTITLE
-:7
-ping -n 2 127.0.0.1>nul
-
-:: Inicia menu principal
 :Menu
 title %nome% v%ver%
 color 03
-:: verficica arquivos adb
  if exist "%cd%\adb\fastboot.exe"     (echo.) else (goto Adb )
  if exist "%cd%\adb\adb.exe"          (echo.) else (goto Adb )
  if exist "%cd%\adb\AdbWinApi.dll"    (echo.) else (goto Adb )
@@ -213,7 +119,6 @@ echo
 echo
 echo
 goto MENU
-:: Menu de bootloader
 :Bootloader
 title Menu Bootloader
 color 03
@@ -259,11 +164,9 @@ goto Bootloader
 cls
 %fastboot% reboot 
 goto Bootloader
-:: Seta função para bloqueio de bootloader
 :BloqBoot
 title Bloqueando bootloader
 cls
-:: Seta cores no script
 color 03
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
@@ -290,10 +193,8 @@ echo Pressione qualquer tecla para voltar
 echo.
 pause >nul 
 goto Bootloader
-:: Desblqueando bootloader 
 :DesbloquearOEM
 title Desbloqueando OEM
-:: Seta cores no script
 color 03
 cls
 echo.
@@ -323,7 +224,6 @@ echo Pressione qualquer tecla para voltar
 echo.
 pause >nul 
 goto Bootloader
-:: Desblqueando bootloader critical
 :DesbloquearCritical
 title Desbloqueando Critical
 color 03
@@ -355,7 +255,6 @@ echo Pressione qualquer tecla para voltar
 echo.
 pause >nul 
 goto Bootloader
-:: Mensagem de eroo no desbloqueio e bloqueio do bootloader
 :ErrorBoot
 title ERRO !
 color 40
@@ -391,7 +290,6 @@ pause>nul
 echo.
 echo.
 goto Bootloader
-:: Menu de Erase
 :Erase
 title Menu Erase 
 color 03
@@ -441,7 +339,6 @@ goto Erase
 cls 
 %fastboot% reboot
 goto Erase
-:: Erase no system do jasmine
 :EraseSystemA2
 title Erase no system jasmine
 color 03
@@ -468,7 +365,6 @@ echo MsgBox "Parece que o comando deu certo [ Erase concluido]                  
 start %cd%\adb\wyz.vbs  
 timeout 5 >nul
 goto Erase
-:: Erase do vendor A2 jasmine_sprout
 :EraseVendorA2
 title Erase no vendor jasmine 
 color 03
@@ -495,7 +391,6 @@ echo MsgBox "Parece que o comando deu certo [ Erase concluido]                  
 start %cd%\adb\wyz.vbs  
 timeout 5 >nul
 goto Erase
-:: Erase no system do wayne
 :EraseSystem6X
 title Erase no system wayne
 color 03
@@ -521,7 +416,6 @@ echo MsgBox "Parece que o comando deu certo [ Erase concluido]                  
 start %cd%\adb\wyz.vbs  
 timeout 5 >nul
 goto Erase
-:: Erase no vendor wayne 
 :EraseVendor6X
 title Erase no vendor do wayne
 color 03
@@ -547,7 +441,6 @@ echo MsgBox "Parece que o comando deu certo [ Erase concluido]                  
 start %cd%\adb\wyz.vbs  
 timeout 5 >nul
 goto Erase
-:: Erase User Data
 :EraseUserData
 title Erase User Data
 color 03
@@ -573,7 +466,6 @@ echo MsgBox "Parece que o comando deu certo [ Erase concluido]                  
 start %cd%\adb\wyz.vbs  
 timeout 5 >nul
 goto Erase
-:: Erase Cache
 :EraseCache
 title Erase no cache do sistema 
 color 03
@@ -599,7 +491,6 @@ echo MsgBox "Parece que o comando deu certo [ Erase concluido]                  
 start %cd%\adb\wyz.vbs  
 timeout 5 >nul
 goto Erase
-:: Erase Cache
 :EraseW
 title Apagando dados e data do sistema
 color 03
@@ -625,7 +516,6 @@ echo MsgBox "Parece que o comando deu certo [ Erase concluido]                  
 start %cd%\adb\wyz.vbs  
 timeout 5 >nul
 goto Erase
-:: Error no erase 
 :ErrorErase
 title Erro ao aplicar o comando ERASE 
 color 40
@@ -660,9 +550,8 @@ pause>nul
 echo.
 echo.
 goto Erase
-:: Menu de stock rom
 :StockRom
-title Menu Stock ROM v 10.0.9.0 OFFICIAL
+title Menu Stock ROM v 10.0.10.0 OFFICIAL
 color 03
 cls
 echo.
@@ -715,7 +604,6 @@ goto StockRom
 cls
 %fastboot% reboot
 goto StockRom
-:: Download da stock memo
 :DownloadStock
  if exist "%cd%\adb\stock\jasmine.tgz" ( echo MsgBox "Deixa de ser besta, voce ja baixou a rom, agora vc precisa extrair ela.",vbInformation,"Presta atencao. " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
