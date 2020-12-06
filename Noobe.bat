@@ -5,7 +5,7 @@ mode 120,35
 
   SET time_start=%time%
   SET time_choice_wait=20
-  SET script_ver=1.00
+  SET script_ver=0.1
   SET script_name=%~n0
   SET server_url=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/
 
@@ -5279,7 +5279,7 @@ goto GenerateSplash
 
   :SCRIPT_COMPARE_VER
   ECHO Please wait while script versions are compared...
-  Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%server_url%%script_name%.current.ver', '%script_name_latest_ver%') }"
+   powershell -command "& {&'Invoke-WebRequest' -Uri '%server_url%%script_name%.bat' -OutFile '%script_name_bat%'}"
   IF NOT EXIST "%script_name_latest_ver%" GOTO END
   SET /p script_latest_ver= < "%script_name_latest_ver%"
   IF %script_ver% EQU %script_latest_ver% CALL :SCRIPT_COMPARE_VER_SAME
@@ -5303,7 +5303,7 @@ goto GenerateSplash
 
   :SCRIPT_DOWNLOAD_SCRIPT
   ECHO Please wait while script downloads...
-  Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%server_url%%script_name%.bat', '%script_name_bat%') }"
+  powershell -command "& {&'Invoke-WebRequest' -Uri '%server_url%%script_name%.bat' -OutFile '%script_name_bat%'}"
   ECHO Script Updated to v%script_latest_ver%^^!
   REM User must exit script. Current batch is stale.
   GOTO :END
