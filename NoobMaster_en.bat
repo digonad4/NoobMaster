@@ -2,20 +2,7 @@
 title Noob Master v 7.0.1.4
 chcp 65001
 cls
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-::: This tool developed by me, Rodrigo Pires da Silva.                                                                                                         :::
-::: It was born of curiosity and because we needed a toolkit in our language, well in January I started a script study of other dev.                           :::
-::: I confess that in the beginning I copied some functions exactly as they were in the first script I found, I was studying how it worked and I was learning. :::
-::: Today, Noob Master has a limited range for Windows 10 users, for automatic download reasons.                                                               :::
-::: And for the end user does not have to download a 1.5gb zip with the files, which are hosted on the cloud and accessible by the script.                     :::
-::: Next to the downloads are all functions available via command by FASTBOOT / ADB.                                                                           :::
-::: You find in this script the following functions:                                                                                                           :::
-::: *** Bootloader unlock and lock                                                                                                                             :::
-::: *** Download, extract and flash stock rom via FASTBOOT                                                                                                     :::
-::: *** Download all versions of Twrp and all available functions for jasmine and wayne (wayne has flash recovery function)                                    :::
-::: *** Patched boot and stock boot download and flash (Root / UnRoot)                                                                                         :::
-::: Today it has a small "artificial intelligence" that allows it to recognize if the file is in its proper place, thus avoiding errors.                       :::
-::: We are in version 7.0.1.4 and this seems to me to be the last version in bash, soon we will be in C #, wait ...                                            :::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::                                          :::
 ::: Rodrigo Pires da Silva, 25/08/2019 - 15:00                                                                                                                 :::
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
