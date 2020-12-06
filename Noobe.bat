@@ -5,8 +5,14 @@
   SETLOCAL ENABLEDELAYEDEXPANSION
 
   SET time_start=%time%
+<<<<<<< HEAD
   SET time_choice_wait=20
   SET script_ver=7.2
+=======
+  SET time_choice_wait=5
+  SET script_ver=8.2
+  SET script_nM= Noob Master  
+>>>>>>> 2860a7069af3cb238c2d415408638e60c6a14019
   SET script_name=%~n0
   SET server_url=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/
 
