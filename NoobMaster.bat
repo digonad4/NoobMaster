@@ -2,7 +2,7 @@
 chcp 65001
 cls
 set server=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/
-set server_stock=https://bigota.d.miui.com/V10.0.10.0.PDIMIXM/jasmine_global_images_V10.0.10.0.PDIMIXM_20190611.0000.00_9.0_9e6473956a.tgz
+set server_stock=https://bigota.d.miui.com/V11.0.17.0.QDIMIXM/jasmine_global_images_V11.0.17.0.QDIMIXM_20201118.0000.00_10.0_16dbde5639.tgz
 set Baguvix=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/jasmine/3.2.3-0.img
 set Hesoyan=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/jasmine/3.3.0-0.img
 set Uzumymw=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/jasmine/3.3.1-0.img
@@ -10,11 +10,11 @@ set Oneway=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/a
 set Runway=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/wayne/3.2.3-1.img
 set Kicogeco=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/wayne/3.3.0-0.img
 set Aezakmi=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/wayne/3.3.1.img
-set PatchedDez=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/patched/10.0.10.0/10.0.10.0.img
+set PatchedDez=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/patched/11.0.17.0/11.0.17.0.img
 set PatchedDoze=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/patched/10.0.12.0/10.0.12.0.img
 set PatchedTreze=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/patched/10.0.13.0/10.0.13.0.img
 set PatchedQuatorze=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/patched/10.0.14.0/10.0.14.0.img
-set StockBootDez=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/stockboot/10.0.10.0/10.0.10.0.img
+set StockBootDez=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/stockboot/11.0.17.0/11.0.17.0.img
 set StockBootDoze=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/stockboot/10.0.12.0/10.0.12.0.img
 set StockBootTreze=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/stockboot/10.0.13.0/10.0.13.0.img
 set StockBootQuatorze=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/stockboot/10.0.14.0/10.0.14.0.img
@@ -24,6 +24,7 @@ set SplashOne=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/maste
 set SplashAnonimous=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/splash/anonimous/splash.img
 set Splashmiui_white=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/splash/miui_white/splash.img
 set Orange=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/Orange/unnoficial.img
+set core=color 0e
 mode 120,35
 setlocal EnableDelayedExpansion
 for /F "tokens=1,2 delims=#" %%a in ('"prompt #$H#$E# & echo on & for %%b in (1) do rem"') do (
@@ -47,7 +48,7 @@ set "nome= Noob Master "
 set "ver= 7.0.1.4 "
 :Menu
 title %nome% v%ver%
-color 03
+%core%
  if exist "%cd%\adb\fastboot.exe"     (echo.) else (goto Adb )
  if exist "%cd%\adb\adb.exe"          (echo.) else (goto Adb )
  if exist "%cd%\adb\AdbWinApi.dll"    (echo.) else (goto Adb )
@@ -121,7 +122,7 @@ echo
 goto MENU
 :Bootloader
 title Menu Bootloader
-color 03
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
@@ -167,7 +168,7 @@ goto Bootloader
 :BloqBoot
 title Bloqueando bootloader
 cls
-color 03
+%core%
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
 echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
@@ -195,7 +196,7 @@ pause >nul
 goto Bootloader
 :DesbloquearOEM
 title Desbloqueando OEM
-color 03
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
@@ -226,7 +227,7 @@ pause >nul
 goto Bootloader
 :DesbloquearCritical
 title Desbloqueando Critical
-color 03
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
@@ -292,7 +293,7 @@ echo.
 goto Bootloader
 :Erase
 title Menu Erase 
-color 03
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
@@ -341,7 +342,7 @@ cls
 goto Erase
 :EraseSystemA2
 title Erase no system jasmine
-color 03
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
@@ -367,7 +368,7 @@ timeout 5 >nul
 goto Erase
 :EraseVendorA2
 title Erase no vendor jasmine 
-color 03
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
@@ -393,7 +394,7 @@ timeout 5 >nul
 goto Erase
 :EraseSystem6X
 title Erase no system wayne
-color 03
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
@@ -418,7 +419,7 @@ timeout 5 >nul
 goto Erase
 :EraseVendor6X
 title Erase no vendor do wayne
-color 03
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
@@ -443,7 +444,7 @@ timeout 5 >nul
 goto Erase
 :EraseUserData
 title Erase User Data
-color 03
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
@@ -468,7 +469,7 @@ timeout 5 >nul
 goto Erase
 :EraseCache
 title Erase no cache do sistema 
-color 03
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
@@ -493,7 +494,7 @@ timeout 5 >nul
 goto Erase
 :EraseW
 title Apagando dados e data do sistema
-color 03
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
@@ -551,8 +552,8 @@ echo.
 echo.
 goto Erase
 :StockRom
-title Menu Stock ROM v 10.0.10.0 OFFICIAL
-color 03
+title Menu Stock ROM v 11.0.17.0 OFFICIAL
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
@@ -562,7 +563,7 @@ echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀   
 echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
 echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
 echo      │      ┌───────────────────────────────────────────┐                                                        │
-echo      ├──────┤ 1 ) DOWNLOAD DA STOCK (v10.0.10.0) anti 1 │                                                        │
+echo      ├──────┤ 1 ) DOWNLOAD DA STOCK (v11.0.17.0) anti 1 │                                                        │
 echo      │      └───────────────────────────────────────────┤                                                        │
 echo      │      ┌───────────────────────────────────────────┤                                                        │
 echo      ├──────┤ 2 ) DESCOMPACTAR ARQUIVO                  │                                                        │
@@ -608,7 +609,7 @@ goto StockRom
  if exist "%cd%\adb\stock\jasmine.tgz" ( echo MsgBox "Deixa de ser besta, voce ja baixou a rom, agora vc precisa extrair ela.",vbInformation,"Presta atencao. " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto StockRom ) else ( echo. )
-title Baixando a stock rom 10.0.10.0, aguarde !
+title Baixando a stock rom 11.0.17.0, aguarde !
 color 30
 
 cls
@@ -665,7 +666,7 @@ goto StockRom
 :: Extrai stock 
 :ExtrairStock
 title Extraindo a stock rom 
-color 03
+%core%
  if exist "%cd%\adb\stock\system.img" ( echo MsgBox "Deixa de ser besta, voce ja extraiu a rom, agora vc pode flashear ela.",vbInformation,"Presta atencao. " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto StockRom ) else ( echo. )
@@ -695,7 +696,7 @@ goto StockRom
 :: Flash da stock
 :VerificaStock
 title Verificando existencia dos arquivos da rom !
-color 03
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
@@ -705,7 +706,7 @@ echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀   
 echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
 echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
 echo      │                                                                                                           │
-echo      │           Verificando arquivos da stock rom V10.0.10.0                                                    │
+echo      │           Verificando arquivos da stock rom V11.0.17.0                                                    │
 echo      │                                                                                                           │
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
@@ -745,7 +746,7 @@ goto StockRom
 :: Flash da stock rom jasmine  
 :FlashStock 
 title Fazendo a instalação da stock rom através do Fastboot
-color 03
+%core%
 if exist "%cd%\adb\stock\" ( echo . ) else ( goto AvisoDownloadStock )
 if exist "%cd%\adb\stock\system.img" ( echo . ) else ( goto AvisoDownloadStock)
 cls
@@ -863,7 +864,7 @@ goto StockRom
 :: Aviso de que é necessario baixar a stock rom antes de qualquer coisa
 :AvisoDownloadStock
 title Tecle algo para avançar !
-color 03
+%core%
 cls
 echo MsgBox "Voce precisa baixar a stock rom.                                               Aguardo voce pressionar alguma tecla para que eu va para o download da stock rom.",vbInformation,"Epa, perai. " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs  
@@ -904,7 +905,7 @@ goto Menu
 :: SEM PAUSA, VÁ DIRETO PARA O MENU DE VERIFICAÇÃO DE ARQUIVOS
 :VerAdb
 title Verificando existencia dos arquivos do ADB
-color 03
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
@@ -930,7 +931,7 @@ start %cd%\adb\stock\
 goto StockRom
 :Twrp
 title Menu TWRP
-color 03
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
@@ -978,7 +979,7 @@ set /p "nb=Digite o numero da opção que deseja %username% > "
 goto Twrp
 :Twrpbaguvix
 title Twrp jasmine Versão 3.2.3-0 !
-color 03
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
@@ -1026,7 +1027,7 @@ goto TwrpBaguvix
 
 :: Boot no Twrp 
 :GotoTwrpbaguvix
-color 03
+%core%
 title Boot no Twrp 3.2.3-0 jasmine_sprout
 if exist "%cd%\adb\file\twrp\jasmine\3.2.3-0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -1089,7 +1090,7 @@ echo.
 goto Twrpbaguvix
 :DelTwrpbaguvix
 title Deletando Twrp 3.2.3-0
-color 03
+%core%
 cls
 if exist "%cd%\adb\file\twrp\jasmine\3.2.3-0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -1142,7 +1143,7 @@ echo.
 goto Twrpbaguvix
 :TwrpHesoyan
 title Twrp jasmine Versão 3.3.0-0 !
-color 03
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
@@ -1190,7 +1191,7 @@ cls
 goto TwrpHesoyan
 :: Boot no Twrp 
 :GotoTwrpHesoyan
-color 03
+%core%
 title Boot no Twrp 3.3.0-0 jasmine_sprout
 if exist "%cd%\adb\file\twrp\jasmine\3.3.0-0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -1253,7 +1254,7 @@ echo.
 goto TwrpHesoyan
 :DelTwrpHesoyan
 title Deletando Twrp 3.3.0-0
-color 03
+%core%
 cls
 if exist "%cd%\adb\file\twrp\jasmine\3.3.0-0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -1306,7 +1307,7 @@ echo.
 goto TwrpHesoyan
 :TwrpUzumymw
 title Twrp jasmine Versão 3.3.1-0 !
-color 03
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
@@ -1354,7 +1355,7 @@ cls
 %fasboot% reboot
 goto TwrpUzumymw
 :GotoTwrpUzumymw
-color 03
+%core%
 title Boot no Twrp 3.3.1-0 jasmine_sprout
 if exist "%cd%\adb\file\twrp\jasmine\3.3.1-0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -1417,7 +1418,7 @@ echo.
 goto TwrpUzumymw
 :DelTwrpUzumymw
 title Deletando Twrp 3.3.1-0
-color 03
+%core%
 cls
 if exist "%cd%\adb\file\twrp\jasmine\3.3.1-0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -1470,7 +1471,7 @@ echo.
 goto TwrpUzumymw
 :TwrpOneway
 title Twrp wayne Versão 3.2.3-0 !
-color 03
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
@@ -1522,7 +1523,7 @@ goto TwrpOneway
 
 :: Boot no Twrp 
 :GotoTwrpOneway
-color 03
+%core%
 title Boot no Twrp 3.2.3-0 wayne
 if exist "%cd%\adb\file\twrp\wayne\3.2.3-0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -1585,7 +1586,7 @@ echo.
 goto TwrpOneway
 :DelTwrpOneway
 title Deletando Twrp 3.2.3-0
-color 03
+%core%
 cls
 if exist "%cd%\adb\file\twrp\wayne\3.2.3-0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -1637,7 +1638,7 @@ echo.
 echo.
 goto TwrpOneway
 :FlashTwrpOneway
-color 03
+%core%
 title Flash do Twrp 3.2.3-0 wayne
 if exist "%cd%\adb\file\twrp\wayne\3.2.3-0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -1666,7 +1667,7 @@ pause >nul
 goto TwrpOneway
 :TwrpRunway
 title Twrp wayne Versão 3.2.3-1 !
-color 03
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
@@ -1718,7 +1719,7 @@ goto TwrpRunway
 
 :: Boot no Twrp 
 :GotoTwrpRunway
-color 03
+%core%
 title Boot no Twrp 3.2.3-1 wayne
 if exist "%cd%\adb\file\twrp\wayne\3.2.3-1.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -1781,7 +1782,7 @@ echo.
 goto TwrpRunway
 :DelTwrpRunway
 title Deletando Twrp 3.2.3-1
-color 03
+%core%
 cls
 if exist "%cd%\adb\file\twrp\wayne\3.2.3-1.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -1833,7 +1834,7 @@ echo.
 echo.
 goto TwrpRunway
 :FlashTwrpRunway
-color 03
+%core%
 title Flash do Twrp 3.2.3-1 wayne
 if exist "%cd%\adb\file\twrp\wayne\3.2.3-1.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -1862,7 +1863,7 @@ pause >nul
 goto TwrpRunway
 :TwrpKicogeco
 title Twrp wayne Versão 3.3.0-0 !
-color 03
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
@@ -1914,7 +1915,7 @@ goto TwrpKicogeco
 
 :: Boot no Twrp 
 :GotoTwrpKicogeco
-color 03
+%core%
 title Boot no Twrp 3.3.0-0 wayne
 if exist "%cd%\adb\file\twrp\wayne\3.3.0-0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -1977,7 +1978,7 @@ echo.
 goto TwrpKicogeco
 :DelTwrpKicogeco
 title Deletando Twrp 3.3.0-0
-color 03
+%core%
 cls
 if exist "%cd%\adb\file\twrp\wayne\3.3.0-0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -2029,7 +2030,7 @@ echo.
 echo.
 goto TwrpKicogeco
 :FlashTwrpKicogeco
-color 03
+%core%
 title Flash do Twrp 3.3.0-0 wayne
 if exist "%cd%\adb\file\twrp\wayne\3.3.0-0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -2058,7 +2059,7 @@ pause >nul
 goto TwrpKicogeco
 :TwrpAezakmi
 title Twrp wayne Versão 3.3.1 !
-color 03
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
@@ -2110,7 +2111,7 @@ goto TwrpAezakmi
 
 :: Boot no Twrp 
 :GotoTwrpAezakmi
-color 03
+%core%
 title Boot no Twrp 3.3.1 wayne
 if exist "%cd%\adb\file\twrp\wayne\3.3.1.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -2173,7 +2174,7 @@ echo.
 goto TwrpAezakmi
 :DelTwrpAezakmi
 title Deletando Twrp 3.3.1
-color 03
+%core%
 cls
 if exist "%cd%\adb\file\twrp\wayne\3.3.1.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -2225,7 +2226,7 @@ echo.
 echo.
 goto TwrpAezakmi
 :FlashTwrpAezakmi
-color 03
+%core%
 title Flash do Twrp 3.3.1 wayne
 if exist "%cd%\adb\file\twrp\wayne\3.3.1.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -2254,7 +2255,7 @@ pause >nul
 goto TwrpAezakmi
 :Orange
 title Orange wayne Versão UNNOFICIAL !
-color 03
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
@@ -2306,7 +2307,7 @@ goto Orange
 
 :: Boot no Orange 
 :GotoOrange
-color 03
+%core%
 title Boot no Orange unnoficial wayne
 if exist "%cd%\adb\file\Orange\wayne\unnoficial.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -2369,7 +2370,7 @@ echo.
 goto Orange
 :DelOrange
 title Deletando Orange unnoficial
-color 03
+%core%
 cls
 if exist "%cd%\adb\file\Orange\wayne\unnoficial.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -2421,7 +2422,7 @@ echo.
 echo.
 goto Orange
 :FlashOrange
-color 03
+%core%
 title Flash do Orange unnoficial wayne
 if exist "%cd%\adb\file\Orange\wayne\unnoficial.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -2450,7 +2451,7 @@ pause >nul
 goto Orange
 :Patched
 title Patched boot para root na stock rom !
-color 03
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
@@ -2460,7 +2461,7 @@ echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀   
 echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
 echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
 echo      │      ┌───────────────────────────────────────────┐                                                        │
-echo      ├──────┤ 1 ) PATCHED BOOT 10.0.10.0                │                                                        │
+echo      ├──────┤ 1 ) PATCHED BOOT 11.0.17.0                │                                                        │
 echo      │      └───────────────────────────────────────────┤                                                        │
 echo      │      ┌───────────────────────────────────────────┤                                                        │
 echo      ├──────┤ 2 ) PATCHED BOOT 10.0.12.0                │                                                        │
@@ -2491,8 +2492,8 @@ if '%nb%' == 'E' goto Menu
 if '%nb%' == 'e' goto Menu
 goto Patched
 :PatchedDez
-title Patched Boot 10.0.10.0 !
-color 03
+title Patched Boot 11.0.17.0 !
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
@@ -2502,10 +2503,10 @@ echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀   
 echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
 echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
 echo      │      ┌───────────────────────────────────────────┐                                                        │
-echo      ├──────┤ 1 ) BOOT NO PATCHED BOOT 10.0.10.0        │                                                        │
+echo      ├──────┤ 1 ) BOOT NO PATCHED BOOT 11.0.17.0        │                                                        │
 echo      │      └───────────────────────────────────────────┤                                                        │
 echo      │      ┌───────────────────────────────────────────┤                                                        │
-echo      ├──────┤ 2 ) DOWNLOAD PATCHED BOOT 10.0.10.0       │                                                        │
+echo      ├──────┤ 2 ) DOWNLOAD PATCHED BOOT 11.0.17.0       │                                                        │
 echo      │      └───────────────────────────────────────────┤                                                        │
 echo      │      ┌───────────────────────────────────────────┤                                                        │
 echo      ├──────┤ 3 ) DELETAR ARQUIVO                       │                                                        │
@@ -2514,7 +2515,7 @@ echo      │      ┌───────────────────�
 echo      ├──────┤ 4 ) VERIFICAR ARQUIVO                     │                                                        │
 echo      │      └───────────────────────────────────────────┤                                                        │
 echo      │      ┌───────────────────────────────────────────┤                                                        │
-echo      ├──────┤ 5 ) FLASH DO PATCHED BOOT 10.0.10.0       │                                                        │
+echo      ├──────┤ 5 ) FLASH DO PATCHED BOOT 11.0.17.0       │                                                        │
 echo      │      └───────────────────────────────────────────┤                                                        │
 echo      │      ┌───────────────────────────────────────────┤                                                        │
 echo      ├──────┤ 6 ) REBOOT SYSTEM                         │                                                        │
@@ -2523,7 +2524,7 @@ echo      │                                                               ┌�
 echo      └───────────────────────────────────────────────────────────────┤ E ) VOLTAR                                │
 echo                                                                      └───────────────────────────────────────────┘
 echo.
-if exist "%cd%\adb\file\patched\10.0.10.0\10.0.10.0.img" ( call :cortexto 0a " Ok, parece que o arquivo existe. " ) else ( call :cortexto 0c "Baixe o arquivo. " )
+if exist "%cd%\adb\file\patched\11.0.17.0\11.0.17.0.img" ( call :cortexto 0a " Ok, parece que o arquivo existe. " ) else ( call :cortexto 0c "Baixe o arquivo. " )
 echo.
 echo.
 set nb= 
@@ -2543,8 +2544,8 @@ cls
 goto PatchedDez
 :DownPatchedDez
 color 30
-title Download patched boot 10.0.10.0!
-if exist "%cd%\adb\file\patched\10.0.10.0\10.0.10.0.img" (  echo MsgBox "Pare de frescura, ce ja baixou o negocio e ta ai querendo baixar denovo, vai flashea isso ai rapa! ",16,"Vai canta seu bosta " >%cd%\adb\wyz.vbs  
+title Download patched boot 11.0.17.0!
+if exist "%cd%\adb\file\patched\11.0.17.0\11.0.17.0.img" (  echo MsgBox "Pare de frescura, ce ja baixou o negocio e ta ai querendo baixar denovo, vai flashea isso ai rapa! ",16,"Vai canta seu bosta " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto PatchedDez ) else ( echo . )
 cls
@@ -2556,7 +2557,7 @@ echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀   
 echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
 echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
 echo      │                                                                                                           │
-echo      │                          Baixando patched boot da versão 10.0.10.0...                                     │
+echo      │                          Baixando patched boot da versão 11.0.17.0...                                     │
 echo      │                                                                                                           │
 echo      │               Eu vou te avisar quando o Download terminar, apenas aguarde e relaxa a ppk.                 │
 echo      │                                                                                                           │
@@ -2565,9 +2566,9 @@ echo      │                                                                   
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
 echo.
-mkdir adb\file\patched\10.0.10.0\
-Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%PatchedDez%', 'adb\file\patched\10.0.10.0\10.0.10.0.img') }"
-if exist "%cd%\adb\file\patched\10.0.10.0\10.0.10.0.img" ( echo. ) else (   echo MsgBox "Deu erro na parada, o arquivo nao foi baixado! ",16,"Deu erro, vishhh" >%cd%\adb\wyz.vbs  
+mkdir adb\file\patched\11.0.17.0\
+Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%PatchedDez%', 'adb\file\patched\11.0.17.0\11.0.17.0.img') }"
+if exist "%cd%\adb\file\patched\11.0.17.0\11.0.17.0.img" ( echo. ) else (   echo MsgBox "Deu erro na parada, o arquivo nao foi baixado! ",16,"Deu erro, vishhh" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto PatchedDez )
 echo.
@@ -2576,20 +2577,20 @@ start %cd%\adb\wyz.vbs
 echo.
 goto PatchedDez
 :DelPatchedDez
-title Deletando Patched boot 10.0.10.0
-color 03
+title Deletando Patched boot 11.0.17.0
+%core%
 cls
-if exist "%cd%\adb\file\patched\10.0.10.0\10.0.10.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+if exist "%cd%\adb\file\patched\11.0.17.0\11.0.17.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto PatchedDez )
-del adb\file\patched\10.0.10.0\10.0.10.0.img
+del adb\file\patched\11.0.17.0\11.0.17.0.img
 echo MsgBox "Ok, arquivo excluido ",16,"Excluir patched" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto PatchedDez
 :FlashPatchedDez
-color 03
-title Flash do Patched boot 10.0.10.0
-if exist "%cd%\adb\file\patched\10.0.10.0\10.0.10.0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
+%core%
+title Flash do Patched boot 11.0.17.0
+if exist "%cd%\adb\file\patched\11.0.17.0\11.0.17.0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto PatchedDez  )
 cls
@@ -2601,12 +2602,12 @@ echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀   
 echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
 echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
 echo      │                                                                                                           │
-echo      │           Flash do patched boot 10.0.10.0                                                                 │
+echo      │           Flash do patched boot 11.0.17.0                                                                 │
 echo      │                                                                                                           │
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
 echo.
-%fastboot% flash boot "%~dp0\adb\file\patched\10.0.10.0\10.0.10.0.img" || @echo "flash recovery error" && goto PatchedDezError
+%fastboot% flash boot "%~dp0\adb\file\patched\11.0.17.0\11.0.17.0.img" || @echo "flash recovery error" && goto PatchedDezError
 echo.
 echo.
 echo.
@@ -2615,9 +2616,9 @@ echo.
 pause >nul
 goto PatchedDez
 :GotoPatchedDez
-color 03
-title Boot no patched boot 10.0.10.0
-if exist "%cd%\adb\file\patched\10.0.10.0\10.0.10.0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
+%core%
+title Boot no patched boot 11.0.17.0
+if exist "%cd%\adb\file\patched\11.0.17.0\11.0.17.0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto PatchedDez  )
 cls
@@ -2629,12 +2630,12 @@ echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀   
 echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
 echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
 echo      │                                                                                                           │
-echo      │           Boot do patched boot 10.0.10.0                                                                  │
+echo      │           Boot do patched boot 11.0.17.0                                                                  │
 echo      │                                                                                                           │
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
 echo.
-%fastboot% boot "%~dp0\adb\file\patched\10.0.10.0\10.0.10.0.img" || @echo "boot error" && goto PatchedDezError
+%fastboot% boot "%~dp0\adb\file\patched\11.0.17.0\11.0.17.0.img" || @echo "boot error" && goto PatchedDezError
 echo.
 echo.
 echo.
@@ -2644,10 +2645,10 @@ pause >nul
 goto PatchedDez
 :VerPatchedDez
 cls
-if exist "%cd%\adb\file\patched\10.0.10.0\10.0.10.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+if exist "%cd%\adb\file\patched\11.0.17.0\11.0.17.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto PatchedDez )
-start %cd%\adb\file\patched\10.0.10.0\
+start %cd%\adb\file\patched\11.0.17.0\
 goto PatchedDez
 :PatchedDezError
 title ERROOOOOOOOOOOOOOOOOOOOOOOOOOOooooo !
@@ -2686,7 +2687,7 @@ echo.
 goto PatchedDez
 :PatchedDoze
 title Patched Boot 10.0.12.0 !
-color 03
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
@@ -2771,7 +2772,7 @@ echo.
 goto PatchedDoze
 :DelPatchedDoze
 title Deletando Patched boot 10.0.12.0
-color 03
+%core%
 cls
 if exist "%cd%\adb\file\patched\10.0.12.0\10.0.12.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo ja foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai." >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -2781,7 +2782,7 @@ echo MsgBox "Ok, arquivo excluido ",16,"Excluir patched" >%cd%\adb\wyz.vbs
 start %cd%\adb\wyz.vbs
 goto PatchedDoze
 :FlashPatchedDoze
-color 03
+%core%
 title Flash do Patched boot 10.0.12.0
 if exist "%cd%\adb\file\patched\10.0.12.0\10.0.12.0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -2809,7 +2810,7 @@ echo.
 pause >nul
 goto PatchedDoze
 :GotoPatchedDoze
-color 03
+%core%
 title Boot no patched boot 10.0.12.0
 if exist "%cd%\adb\file\patched\10.0.12.0\10.0.12.0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -2880,7 +2881,7 @@ echo.
 goto PatchedDoze
 :PatchedTreze
 title Patched Boot 10.0.13.0 !
-color 03
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
@@ -2966,7 +2967,7 @@ echo.
 goto PatchedTreze
 :DelPatchedTreze
 title Deletando Patched boot 10.0.13.0
-color 03
+%core%
 cls
 if exist "%cd%\adb\file\patched\10.0.13.0\10.0.13.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -2976,7 +2977,7 @@ echo MsgBox "Ok, arquivo excluido ",16,"Excluir patched" >%cd%\adb\wyz.vbs
 start %cd%\adb\wyz.vbs
 goto PatchedTreze
 :FlashPatchedTreze
-color 03
+%core%
 title Flash do Patched boot 10.0.13.0
 if exist "%cd%\adb\file\patched\10.0.13.0\10.0.13.0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -3004,7 +3005,7 @@ echo.
 pause >nul
 goto PatchedTreze
 :GotoPatchedTreze
-color 03
+%core%
 title Boot no patched boot 10.0.13.0
 if exist "%cd%\adb\file\patched\10.0.13.0\10.0.13.0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -3075,7 +3076,7 @@ echo.
 goto PatchedTreze
 :PatchedQuatorze
 title Patched Boot 10.0.14.0 !
-color 03
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
@@ -3161,7 +3162,7 @@ echo.
 goto PatchedQuatorze
 :DelPatchedQuatorze
 title Deletando Patched boot 10.0.14.0
-color 03
+%core%
 cls
 if exist "%cd%\adb\file\patched\10.0.14.0\10.0.14.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -3171,7 +3172,7 @@ echo MsgBox "Ok, arquivo excluido ",16,"Excluir patched" >%cd%\adb\wyz.vbs
 start %cd%\adb\wyz.vbs
 goto PatchedQuatorze
 :FlashPatchedQuatorze
-color 03
+%core%
 title Flash do Patched boot 10.0.14.0
 if exist "%cd%\adb\file\patched\10.0.14.0\10.0.14.0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -3199,7 +3200,7 @@ echo.
 pause >nul
 goto PatchedQuatorze
 :GotoPatchedQuatorze
-color 03
+%core%
 title Boot no patched boot 10.0.14.0
 if exist "%cd%\adb\file\patched\10.0.14.0\10.0.14.0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -3270,7 +3271,7 @@ echo.
 goto PatchedQuatorze
 :StockBoot
 title Stock boot para a stock rom !
-color 03
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
@@ -3280,7 +3281,7 @@ echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀   
 echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
 echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
 echo      │      ┌───────────────────────────────────────────┐                                                        │
-echo      ├──────┤ 1 ) STOCK BOOT 10.0.10.0                  │                                                        │
+echo      ├──────┤ 1 ) STOCK BOOT 11.0.17.0                  │                                                        │
 echo      │      └───────────────────────────────────────────┤                                                        │
 echo      │      ┌───────────────────────────────────────────┤                                                        │
 echo      ├──────┤ 2 ) STOCK BOOT 10.0.12.0                  │                                                        │
@@ -3310,8 +3311,8 @@ if '%nb%' == 'E' goto Menu
 if '%nb%' == 'e' goto Menu
 goto StockBoot
 :StockBootDez
-title STOCK Boot 10.0.10.0 !
-color 03
+title STOCK Boot 11.0.17.0 !
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
@@ -3321,10 +3322,10 @@ echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀   
 echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
 echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
 echo      │      ┌───────────────────────────────────────────┐                                                        │
-echo      ├──────┤ 1 ) BOOT NO STOCK BOOT 10.0.10.0          │                                                        │
+echo      ├──────┤ 1 ) BOOT NO STOCK BOOT 11.0.17.0          │                                                        │
 echo      │      └───────────────────────────────────────────┤                                                        │
 echo      │      ┌───────────────────────────────────────────┤                                                        │
-echo      ├──────┤ 2 ) DOWNLOAD STOCK BOOT 10.0.10.0         │                                                        │
+echo      ├──────┤ 2 ) DOWNLOAD STOCK BOOT 11.0.17.0         │                                                        │
 echo      │      └───────────────────────────────────────────┤                                                        │
 echo      │      ┌───────────────────────────────────────────┤                                                        │
 echo      ├──────┤ 3 ) DELETAR ARQUIVO                       │                                                        │
@@ -3333,7 +3334,7 @@ echo      │      ┌───────────────────�
 echo      ├──────┤ 4 ) VERIFICAR ARQUIVO                     │                                                        │
 echo      │      └───────────────────────────────────────────┤                                                        │
 echo      │      ┌───────────────────────────────────────────┤                                                        │
-echo      ├──────┤ 5 ) FLASH DO STOCK BOOT 10.0.10.0         │                                                        │
+echo      ├──────┤ 5 ) FLASH DO STOCK BOOT 11.0.17.0         │                                                        │
 echo      │      └───────────────────────────────────────────┤                                                        │
 echo      │      ┌───────────────────────────────────────────┤                                                        │
 echo      ├──────┤ 6 ) REBOOT SYSTEM                         │                                                        │
@@ -3342,7 +3343,7 @@ echo      │                                                               ┌�
 echo      └───────────────────────────────────────────────────────────────┤ E ) VOLTAR                                │
 echo                                                                      └───────────────────────────────────────────┘
 echo.
-if exist "%cd%\adb\file\stockboot\10.0.10.0\10.0.10.0.img" ( call :cortexto 0a " Ok, parece que o arquivo existe. " ) else ( call :cortexto 0c "Baixe o arquivo. " )
+if exist "%cd%\adb\file\stockboot\11.0.17.0\11.0.17.0.img" ( call :cortexto 0a " Ok, parece que o arquivo existe. " ) else ( call :cortexto 0c "Baixe o arquivo. " )
 echo.
 echo.
 set nb= 
@@ -3362,8 +3363,8 @@ cls
 goto StockBootDez
 :DownStockBootDez
 color 30
-title Download STOCK boot 10.0.10.0!
-if exist "%cd%\adb\file\stockboot\10.0.10.0\10.0.10.0.img" (  echo MsgBox "Pare de frescura, ce ja baixou o negocio e ta ai querendo baixar denovo, vai flashea isso ai rapa! ",16,"Vai canta seu bosta " >%cd%\adb\wyz.vbs  
+title Download STOCK boot 11.0.17.0!
+if exist "%cd%\adb\file\stockboot\11.0.17.0\11.0.17.0.img" (  echo MsgBox "Pare de frescura, ce ja baixou o negocio e ta ai querendo baixar denovo, vai flashea isso ai rapa! ",16,"Vai canta seu bosta " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto StockBootDez ) else ( echo . )
 cls
@@ -3375,7 +3376,7 @@ echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀   
 echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
 echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
 echo      │                                                                                                           │
-echo      │                          Baixando STOCK boot da versão 10.0.10.0...                                       │
+echo      │                          Baixando STOCK boot da versão 11.0.17.0...                                       │
 echo      │                                                                                                           │
 echo      │               Eu vou te avisar quando o Download terminar, apenas aguarde e relaxa a ppk.                 │
 echo      │                                                                                                           │
@@ -3384,9 +3385,9 @@ echo      │                                                                   
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
 echo.
-mkdir adb\file\stockboot\10.0.10.0\
-Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%StockBootDez%', 'adb\file\stockboot\10.0.10.0\10.0.10.0.img') }"
-if exist "%cd%\adb\file\stockboot\10.0.10.0\10.0.10.0.img" ( echo. ) else (   echo MsgBox "Deu erro na parada, o arquivo nao foi baixado! ",16,"Deu erro, vishhh" >%cd%\adb\wyz.vbs  
+mkdir adb\file\stockboot\11.0.17.0\
+Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%StockBootDez%', 'adb\file\stockboot\11.0.17.0\11.0.17.0.img') }"
+if exist "%cd%\adb\file\stockboot\11.0.17.0\11.0.17.0.img" ( echo. ) else (   echo MsgBox "Deu erro na parada, o arquivo nao foi baixado! ",16,"Deu erro, vishhh" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto StockBootDez )
 echo.
@@ -3395,20 +3396,20 @@ start %cd%\adb\wyz.vbs
 echo.
 goto StockBootDez
 :DelStockBootDez
-title Deletando STOCK boot 10.0.10.0
-color 03
+title Deletando STOCK boot 11.0.17.0
+%core%
 cls
-if exist "%cd%\adb\file\stockboot\10.0.10.0\10.0.10.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+if exist "%cd%\adb\file\stockboot\11.0.17.0\11.0.17.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto StockBootDez )
-del adb\file\stockboot\10.0.10.0\10.0.10.0.img
+del adb\file\stockboot\11.0.17.0\11.0.17.0.img
 echo MsgBox "Ok, arquivo excluido ",16,"Excluir STOCK" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto StockBootDez
 :FlashStockBootDez
-color 03
-title Flash do STOCK boot 10.0.10.0
-if exist "%cd%\adb\file\stockboot\10.0.10.0\10.0.10.0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
+%core%
+title Flash do STOCK boot 11.0.17.0
+if exist "%cd%\adb\file\stockboot\11.0.17.0\11.0.17.0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto StockBootDez  )
 cls
@@ -3420,12 +3421,12 @@ echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀   
 echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
 echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
 echo      │                                                                                                           │
-echo      │           Flash do STOCK boot 10.0.10.0                                                                   │
+echo      │           Flash do STOCK boot 11.0.17.0                                                                   │
 echo      │                                                                                                           │
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
 echo.
-%fastboot% flash boot "%~dp0\adb\file\stockboot\10.0.10.0\10.0.10.0.img" || @echo "flash recovery error" && goto StockBootDezError
+%fastboot% flash boot "%~dp0\adb\file\stockboot\11.0.17.0\11.0.17.0.img" || @echo "flash recovery error" && goto StockBootDezError
 echo.
 echo.
 echo.
@@ -3434,9 +3435,9 @@ echo.
 pause >nul
 goto StockBootDez
 :GotoStockBootDez
-color 03
-title Boot no STOCK boot 10.0.10.0
-if exist "%cd%\adb\file\stockboot\10.0.10.0\10.0.10.0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
+%core%
+title Boot no STOCK boot 11.0.17.0
+if exist "%cd%\adb\file\stockboot\11.0.17.0\11.0.17.0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto StockBootDez  )
 cls
@@ -3448,12 +3449,12 @@ echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀   
 echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
 echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
 echo      │                                                                                                           │
-echo      │           Boot do STOCK boot 10.0.10.0                                                                    │
+echo      │           Boot do STOCK boot 11.0.17.0                                                                    │
 echo      │                                                                                                           │
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
 echo.
-%fastboot% boot "%~dp0\adb\file\stockboot\10.0.10.0\10.0.10.0.img" || @echo "boot error" && goto StockBootDezError
+%fastboot% boot "%~dp0\adb\file\stockboot\11.0.17.0\11.0.17.0.img" || @echo "boot error" && goto StockBootDezError
 echo.
 echo.
 echo.
@@ -3463,10 +3464,10 @@ pause >nul
 goto StockBootDez
 :VerStockBootDez
 cls
-if exist "%cd%\adb\file\stockboot\10.0.10.0\10.0.10.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+if exist "%cd%\adb\file\stockboot\11.0.17.0\11.0.17.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto StockBootDez )
-start %cd%\adb\file\stockboot\10.0.10.0\
+start %cd%\adb\file\stockboot\11.0.17.0\
 goto StockBootDez
 :StockBootDezError
 title ERROOOOOOOOOOOOOOOOOOOOOOOOOOOooooo !
@@ -3505,7 +3506,7 @@ echo.
 goto StockBootDez
 :StockBootDoze
 title STOCK Boot 10.0.12.0 !
-color 03
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
@@ -3591,7 +3592,7 @@ echo.
 goto StockBootDoze
 :DelStockBootDoze
 title Deletando STOCK boot 10.0.12.0
-color 03
+%core%
 cls
 if exist "%cd%\adb\file\stockboot\10.0.12.0\10.0.12.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo ja foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai." >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -3601,7 +3602,7 @@ echo MsgBox "Ok, arquivo excluido ",16,"Excluir STOCK" >%cd%\adb\wyz.vbs
 start %cd%\adb\wyz.vbs
 goto StockBootDoze
 :FlashStockBootDoze
-color 03
+%core%
 title Flash do STOCK boot 10.0.12.0
 if exist "%cd%\adb\file\stockboot\10.0.12.0\10.0.12.0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -3629,7 +3630,7 @@ echo.
 pause >nul
 goto StockBootDoze
 :GotoStockBootDoze
-color 03
+%core%
 title Boot no STOCK boot 10.0.12.0
 if exist "%cd%\adb\file\stockboot\10.0.12.0\10.0.12.0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -3700,7 +3701,7 @@ echo.
 goto StockBootDoze
 :StockBootTreze
 title STOCK Boot 10.0.13.0 !
-color 03
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
@@ -3786,7 +3787,7 @@ echo.
 goto StockBootTreze
 :DelStockBootTreze
 title Deletando STOCK boot 10.0.13.0
-color 03
+%core%
 cls
 if exist "%cd%\adb\file\stockboot\10.0.13.0\10.0.13.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo ja foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai." >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -3796,7 +3797,7 @@ echo MsgBox "Ok, arquivo excluido ",16,"Excluir STOCK" >%cd%\adb\wyz.vbs
 start %cd%\adb\wyz.vbs
 goto StockBootTreze
 :FlashStockBootTreze
-color 03
+%core%
 title Flash do STOCK boot 10.0.13.0
 if exist "%cd%\adb\file\stockboot\10.0.13.0\10.0.13.0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -3824,7 +3825,7 @@ echo.
 pause >nul
 goto StockBootTreze
 :GotoStockBootTreze
-color 03
+%core%
 title Boot no STOCK boot 10.0.13.0
 if exist "%cd%\adb\file\stockboot\10.0.13.0\10.0.13.0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -3895,7 +3896,7 @@ echo.
 goto StockBootTreze
 :StockBootQuatorze
 title STOCK Boot 10.0.14.0 !
-color 03
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
@@ -3980,7 +3981,7 @@ echo.
 goto StockBootQuatorze
 :DelStockBootQuatorze
 title Deletando STOCK boot 10.0.14.0
-color 03
+%core%
 cls
 if exist "%cd%\adb\file\stockboot\10.0.14.0\10.0.14.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -3990,7 +3991,7 @@ echo MsgBox "Ok, arquivo excluido ",16,"Excluir STOCK" >%cd%\adb\wyz.vbs
 start %cd%\adb\wyz.vbs
 goto StockBootQuatorze
 :FlashStockBootQuatorze
-color 03
+%core%
 title Flash do STOCK boot 10.0.14.0
 if exist "%cd%\adb\file\stockboot\10.0.14.0\10.0.14.0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -4018,7 +4019,7 @@ echo.
 pause >nul
 goto StockBootQuatorze
 :GotoStockBootQuatorze
-color 03
+%core%
 title Boot no STOCK boot 10.0.14.0
 if exist "%cd%\adb\file\stockboot\10.0.14.0\10.0.14.0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -4089,7 +4090,7 @@ echo.
 goto StockBootQuatorze
 :GappsMicro
 title Gapps Micro  ( 01/19 )
-color 03
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
@@ -4137,7 +4138,7 @@ cls
 goto GappsMicro
 :: Boot no Gapps 
 :GotoGappsMicro
-color 03
+%core%
 title Servindo Gapps através do Adb Sideload
 if exist "%cd%\adb\file\gappsmicro\gappsmicro.zip" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -4200,7 +4201,7 @@ echo.
 goto GappsMicro
 :DelGappsMicro
 title Deletando Gapps 
-color 03
+%core%
 cls
 if exist "%cd%\adb\file\gappsmicro\gappsmicro.zip" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -4253,7 +4254,7 @@ echo.
 goto GappsMicro
 :Splash
 title Menu seleciona Splash!
-color 03
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
@@ -4293,7 +4294,7 @@ if '%nb%' == 'e' goto Menu
 goto Splash
 :SplashOne
 title Splash Android One Stock !
-color 03
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
@@ -4377,7 +4378,7 @@ echo.
 goto SplashOne
 :DelSplashOne
 title Deletando Splash Android One Stock
-color 03
+%core%
 cls
 if exist "%cd%\adb\file\splash\one\splash.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -4387,7 +4388,7 @@ echo MsgBox "Ok, arquivo excluido ",16,"Excluir STOCK" >%cd%\adb\wyz.vbs
 start %cd%\adb\wyz.vbs
 goto SplashOne
 :FlashSplashOne
-color 03
+%core%
 title Flash do Splash Android One Stock
 if exist "%cd%\adb\file\splash\one\splash.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -4462,7 +4463,7 @@ echo.
 goto SplashOne
 :SplashMIUI
 title Splash Android MIUI Stock !
-color 03
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
@@ -4545,7 +4546,7 @@ echo.
 goto SplashMIUI
 :DelSplashMIUI
 title Deletando Splash Android MIUI Stock
-color 03
+%core%
 cls
 if exist "%cd%\adb\file\splash\MIUI\splash.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -4555,7 +4556,7 @@ echo MsgBox "Ok, arquivo excluido ",16,"Excluir STOCK" >%cd%\adb\wyz.vbs
 start %cd%\adb\wyz.vbs
 goto SplashMIUI
 :FlashSplashMIUI
-color 03
+%core%
 title Flash do Splash Android MIUI Stock
 if exist "%cd%\adb\file\splash\MIUI\splash.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -4631,7 +4632,7 @@ echo.
 goto SplashMIUI
 :Splashmiui_white
 title Splash Android miui_white  !
-color 03
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
@@ -4714,7 +4715,7 @@ echo.
 goto Splashmiui_white
 :DelSplashmiui_white
 title Deletando Splash Android miui_white 
-color 03
+%core%
 cls
 if exist "%cd%\adb\file\splash\miui_white\splash.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -4724,7 +4725,7 @@ echo MsgBox "Ok, arquivo excluido ",16,"Excluir " >%cd%\adb\wyz.vbs
 start %cd%\adb\wyz.vbs
 goto Splashmiui_white
 :FlashSplashmiui_white
-color 03
+%core%
 title Flash do Splash Android miui_white 
 if exist "%cd%\adb\file\splash\miui_white\splash.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -4799,7 +4800,7 @@ echo.
 goto Splashmiui_white
 :SplashAnonimous
 title Splash Android Anonimous  !
-color 03
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
@@ -4882,7 +4883,7 @@ echo.
 goto SplashAnonimous
 :DelSplashAnonimous
 title Deletando Splash Android Anonimous 
-color 03
+%core%
 cls
 if exist "%cd%\adb\file\splash\Anonimous\splash.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -4892,7 +4893,7 @@ echo MsgBox "Ok, arquivo excluido ",16,"Excluir " >%cd%\adb\wyz.vbs
 start %cd%\adb\wyz.vbs
 goto SplashAnonimous
 :FlashSplashAnonimous
-color 03
+%core%
 title Flash do Splash Android Anonimous 
 if exist "%cd%\adb\file\splash\Anonimous\splash.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
@@ -4967,7 +4968,7 @@ echo.
 goto SplashAnonimous
 :CheckArb
 title Checando arb !
-color 03
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
@@ -4987,7 +4988,7 @@ goto Menu
 :: Menu de bootloader
 :GotoFastboot
 title Menu Reboot !
-color 03
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
@@ -5061,7 +5062,7 @@ goto GotoFastboot
 :: Gerador de splash customizado
 :GenerateSplash
 title Gerador de Splash Customizado
-color 03
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
@@ -5150,7 +5151,7 @@ if exist %cd%\adb\file\splash\newsplash\newsplash.img (
  echo MsgBox "O arquivo ja existe, exclua o arquivo ja existente ! ",16,"Calma que vai dar certo " >%cd%\adb\wyz.vbs  
 start %cd%\wyz.vbs
 goto GenerateSplash  )
-color 03
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
@@ -5180,7 +5181,7 @@ if exist %cd%\adb\file\splash\newsplash\newsplash.img ( echo. ) else ( echo MsgB
 start %cd%\adb\wyz.vbs 
 goto GenerateSplash )
 title Flash do splash customizado 
-color 03
+%core%
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
