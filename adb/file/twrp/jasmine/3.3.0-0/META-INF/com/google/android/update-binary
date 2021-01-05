@@ -1,0 +1,339 @@
+#!/sbin/sh
+
+# the target device(s)
+TARGET_DEVICE="jasmine"
+TARGET_DEVICE_ALT="jasmine_sprout"
+PRODUCT_DEVICE=$(getprop "ro.product.device")
+
+# target partition
+RECOVERY_PARTITION="/dev/block/bootdevice/by-name/recovery"
+
+# the display screen
+SCREEN=/proc/self/fd/$2
+
+# the current zip installer
+ZIPFILE="$3"
+
+# the zip extract directory
+EX_DIR=/tmp/twrp_installer
+
+# global error code (0=good; 1=error)
+ERROR_CODE=0
+
+# AB device?
+OF_AB_DEVICE="1"
+
+# ui_print "<message>" ["<message 2>" ...]
+ui_print() {
+  until [ ! "$1" ]; do
+    echo -e "ui_print $1\nui_print" >> $SCREEN
+    shift
+  done
+}
+
+# is_mounted <partition>
+is_mounted() {
+  case `mount` in
+    *" $1 "*) echo 1;;
+    *) echo 0;;
+  esac;
+}
+
+# package_extract_file <file> <destination_file>
+old_package_extract_file() { 
+   mkdir -p "$(dirname "$2")"
+   unzip -o "$ZIPFILE" "$1" -p > "$2" 
+}
+
+# package_extract_dir <dir> <destination_dir>
+old_package_extract_dir() {
+  for entry in $(unzip -l "$ZIPFILE" "$1/*" 2>/dev/null | tail -n+4 | grep -o " $1.*$" | cut -c2-); do
+    outfile=$(echo "$entry" | sed "s|${1}|${2}|")
+    mkdir -p "$(dirname "$outfile")"
+    unzip -o "$ZIPFILE" "$entry" -p > "$outfile"
+  done;
+}
+
+package_extract_dir() {
+   if [ -d $EX_DIR/$1 ]; then
+      cp -a $EX_DIR/$1/* $2
+   else
+      ui_print "Invalid directory: $1"
+   fi
+} 
+
+package_extract_file() {
+   if [ -e $EX_DIR/$1 ]; then
+      dd if=$EX_DIR/$1 of=$2
+   else
+      ui_print "Invalid file: $1"   
+   fi 
+}
+
+# file_getprop <file> <property>
+file_getprop() { 
+  grep "^$2=" "$1" | cut -d= -f2
+}
+
+# getprop <property>
+getprop() { 
+   [ -e /sbin/getprop ] && /sbin/getprop $1 || grep "^$1=" /default.prop | head -n1 | cut -d= -f2
+}
+
+# abort [<message>]
+abort() { 
+   ui_print "$*"
+   ERROR_CODE=1
+   exit 1
+}
+
+# check if we have specified a target device and whether this is it
+CheckRequirements() {
+   local F=$(echo "$PRODUCT_DEVICE" | grep "$TARGET_DEVICE")
+   if [ -n "$F" ]; then
+       ui_print "- TWRP 3.3 by Noob Master for $TARGET_DEVICE ..."
+   else
+       if [ -z "$TARGET_DEVICE_ALT" ]; then
+          abort "E3004: This package is for $TARGET_DEVICE. This device ($PRODUCT_DEVICE) is not supported."
+       fi
+       F=$(echo "$PRODUCT_DEVICE" | grep "$TARGET_DEVICE_ALT")
+       if [ -n "$F" ]; then
+          ui_print "- TWRP 3.3 by Noob Master for $TARGET_DEVICE_ALT ..."
+       else
+          abort "E3004: This package is for $TARGET_DEVICE. This device ($PRODUCT_DEVICE) is not supported."
+       fi
+   fi
+}
+
+# mount everything we might need
+MountThemAll() {
+local F=$(is_mounted "/system")
+    	# /system
+    	if [ "$F" = "0" ]; then
+    	   mount "/system" > /dev/null 2>&1
+    	   F=$(is_mounted "/system")
+    	   [ "$F" = "0" ] && mount -t ext4 /dev/block/bootdevice/by-name/system /system
+    	fi
+    	F=$(is_mounted "/system")
+    	[ "$F" = "1" ] && {
+	   mount -o rw,remount /system
+	   mount -o rw,remount /system /system
+    	}
+    	
+    	# /vendor    	
+    	F=$(is_mounted "/vendor")
+    	if [ "$F" = "0" ]; then
+    	   mount "/vendor" > /dev/null 2>&1
+    	   F=$(is_mounted "/vendor")
+    	   [ "$F" = "0" ] && mount -t ext4 /dev/block/bootdevice/by-name/vendor /vendor
+    	fi
+    	F=$(is_mounted "/vendor")
+    	[ "$F" = "1" ] && {
+	   mount -o rw,remount /vendor
+	   mount -o rw,remount /vendor /vendor
+    	}
+    	
+    	# /
+	mount -o rw,remount /
+	mount -o rw,remount / /
+} 
+
+# unmount everything that we mounted
+UnMountThemAll() {
+   umount /system
+   local F=$(is_mounted "/vendor")
+   [ "$F" = "1" ] && umount /vendor
+   F=$(is_mounted "/cache")
+   [ "$F" = "1" ] && umount /cache
+   F=$(is_mounted "/persist")
+   [ "$F" = "1" ] && umount /persist
+   F=$(is_mounted "/data")
+   [ "$F" = "1" ] && umount /data
+}
+
+Process_StockRecovery() {
+local RF=$1
+   # ui_print "- File: [$RF]"
+   if [ -f $RF ]; then
+      ui_print "- Processing file: $RF"
+      cp -af $RF $RF.bak
+      rm -f $RF
+   fi
+}
+
+Disable_stock_recovery_overwrites() {
+local ToRename="/system/bin/install-recovery.sh
+/system/etc/install-recovery.sh
+/system/etc/recovery-resource.dat
+/system/vendor/bin/install-recovery.sh
+/system/vendor/etc/install-recovery.sh
+/system/vendor/etc/recovery-resource.dat
+/system/recovery-from-boot.p
+/system/system/recovery-from-boot.p
+/vendor/bin/install-recovery.sh
+/vendor/etc/install-recovery.sh
+/vendor/etc/recovery-resource.dat"
+
+   for i in $ToRename
+   do
+     Process_StockRecovery "$i"
+   done
+}
+
+# get the cache dir
+GetCacheDir() {
+local C="/cache/" 
+local AB="/data/cache/"
+local P="/persist/cache/"
+ if [ "$OF_AB_DEVICE" = "1" ]; then
+    [ -e $AB ] && { echo "$AB"; return; }
+    [ -e $P ] && { echo "$P"; return; }
+    F=$(is_mounted "/data")
+    [ "$F" != "1" ] && mount /data
+    echo "$AB"
+    return
+ fi
+ [ -e $C ] && { echo "$C"; return; }
+ [ -e $AB ] && { echo "$AB"; return; }
+ [ -e $P ] && { echo "$P"; return; }
+ echo "$C"
+}
+
+# unzip the installer package into /tmp
+Unzip_Installer_Package() {
+   cd /tmp
+   mkdir -p $EX_DIR
+   cd $EX_DIR
+   unzip -o "$ZIPFILE"
+}
+
+# routine for flashing on A/B devices
+AB_Install_Recovery() {
+local toolname="/magiskboot"
+local tool="$EX_DIR$toolname"
+local targetfile="/boot.img"
+local target="$EX_DIR$targetfile"
+
+	cd "$EX_DIR"
+	chmod 0755 "$tool"
+
+	ui_print "- Extracting the ramdisk ..."
+	"$tool" --unpack recovery.img > /dev/null 2>&1
+	rm -f kernel dtb
+	mv -f ramdisk.cpio ramdisk-ofrp.cpio
+
+	ui_print "- Running boot image patcher on slot A..."
+	dd if=/dev/block/bootdevice/by-name/boot_a "of=$target"
+	"$tool" --unpack boot.img > /dev/null 2>&1
+	cp -f ramdisk-ofrp.cpio ramdisk.cpio
+	"$tool" --repack boot.img > /dev/null 2>&1
+	dd if=new-boot.img of=/dev/block/bootdevice/by-name/boot_a
+	rm -f boot.img dtb kernel new-boot.img ramdisk.cpio
+
+	ui_print "- Running boot image patcher on slot B..."
+	dd if=/dev/block/bootdevice/by-name/boot_b "of=$target"
+	"$tool" --unpack boot.img > /dev/null 2>&1
+	cp -f ramdisk-ofrp.cpio ramdisk.cpio
+	"$tool" --repack boot.img > /dev/null 2>&1
+	dd if=new-boot.img of=/dev/block/bootdevice/by-name/boot_b
+	rm -f boot.img dtb kernel new-boot.img ramdisk.cpio ramdisk-ofrp.cpio
+}
+
+# print the size of a file
+FileSize() {
+  if [ -f $1 ]; then
+     set -- $(ls -l "$1"); echo "$5"
+  else
+     echo "0"
+  fi
+}
+
+# install the recovery
+Install_Recovery() {
+local PART=$(readlink -f $RECOVERY_PARTITION)
+  [ -z "$PART" ] && PART=$RECOVERY_PARTITION
+
+  [ "$OF_AB_DEVICE" != "1" ] && {
+    local bak="/tmp/org_recovery.img"
+    dd if="$PART" of=$bak > /dev/null 2>&1
+    local oldF=$(FileSize $bak)
+    local newF=$(FileSize recovery.img)
+    ui_print "- Partition_Size=$oldF bytes; Recovery_Size=$newF bytes"
+    [  $newF -gt $oldF ] && {
+       rm -f $bak
+       abort "The recovery image ($newF bytes) is bigger than your recovery partition ($oldF bytes)! Quitting."
+    }
+    
+    if [ -x "/sbin/flash_image" ] && [ -x "/sbin/erase_image" ]; then
+       ui_print "- Cleaning the recovery partition ($PART)"
+       /sbin/erase_image "$PART"
+       [ $? == 0 ] && ui_print "- Succeeded." || ui_print "- Failed."
+
+       ui_print "- Flashing TWRP 3.3.0..."
+       /sbin/flash_image "$PART" "$EX_DIR/recovery.img"    
+       [ $? == 0 ] && ui_print "- Succeeded." || {
+       	   ui_print "- Problems encountered. Trying an alternative flashing method..."
+       	   package_extract_file "recovery.img" "$PART"
+       	   [ $? == 0 ] && ui_print "- Succeeded." || {
+       	      ui_print "- Flashing failed. Trying to restore original recovery..."
+       	      /sbin/flash_image "$PART" "$bak"
+       	      [ $? == 0 ] && ui_print "- Succeeded." || abort "- Failed! There is now no recovery! Flash a working recovery via fastboot."
+       	   }
+       }
+    else
+         ui_print "- Flashing the new recovery."
+         package_extract_file "recovery.img" "$PART"
+    fi
+    rm -f $bak
+    return
+  }
+  # this is declared to be an A/B device
+  ui_print "- A/B device ... "
+  AB_Install_Recovery
+}
+
+
+# main function
+Main() {
+	ui_print "*******************************************"
+	ui_print "*** | Team Win Recovery Project (3.3) | ***"
+    ui_print "*** |     Compiled from Q manifest    | ***"
+    ui_print "*** |         by Noob Master             | ***"
+	ui_print "*******************************************"
+	ui_print " "
+TWRP 3.3 by Noob Master
+# check if we have any device requirements
+	CheckRequirements
+
+# extract the zip installer
+	Unzip_Installer_Package
+	
+# Install the recovery
+	ui_print "- Installing TWRP 3.3.0 ..."
+	Install_Recovery
+	
+	[ "$ERROR_CODE" = "1" ] && {
+	   ui_print "- The installation of TWRP recovery was not successful ..."
+	   exit 1
+	}
+
+# Prevent the stock recovery from replacing this recovery
+	ui_print "- Disabling stock recovery overwrites"
+	
+	MountThemAll
+	
+	Disable_stock_recovery_overwrites
+
+# umount
+	UnMountThemAll
+
+# Finish and reboot
+	ui_print "- Finished installing TWRP!"
+	ui_print " "
+	sleep 1
+
+} # end Main(); 
+
+# --
+Main
+# --
