@@ -2,7 +2,7 @@
 chcp 65001
 cls
 set server=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/
-set server_stock=https://bigota.d.miui.com/V11.0.17.0.QDIMIXM/jasmine_global_images_V11.0.17.0.QDIMIXM_20201118.0000.00_10.0_16dbde5639.tgz
+set server_stock=https://bigota.d.miui.com/V11.0.19.0.QDIMIXM/jasmine_global_images_V11.0.19.0.QDIMIXM_20201218.0000.00_10.0_9d37383b8a.tgz
 set Baguvix=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/jasmine/3.2.3-0.img
 set Hesoyan=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/jasmine/3.3.0-0.img
 set Uzumymw=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/jasmine/3.3.1-0.img
@@ -10,11 +10,11 @@ set Oneway=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/a
 set Runway=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/wayne/3.2.3-1.img
 set Kicogeco=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/wayne/3.3.0-0.img
 set Aezakmi=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/wayne/3.3.1.img
-set PatchedDez=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/patched/11.0.17.0/11.0.17.0.img
+set PatchedDez=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/patched/11.0.19.0/11.0.19.0.img
 set PatchedDoze=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/patched/10.0.12.0/10.0.12.0.img
 set PatchedTreze=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/patched/10.0.13.0/10.0.13.0.img
 set PatchedQuatorze=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/patched/10.0.14.0/10.0.14.0.img
-set StockBootDez=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/stockboot/11.0.17.0/11.0.17.0.img
+set StockBootDez=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/stockboot/11.0.19.0/11.0.19.0.img
 set StockBootDoze=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/stockboot/10.0.12.0/10.0.12.0.img
 set StockBootTreze=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/stockboot/10.0.13.0/10.0.13.0.img
 set StockBootQuatorze=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/stockboot/10.0.14.0/10.0.14.0.img
@@ -552,7 +552,7 @@ echo.
 echo.
 goto Erase
 :StockRom
-title Menu Stock ROM v 11.0.17.0 OFFICIAL
+title Menu Stock ROM v 11.0.19.0 OFFICIAL
 %core%
 cls
 echo.
@@ -563,7 +563,7 @@ echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀   
 echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
 echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
 echo      │      ┌───────────────────────────────────────────┐                                                        │
-echo      ├──────┤ 1 ) DOWNLOAD DA STOCK (v11.0.17.0) anti 1 │                                                        │
+echo      ├──────┤ 1 ) DOWNLOAD DA STOCK (v11.0.19.0) anti 1 │                                                        │
 echo      │      └───────────────────────────────────────────┤                                                        │
 echo      │      ┌───────────────────────────────────────────┤                                                        │
 echo      ├──────┤ 2 ) DESCOMPACTAR ARQUIVO                  │                                                        │
@@ -609,7 +609,7 @@ goto StockRom
  if exist "%cd%\adb\stock\jasmine.tgz" ( echo MsgBox "Deixa de ser besta, voce ja baixou a rom, agora vc precisa extrair ela.",vbInformation,"Presta atencao. " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto StockRom ) else ( echo. )
-title Baixando a stock rom 11.0.17.0, aguarde !
+title Baixando a stock rom 11.0.19.0, aguarde !
 color 30
 
 cls
@@ -655,7 +655,6 @@ powershell -command "& {&'Invoke-WebRequest' -Uri '%server%adb/7Zip/x64/7za.exe'
 powershell -command "& {&'Invoke-WebRequest' -Uri '%server%adb/7Zip/x64/7za.dll' -OutFile '%cd%\adb\7Zip\X64\7za.dll'}"
 powershell -command "& {&'Invoke-WebRequest' -Uri '%server%adb/7Zip/x64/7zxa.dll' -OutFile '%cd%\adb\7Zip\X64\7zxa.dll'}"
 powershell -command "& {&'Invoke-WebRequest' -Uri '%server%adb/7Zip/Far/7-ZipEng.hlf' -OutFile '%cd%\adb\7Zip\Far\7-ZipEng.hlf'}"
-powershell -command "& {&'Invoke-WebRequest' -Uri '%server%adb/7Zip/Far/7-ZipRus.lng' -OutFile '%cd%\adb\7Zip\Far\7-ZipEng.lng'}"
 powershell -command "& {&'Invoke-WebRequest' -Uri '%server%adb/7Zip/Far/7-ZipFar.dll' -OutFile '%cd%\adb\7Zip\Far\7-ZipFar.dll'}"
 powershell -command "& {&'Invoke-WebRequest' -Uri '%server%adb/7Zip/Far/7-ZipFar64.dll' -OutFile '%cd%\adb\7Zip\Far\7-ZipFar64.dll'}"
 powershell -command "& {&'Invoke-WebRequest' -Uri '%server%adb/7Zip/Far/7-ZipRus.hlf' -OutFile '%cd%\adb\7Zip\Far\7-ZipRus.hlf'}"
@@ -706,7 +705,7 @@ echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀   
 echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
 echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
 echo      │                                                                                                           │
-echo      │           Verificando arquivos da stock rom V11.0.17.0                                                    │
+echo      │           Verificando arquivos da stock rom V11.0.19.0                                                    │
 echo      │                                                                                                           │
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
@@ -2461,7 +2460,7 @@ echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀   
 echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
 echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
 echo      │      ┌───────────────────────────────────────────┐                                                        │
-echo      ├──────┤ 1 ) PATCHED BOOT 11.0.17.0                │                                                        │
+echo      ├──────┤ 1 ) PATCHED BOOT 11.0.19.0                │                                                        │
 echo      │      └───────────────────────────────────────────┤                                                        │
 echo      │      ┌───────────────────────────────────────────┤                                                        │
 echo      ├──────┤ 2 ) PATCHED BOOT 10.0.12.0                │                                                        │
@@ -2492,7 +2491,7 @@ if '%nb%' == 'E' goto Menu
 if '%nb%' == 'e' goto Menu
 goto Patched
 :PatchedDez
-title Patched Boot 11.0.17.0 !
+title Patched Boot 11.0.19.0 !
 %core%
 cls
 echo.
@@ -2503,10 +2502,10 @@ echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀   
 echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
 echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
 echo      │      ┌───────────────────────────────────────────┐                                                        │
-echo      ├──────┤ 1 ) BOOT NO PATCHED BOOT 11.0.17.0        │                                                        │
+echo      ├──────┤ 1 ) BOOT NO PATCHED BOOT 11.0.19.0        │                                                        │
 echo      │      └───────────────────────────────────────────┤                                                        │
 echo      │      ┌───────────────────────────────────────────┤                                                        │
-echo      ├──────┤ 2 ) DOWNLOAD PATCHED BOOT 11.0.17.0       │                                                        │
+echo      ├──────┤ 2 ) DOWNLOAD PATCHED BOOT 11.0.19.0       │                                                        │
 echo      │      └───────────────────────────────────────────┤                                                        │
 echo      │      ┌───────────────────────────────────────────┤                                                        │
 echo      ├──────┤ 3 ) DELETAR ARQUIVO                       │                                                        │
@@ -2515,7 +2514,7 @@ echo      │      ┌───────────────────�
 echo      ├──────┤ 4 ) VERIFICAR ARQUIVO                     │                                                        │
 echo      │      └───────────────────────────────────────────┤                                                        │
 echo      │      ┌───────────────────────────────────────────┤                                                        │
-echo      ├──────┤ 5 ) FLASH DO PATCHED BOOT 11.0.17.0       │                                                        │
+echo      ├──────┤ 5 ) FLASH DO PATCHED BOOT 11.0.19.0       │                                                        │
 echo      │      └───────────────────────────────────────────┤                                                        │
 echo      │      ┌───────────────────────────────────────────┤                                                        │
 echo      ├──────┤ 6 ) REBOOT SYSTEM                         │                                                        │
@@ -2524,7 +2523,7 @@ echo      │                                                               ┌�
 echo      └───────────────────────────────────────────────────────────────┤ E ) VOLTAR                                │
 echo                                                                      └───────────────────────────────────────────┘
 echo.
-if exist "%cd%\adb\file\patched\11.0.17.0\11.0.17.0.img" ( call :cortexto 0a " Ok, parece que o arquivo existe. " ) else ( call :cortexto 0c "Baixe o arquivo. " )
+if exist "%cd%\adb\file\patched\11.0.19.0\11.0.19.0.img" ( call :cortexto 0a " Ok, parece que o arquivo existe. " ) else ( call :cortexto 0c "Baixe o arquivo. " )
 echo.
 echo.
 set nb= 
@@ -2544,8 +2543,8 @@ cls
 goto PatchedDez
 :DownPatchedDez
 color 30
-title Download patched boot 11.0.17.0!
-if exist "%cd%\adb\file\patched\11.0.17.0\11.0.17.0.img" (  echo MsgBox "Pare de frescura, ce ja baixou o negocio e ta ai querendo baixar denovo, vai flashea isso ai rapa! ",16,"Vai canta seu bosta " >%cd%\adb\wyz.vbs  
+title Download patched boot 11.0.19.0!
+if exist "%cd%\adb\file\patched\11.0.19.0\11.0.19.0.img" (  echo MsgBox "Pare de frescura, ce ja baixou o negocio e ta ai querendo baixar denovo, vai flashea isso ai rapa! ",16,"Vai canta seu bosta " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto PatchedDez ) else ( echo . )
 cls
@@ -2557,7 +2556,7 @@ echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀   
 echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
 echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
 echo      │                                                                                                           │
-echo      │                          Baixando patched boot da versão 11.0.17.0...                                     │
+echo      │                          Baixando patched boot da versão 11.0.19.0...                                     │
 echo      │                                                                                                           │
 echo      │               Eu vou te avisar quando o Download terminar, apenas aguarde e relaxa a ppk.                 │
 echo      │                                                                                                           │
@@ -2566,9 +2565,9 @@ echo      │                                                                   
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
 echo.
-mkdir adb\file\patched\11.0.17.0\
-Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%PatchedDez%', 'adb\file\patched\11.0.17.0\11.0.17.0.img') }"
-if exist "%cd%\adb\file\patched\11.0.17.0\11.0.17.0.img" ( echo. ) else (   echo MsgBox "Deu erro na parada, o arquivo nao foi baixado! ",16,"Deu erro, vishhh" >%cd%\adb\wyz.vbs  
+mkdir adb\file\patched\11.0.19.0\
+Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%PatchedDez%', 'adb\file\patched\11.0.19.0\11.0.19.0.img') }"
+if exist "%cd%\adb\file\patched\11.0.19.0\11.0.19.0.img" ( echo. ) else (   echo MsgBox "Deu erro na parada, o arquivo nao foi baixado! ",16,"Deu erro, vishhh" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto PatchedDez )
 echo.
@@ -2577,20 +2576,20 @@ start %cd%\adb\wyz.vbs
 echo.
 goto PatchedDez
 :DelPatchedDez
-title Deletando Patched boot 11.0.17.0
+title Deletando Patched boot 11.0.19.0
 %core%
 cls
-if exist "%cd%\adb\file\patched\11.0.17.0\11.0.17.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+if exist "%cd%\adb\file\patched\11.0.19.0\11.0.19.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto PatchedDez )
-del adb\file\patched\11.0.17.0\11.0.17.0.img
+del adb\file\patched\11.0.19.0\11.0.19.0.img
 echo MsgBox "Ok, arquivo excluido ",16,"Excluir patched" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto PatchedDez
 :FlashPatchedDez
 %core%
-title Flash do Patched boot 11.0.17.0
-if exist "%cd%\adb\file\patched\11.0.17.0\11.0.17.0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
+title Flash do Patched boot 11.0.19.0
+if exist "%cd%\adb\file\patched\11.0.19.0\11.0.19.0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto PatchedDez  )
 cls
@@ -2602,12 +2601,12 @@ echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀   
 echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
 echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
 echo      │                                                                                                           │
-echo      │           Flash do patched boot 11.0.17.0                                                                 │
+echo      │           Flash do patched boot 11.0.19.0                                                                 │
 echo      │                                                                                                           │
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
 echo.
-%fastboot% flash boot "%~dp0\adb\file\patched\11.0.17.0\11.0.17.0.img" || @echo "flash recovery error" && goto PatchedDezError
+%fastboot% flash boot "%~dp0\adb\file\patched\11.0.19.0\11.0.19.0.img" || @echo "flash recovery error" && goto PatchedDezError
 echo.
 echo.
 echo.
@@ -2617,8 +2616,8 @@ pause >nul
 goto PatchedDez
 :GotoPatchedDez
 %core%
-title Boot no patched boot 11.0.17.0
-if exist "%cd%\adb\file\patched\11.0.17.0\11.0.17.0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
+title Boot no patched boot 11.0.19.0
+if exist "%cd%\adb\file\patched\11.0.19.0\11.0.19.0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto PatchedDez  )
 cls
@@ -2630,12 +2629,12 @@ echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀   
 echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
 echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
 echo      │                                                                                                           │
-echo      │           Boot do patched boot 11.0.17.0                                                                  │
+echo      │           Boot do patched boot 11.0.19.0                                                                  │
 echo      │                                                                                                           │
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
 echo.
-%fastboot% boot "%~dp0\adb\file\patched\11.0.17.0\11.0.17.0.img" || @echo "boot error" && goto PatchedDezError
+%fastboot% boot "%~dp0\adb\file\patched\11.0.19.0\11.0.19.0.img" || @echo "boot error" && goto PatchedDezError
 echo.
 echo.
 echo.
@@ -2645,10 +2644,10 @@ pause >nul
 goto PatchedDez
 :VerPatchedDez
 cls
-if exist "%cd%\adb\file\patched\11.0.17.0\11.0.17.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+if exist "%cd%\adb\file\patched\11.0.19.0\11.0.19.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto PatchedDez )
-start %cd%\adb\file\patched\11.0.17.0\
+start %cd%\adb\file\patched\11.0.19.0\
 goto PatchedDez
 :PatchedDezError
 title ERROOOOOOOOOOOOOOOOOOOOOOOOOOOooooo !
@@ -3281,7 +3280,7 @@ echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀   
 echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
 echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
 echo      │      ┌───────────────────────────────────────────┐                                                        │
-echo      ├──────┤ 1 ) STOCK BOOT 11.0.17.0                  │                                                        │
+echo      ├──────┤ 1 ) STOCK BOOT 11.0.19.0                  │                                                        │
 echo      │      └───────────────────────────────────────────┤                                                        │
 echo      │      ┌───────────────────────────────────────────┤                                                        │
 echo      ├──────┤ 2 ) STOCK BOOT 10.0.12.0                  │                                                        │
@@ -3311,7 +3310,7 @@ if '%nb%' == 'E' goto Menu
 if '%nb%' == 'e' goto Menu
 goto StockBoot
 :StockBootDez
-title STOCK Boot 11.0.17.0 !
+title STOCK Boot 11.0.19.0 !
 %core%
 cls
 echo.
@@ -3322,10 +3321,10 @@ echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀   
 echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
 echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
 echo      │      ┌───────────────────────────────────────────┐                                                        │
-echo      ├──────┤ 1 ) BOOT NO STOCK BOOT 11.0.17.0          │                                                        │
+echo      ├──────┤ 1 ) BOOT NO STOCK BOOT 11.0.19.0          │                                                        │
 echo      │      └───────────────────────────────────────────┤                                                        │
 echo      │      ┌───────────────────────────────────────────┤                                                        │
-echo      ├──────┤ 2 ) DOWNLOAD STOCK BOOT 11.0.17.0         │                                                        │
+echo      ├──────┤ 2 ) DOWNLOAD STOCK BOOT 11.0.19.0         │                                                        │
 echo      │      └───────────────────────────────────────────┤                                                        │
 echo      │      ┌───────────────────────────────────────────┤                                                        │
 echo      ├──────┤ 3 ) DELETAR ARQUIVO                       │                                                        │
@@ -3334,7 +3333,7 @@ echo      │      ┌───────────────────�
 echo      ├──────┤ 4 ) VERIFICAR ARQUIVO                     │                                                        │
 echo      │      └───────────────────────────────────────────┤                                                        │
 echo      │      ┌───────────────────────────────────────────┤                                                        │
-echo      ├──────┤ 5 ) FLASH DO STOCK BOOT 11.0.17.0         │                                                        │
+echo      ├──────┤ 5 ) FLASH DO STOCK BOOT 11.0.19.0         │                                                        │
 echo      │      └───────────────────────────────────────────┤                                                        │
 echo      │      ┌───────────────────────────────────────────┤                                                        │
 echo      ├──────┤ 6 ) REBOOT SYSTEM                         │                                                        │
@@ -3343,7 +3342,7 @@ echo      │                                                               ┌�
 echo      └───────────────────────────────────────────────────────────────┤ E ) VOLTAR                                │
 echo                                                                      └───────────────────────────────────────────┘
 echo.
-if exist "%cd%\adb\file\stockboot\11.0.17.0\11.0.17.0.img" ( call :cortexto 0a " Ok, parece que o arquivo existe. " ) else ( call :cortexto 0c "Baixe o arquivo. " )
+if exist "%cd%\adb\file\stockboot\11.0.19.0\11.0.19.0.img" ( call :cortexto 0a " Ok, parece que o arquivo existe. " ) else ( call :cortexto 0c "Baixe o arquivo. " )
 echo.
 echo.
 set nb= 
@@ -3363,8 +3362,8 @@ cls
 goto StockBootDez
 :DownStockBootDez
 color 30
-title Download STOCK boot 11.0.17.0!
-if exist "%cd%\adb\file\stockboot\11.0.17.0\11.0.17.0.img" (  echo MsgBox "Pare de frescura, ce ja baixou o negocio e ta ai querendo baixar denovo, vai flashea isso ai rapa! ",16,"Vai canta seu bosta " >%cd%\adb\wyz.vbs  
+title Download STOCK boot 11.0.19.0!
+if exist "%cd%\adb\file\stockboot\11.0.19.0\11.0.19.0.img" (  echo MsgBox "Pare de frescura, ce ja baixou o negocio e ta ai querendo baixar denovo, vai flashea isso ai rapa! ",16,"Vai canta seu bosta " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto StockBootDez ) else ( echo . )
 cls
@@ -3376,7 +3375,7 @@ echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀   
 echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
 echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
 echo      │                                                                                                           │
-echo      │                          Baixando STOCK boot da versão 11.0.17.0...                                       │
+echo      │                          Baixando STOCK boot da versão 11.0.19.0...                                       │
 echo      │                                                                                                           │
 echo      │               Eu vou te avisar quando o Download terminar, apenas aguarde e relaxa a ppk.                 │
 echo      │                                                                                                           │
@@ -3385,9 +3384,9 @@ echo      │                                                                   
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
 echo.
-mkdir adb\file\stockboot\11.0.17.0\
-Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%StockBootDez%', 'adb\file\stockboot\11.0.17.0\11.0.17.0.img') }"
-if exist "%cd%\adb\file\stockboot\11.0.17.0\11.0.17.0.img" ( echo. ) else (   echo MsgBox "Deu erro na parada, o arquivo nao foi baixado! ",16,"Deu erro, vishhh" >%cd%\adb\wyz.vbs  
+mkdir adb\file\stockboot\11.0.19.0\
+Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%StockBootDez%', 'adb\file\stockboot\11.0.19.0\11.0.19.0.img') }"
+if exist "%cd%\adb\file\stockboot\11.0.19.0\11.0.19.0.img" ( echo. ) else (   echo MsgBox "Deu erro na parada, o arquivo nao foi baixado! ",16,"Deu erro, vishhh" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto StockBootDez )
 echo.
@@ -3396,20 +3395,20 @@ start %cd%\adb\wyz.vbs
 echo.
 goto StockBootDez
 :DelStockBootDez
-title Deletando STOCK boot 11.0.17.0
+title Deletando STOCK boot 11.0.19.0
 %core%
 cls
-if exist "%cd%\adb\file\stockboot\11.0.17.0\11.0.17.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+if exist "%cd%\adb\file\stockboot\11.0.19.0\11.0.19.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto StockBootDez )
-del adb\file\stockboot\11.0.17.0\11.0.17.0.img
+del adb\file\stockboot\11.0.19.0\11.0.19.0.img
 echo MsgBox "Ok, arquivo excluido ",16,"Excluir STOCK" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto StockBootDez
 :FlashStockBootDez
 %core%
-title Flash do STOCK boot 11.0.17.0
-if exist "%cd%\adb\file\stockboot\11.0.17.0\11.0.17.0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
+title Flash do STOCK boot 11.0.19.0
+if exist "%cd%\adb\file\stockboot\11.0.19.0\11.0.19.0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto StockBootDez  )
 cls
@@ -3421,12 +3420,12 @@ echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀   
 echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
 echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
 echo      │                                                                                                           │
-echo      │           Flash do STOCK boot 11.0.17.0                                                                   │
+echo      │           Flash do STOCK boot 11.0.19.0                                                                   │
 echo      │                                                                                                           │
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
 echo.
-%fastboot% flash boot "%~dp0\adb\file\stockboot\11.0.17.0\11.0.17.0.img" || @echo "flash recovery error" && goto StockBootDezError
+%fastboot% flash boot "%~dp0\adb\file\stockboot\11.0.19.0\11.0.19.0.img" || @echo "flash recovery error" && goto StockBootDezError
 echo.
 echo.
 echo.
@@ -3436,8 +3435,8 @@ pause >nul
 goto StockBootDez
 :GotoStockBootDez
 %core%
-title Boot no STOCK boot 11.0.17.0
-if exist "%cd%\adb\file\stockboot\11.0.17.0\11.0.17.0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
+title Boot no STOCK boot 11.0.19.0
+if exist "%cd%\adb\file\stockboot\11.0.19.0\11.0.19.0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto StockBootDez  )
 cls
@@ -3449,12 +3448,12 @@ echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀   
 echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
 echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
 echo      │                                                                                                           │
-echo      │           Boot do STOCK boot 11.0.17.0                                                                    │
+echo      │           Boot do STOCK boot 11.0.19.0                                                                    │
 echo      │                                                                                                           │
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
 echo.
-%fastboot% boot "%~dp0\adb\file\stockboot\11.0.17.0\11.0.17.0.img" || @echo "boot error" && goto StockBootDezError
+%fastboot% boot "%~dp0\adb\file\stockboot\11.0.19.0\11.0.19.0.img" || @echo "boot error" && goto StockBootDezError
 echo.
 echo.
 echo.
@@ -3464,10 +3463,10 @@ pause >nul
 goto StockBootDez
 :VerStockBootDez
 cls
-if exist "%cd%\adb\file\stockboot\11.0.17.0\11.0.17.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+if exist "%cd%\adb\file\stockboot\11.0.19.0\11.0.19.0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 goto StockBootDez )
-start %cd%\adb\file\stockboot\11.0.17.0\
+start %cd%\adb\file\stockboot\11.0.19.0\
 goto StockBootDez
 :StockBootDezError
 title ERROOOOOOOOOOOOOOOOOOOOOOOOOOOooooo !
