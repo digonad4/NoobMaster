@@ -1,7 +1,6 @@
 @echo off
 chcp 65001
 cls
-set NEBRASSY=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/jasmine/3.4.0-0.img
 set core=color 03
 mode 120,35
 setlocal EnableDelayedExpansion
@@ -25,8 +24,33 @@ set fastboot="%cd%\adb\fastboot.exe"
 set "nome= Noob Master "
 set "ver= 7.0.1.4 "
 
-:TwrpNEBRASSY
-title Twrp jasmine Versão 3.4.0-0
+
+
+
+
+
+
+::::::: ESSA PARTE DE CIMA É DO SCRIPT PRINCIPAL, ELE CARREGA ISSO PRA EXIBIR CORES E LINHAS COM CORES ESPECIFICAS
+
+
+
+
+
+
+
+::::::: Aqui começa o scrript de fato, seguindo um padrão.
+::::::: Edite a versão, a variavel do link e o nome da função 
+::::::: Voce deve editar no script todo, esse nome setará a função no script principal>>> WayneQuatro 
+::::::: Edite a versão e mantenha este padrão >>> 3.3.1-0 
+
+
+
+
+set WayneQuatro=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/jasmine/3.3.1-0.img
+
+
+:TwrpWayneQuatro
+title Twrp wayne Versão 3.3.1-0 !
 %core%
 cls
 echo.
@@ -37,7 +61,7 @@ echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀   
 echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
 echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
 echo      │      ┌───────────────────────────────────────────┐                                                        │
-echo      ├──────┤ 1 ) BOOT NO TWRP 3.4.0-0                  │                                                        │
+echo      ├──────┤ 1 ) BOOT NO TWRP 3.3.1-0                  │                                                        │
 echo      │      └───────────────────────────────────────────┤                                                        │
 echo      │      ┌───────────────────────────────────────────┤                                                        │
 echo      ├──────┤ 2 ) DOWNLOAD PARA CASO ESTAR CORROMPIDO   │                                                        │
@@ -49,37 +73,41 @@ echo      │      ┌───────────────────�
 echo      ├──────┤ 4 ) VERIFICAR ARQUIVO                     │                                                        │
 echo      │      └───────────────────────────────────────────┤                                                        │
 echo      │      ┌───────────────────────────────────────────┤                                                        │
-echo      ├──────┤ 5 ) REBOOT SYSTEM                         │                                                        │
+echo      ├──────┤ 5 ) FLASH DO TWRP 3.3.1-0 WAYNE           │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 6 ) REBOOT SYSTEM                         │                                                        │
 echo      │      └───────────────────────────────────────────┘                                                        │
 echo      │                                                               ┌───────────────────────────────────────────┤
 echo      └───────────────────────────────────────────────────────────────┤ E ) VOLTAR                                │
 echo                                                                      └───────────────────────────────────────────┘
 echo.
-if exist "%cd%\adb\file\twrp\jasmine\3.2.3-0.img" ( call :cortexto 0a " Ok, parece que o arquivo existe. " ) else ( call :cortexto 0c "Baixe o arquivo. " )
+if exist "%cd%\adb\file\twrp\wayne\3.3.1-0.img" ( call :cortexto 0a " Ok, parece que o arquivo existe. " ) else ( call :cortexto 0c "Baixe o arquivo. " )
 echo.
 echo.
 set nb= 
 set /p "nb=Digite algo aqui %username% >"
-if '%nb%' == '1' goto GotoTwrpNEBRASSY
-if '%nb%' == '2' goto DownTwrpNEBRASSY
-if '%nb%' == '3' goto DelTwrpNEBRASSY
-if '%nb%' == '4' goto VerTwrpNEBRASSY
-if '%nb%' == '5' goto RebootNEBRASSY
+if '%nb%' == '1' goto GotoTwrpWayneQuatro
+if '%nb%' == '2' goto DownTwrpWayneQuatro
+if '%nb%' == '3' goto DelTwrpWayneQuatro
+if '%nb%' == '4' goto VerTwrpWayneQuatro
+if '%nb%' == '5' goto FlashTwrpWayneQuatro
+if '%nb%' == '6' goto RebootWayneQuatro
 if '%nb%' == 'E' goto Twrp
 if '%nb%' == 'e' goto Twrp
-goto TwrpNEBRASSY
-:RebootNEBRASSY
-cls
-%fastboot% reboot
-goto TwrpNEBRASSY
+goto TwrpWayneQuatro
+:RebootWayneQuatro
+cls 
+%fastboot% reboot 
+goto TwrpWayneQuatro
 
 :: Boot no Twrp 
-:GotoTwrpNEBRASSY
+:GotoTwrpWayneQuatro
 %core%
-title Boot no Twrp 3.4.0-0jasmine_sprout
-if exist "%cd%\adb\file\twrp\jasmine\3.2.3-0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
+title Boot no Twrp 3.3.1-0 wayne
+if exist "%cd%\adb\file\twrp\wayne\3.3.1-0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpNEBRASSY  )
+goto TwrpWayneQuatro  )
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
@@ -89,25 +117,25 @@ echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀   
 echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
 echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
 echo      │                                                                                                           │
-echo      │           Boot no twrp jasmine_sprout  v 3.4.0-0                                                          │
+echo      │           Boot no twrp wayne  v 3.3.1-0                                                                   │
 echo      │                                                                                                           │
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
 echo.
-%fastboot% boot "%~dp0\adb\file\twrp\jasmine\3.2.3-0.img" || @echo "boot error" && goto TwrpNEBRASSYError
+%fastboot% boot "%~dp0\adb\file\twrp\wayne\3.3.1-0.img" || @echo "boot error" && goto TwrpWayneQuatroError
 echo.
 echo.
 echo.
 echo Pressione qualquer tecla para voltar
 echo.
 pause >nul
-goto TwrpNEBRASSY
-:DownTwrpNEBRASSY
+goto TwrpWayneQuatro
+:DownTwrpWayneQuatro
 color 30
-title Download Twrp 3.4.0-0jasmine_sprout
-if exist "%cd%\adb\file\twrp\jasmine\3.2.3-0.img" (  echo MsgBox "Pare de frescura, ce ja baixou o negocio e ta ai querendo baixar denovo, vai flashea isso ai rapa! ",16,"Vai canta seu bosta " >%cd%\adb\wyz.vbs  
+title Download Twrp 3.3.1-0 wayne
+if exist "%cd%\adb\file\twrp\wayne\3.3.1-0.img" (  echo MsgBox "Pare de frescura, ce ja baixou o negocio e ta ai querendo baixar denovo, vai flashea isso ai rapa! ",16,"Vai canta seu bosta " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpNEBRASSY ) else ( echo . )
+goto TwrpWayneQuatro ) else ( echo . )
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
@@ -117,7 +145,7 @@ echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀   
 echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
 echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
 echo      │                                                                                                           │
-echo      │                          Baixando twrp jasmine_sprout v 3.4.0-0 aguarde...                                │
+echo      │                          Baixando twrp wayne v 3.3.1-0 aguarde...                                         │
 echo      │                                                                                                           │
 echo      │               Eu vou te avisar quando o Download terminar, apenas aguarde e relaxa a ppk.                 │
 echo      │                                                                                                           │
@@ -126,35 +154,35 @@ echo      │                                                                   
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
 echo.
-mkdir adb\file\twrp\jasmine\
-Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%NEBRASSY%', 'adb\file\twrp\jasmine\3.2.3-0.img') }"
-if exist "%cd%\adb\file\twrp\jasmine\3.2.3-0.img" ( echo. ) else (   echo MsgBox "Deu erro na parada, o arquivo nao foi baixado! ",16,"Deu erro, vishhh" >%cd%\adb\wyz.vbs  
+mkdir adb\file\twrp\wayne\
+Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%WayneQuatro%', 'adb\file\twrp\wayne\3.3.1-0.img') }"
+if exist "%cd%\adb\file\twrp\wayne\3.3.1-0.img" ( echo. ) else (   echo MsgBox "Deu erro na parada, o arquivo nao foi baixado! ",16,"Deu erro, vishhh" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpNEBRASSY )
+goto TwrpWayneQuatro )
 echo.
 echo MsgBox "Ok, arquivo baixado ",16,"Vai canta seu bosta" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 echo.
-goto TwrpNEBRASSY
-:DelTwrpNEBRASSY
-title Deletando Twrp 3.2.3-0
+goto TwrpWayneQuatro
+:DelTwrpWayneQuatro
+title Deletando Twrp 3.3.1-0
 %core%
 cls
-if exist "%cd%\adb\file\twrp\jasmine\3.2.3-0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+if exist "%cd%\adb\file\twrp\wayne\3.3.1-0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpNEBRASSY )
-del adb\file\twrp\jasmine\3.2.3-0.img
+goto TwrpWayneQuatro )
+del adb\file\twrp\wayne\3.3.1-0.img
 echo MsgBox "Ok, arquivo excluido ",16,"Excluir Twrp" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpNEBRASSY
-:VerTwrpNEBRASSY
+goto TwrpWayneQuatro
+:VerTwrpWayneQuatro
 cls
-if exist "%cd%\adb\file\twrp\jasmine\3.2.3-0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+if exist "%cd%\adb\file\twrp\wayne\3.3.1-0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpNEBRASSY )
-start %cd%\adb\file\twrp\jasmine\
-goto TwrpNEBRASSY
-:TwrpNEBRASSYError
+goto TwrpWayneQuatro )
+start %cd%\adb\file\twrp\wayne\
+goto TwrpWayneQuatro
+:TwrpWayneQuatroError
 title ERROOOOOOOOOOOOOOOOOOOOOOOOOOOooooo !
 color 40
 cls
@@ -188,4 +216,32 @@ echo.
 pause>nul
 echo.
 echo.
-goto TwrpNEBRASSY
+goto TwrpWayneQuatro
+:FlashTwrpWayneQuatro
+%core%
+title Flash do Twrp 3.3.1-0 wayne
+if exist "%cd%\adb\file\twrp\wayne\3.3.1-0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto TwrpWayneQuatro  )
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █  
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │                                                                                                           │
+echo      │           Flash do twrp wayne  v 3.3.1-0                                                                  │
+echo      │                                                                                                           │
+echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+echo.
+echo.
+%fastboot% flash recovery "%~dp0\adb\file\twrp\wayne\3.3.1-0.img" || @echo "flash recovery error" && goto TwrpWayneQuatroError
+echo.
+echo.
+echo.
+echo Pressione qualquer tecla para voltar
+echo.
+pause >nul
+goto TwrpWayneQuatro
