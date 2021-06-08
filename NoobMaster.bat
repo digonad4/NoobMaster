@@ -1,20 +1,27 @@
 @echo off
+@echo off
 chcp 65001
 cls
 set server=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/
-set server_stock=https://bigota.d.miui.com/V11.0.19.0.QDIMIXM/jasmine_global_images_V11.0.19.0.QDIMIXM_20201218.0000.00_10.0_9d37383b8a.tgz
-set Baguvix=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/jasmine/3.2.3-0.img
-set Hesoyan=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/jasmine/3.3.0-0.img
-set Uzumymw=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/jasmine/3.3.1-0.img
-set Oneway=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/wayne/3.2.3-0.img
-set Runway=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/wayne/3.2.3-1.img
-set Kicogeco=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/wayne/3.3.0-0.img
-set Aezakmi=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/wayne/3.3.1.img
-set PatchedDez=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/patched/11.0.19.0/11.0.19.0.img
+set server_stock=https://bigota.d.miui.com/V11.0.22.0.QDIMIXM/jasmine_global_images_V11.0.22.0.QDIMIXM_20210309.0000.00_10.0_2f25e8fd87.tgz
+:::: Links Twrp Jasmine
+set JasmineUm=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/jasmine/3.2.3-0.img
+set JasmineDois=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/jasmine/3.3.0-0.img
+set JasmineTres=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/jasmine/3.3.1-0.img
+set JasmineQuatro=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/jasmine/3.3.1-5.img
+set JasmineCinco=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/jasmine/3.4.0-0.img
+set JasmineSeis=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/jasmine/3.5.0-0.img
+:::: Links Twrp Wayne
+set WayneUm=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/wayne/3.2.3-0.img
+set WayneDois=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/jasmine/3.2.3-1.img
+set WayneTres=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/jasmine/3.3.0-0.img
+set WayneQuatro=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/jasmine/3.3.1-0.img
+::::: vou excluir
+set PatchedDez=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/patched/11.0.22.0/11.0.22.0.img
 set PatchedDoze=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/patched/10.0.12.0/10.0.12.0.img
 set PatchedTreze=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/patched/10.0.13.0/10.0.13.0.img
 set PatchedQuatorze=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/patched/10.0.14.0/10.0.14.0.img
-set StockBootDez=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/stockboot/11.0.19.0/11.0.19.0.img
+set StockBootDez=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/stockboot/11.0.22.0/11.0.22.0.img
 set StockBootDoze=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/stockboot/10.0.12.0/10.0.12.0.img
 set StockBootTreze=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/stockboot/10.0.13.0/10.0.13.0.img
 set StockBootQuatorze=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/stockboot/10.0.14.0/10.0.14.0.img
@@ -24,7 +31,7 @@ set SplashOne=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/maste
 set SplashAnonimous=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/splash/anonimous/splash.img
 set Splashmiui_white=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/splash/miui_white/splash.img
 set Orange=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/Orange/unnoficial.img
-set core=color 03
+set core=color 0E
 mode 120,35
 setlocal EnableDelayedExpansion
 for /F "tokens=1,2 delims=#" %%a in ('"prompt #$H#$E# & echo on & for %%b in (1) do rem"') do (
@@ -45,7 +52,9 @@ pushd "%~dp0"
 set adb="%cd%\adb\adb.exe"
 set fastboot="%cd%\adb\fastboot.exe"
 set "nome= Noob Master "
-set "ver= 7.0.1.4 "
+set "ver= 7.2.2.0 "
+cls
+@echo off
 :Menu
 title %nome% v%ver%
 %core%
@@ -639,9 +648,9 @@ goto StockRom
 title Baixando os arquivos que farão a extração da rom stock !
 color 30
 cls
-echo.	
-echo.				Baixando arquivos necessários para extração!
-echo.							Aguarde !
+echo. 
+echo.       Baixando arquivos necessários para extração!
+echo.             Aguarde !
 echo.
 timeout 3 > nul
 mkdir adb\7Zip\
@@ -751,59 +760,59 @@ if exist "%cd%\adb\stock\system.img" ( echo . ) else ( goto AvisoDownloadStock)
 cls
 echo.
 echo.
-echo.			Vamos aos erase !
+echo.     Vamos aos erase !
 echo.
 echo.
 timeout 2 > nul
-		%fastboot% erase system_a || @echo "erase system_a error" && goto FlashStockError
-		%fastboot% erase system_b || @echo "erase system_a error" && goto FlashStockError
-		%fastboot% erase vendor_a || @echo "erase vendor_a error" && goto FlashStockError
-		%fastboot% erase vendor_b || @echo "erase vendor_a error" && goto FlashStockError
-		%fastboot% erase cache
-		%fastboot% erase userdata
-		%fastboot% -w 
+    %fastboot% erase system_a || @echo "erase system_a error" && goto FlashStockError
+    %fastboot% erase system_b || @echo "erase system_a error" && goto FlashStockError
+    %fastboot% erase vendor_a || @echo "erase vendor_a error" && goto FlashStockError
+    %fastboot% erase vendor_b || @echo "erase vendor_a error" && goto FlashStockError
+    %fastboot% erase cache
+    %fastboot% erase userdata
+    %fastboot% -w 
 cls
-		%fastboot%  flash bluetooth_a "%~dp0\adb\stock\bluetooth.img" || @echo "Flash bluetooth_a error" && goto FlashStockError
-		%fastboot%  flash bluetooth_b "%~dp0\adb\stock\bluetooth.img" || @echo "Flash bluetooth_b error" && goto FlashStockError
-		%fastboot%  flash devcfg_a "%~dp0\adb\stock\devcfg.img" || @echo "Flash devcfg_a error" && goto FlashStockError
-		%fastboot%  flash devcfg_b "%~dp0\adb\stock\devcfg.img" || @echo "Flash devcfg_b error" && goto FlashStockError
-		%fastboot%  flash dsp_a "%~dp0\adb\stock\dsp.img" || @echo "Flash dsp_a error" && goto FlashStockError
-		%fastboot%  flash dsp_b "%~dp0\adb\stock\dsp.img" || @echo "Flash dsp_b error" && goto FlashStockError
-		%fastboot%  flash modem_a "%~dp0\adb\stock\modem.img" || @echo "Flash modem_a error" && goto FlashStockError
-		%fastboot%  flash modem_b "%~dp0\adb\stock\modem.img" || @echo "Flash modem_b error" && goto FlashStockError
-		%fastboot%  flash xbl_a "%~dp0\adb\stock\xbl.img" || @echo "Flash xbl_a error" && goto FlashStockError
-		%fastboot%  flash xbl_b "%~dp0\adb\stock\xbl.img" || @echo "Flash xbl_b error" && goto FlashStockError
-		%fastboot%  flash pmic_a "%~dp0\adb\stock\pmic.img" || @echo "Flash pmic_a error" && goto FlashStockError
-		%fastboot%  flash pmic_b "%~dp0\adb\stock\pmic.img" || @echo "Flash pmic_b error" && goto FlashStockError
-		%fastboot%  flash rpm_a "%~dp0\adb\stock\rpm.img" || @echo "Flash rpm_a error" && goto FlashStockError
-		%fastboot%  flash rpm_b "%~dp0\adb\stock\rpm.img" || @echo "Flash rpm_b error" && goto FlashStockError
-		%fastboot%  flash tz_a "%~dp0\adb\stock\tz.img" || @echo "Flash tz_a error" && goto FlashStockError
-		%fastboot%  flash tz_b "%~dp0\adb\stock\tz.img" || @echo "Flash tz_b error" && goto FlashStockError
-		%fastboot%  flash hyp_a "%~dp0\adb\stock\hyp.img" || @echo "Flash hyp_a error" && goto FlashStockError
-		%fastboot%  flash hyp_b "%~dp0\adb\stock\hyp.img" || @echo "Flash hyp_b error" && goto FlashStockError
-		%fastboot%  flash keymaster_a "%~dp0\adb\stock\keymaster.img" || @echo "Flash keymaster_a error" && goto FlashStockError
-		%fastboot%  flash keymaster_b "%~dp0\adb\stock\keymaster.img" || @echo "Flash keymaster_b error" && goto FlashStockError
-		%fastboot%  flash cmnlib64_a "%~dp0\adb\stock\cmnlib64.img" || @echo "Flash cmnlib64_a error" && goto FlashStockError
-		%fastboot%  flash cmnlib64_b "%~dp0\adb\stock\cmnlib64.img" || @echo "Flash cmnlib64_b error" && goto FlashStockError
-		%fastboot%  flash cmnlib_a "%~dp0\adb\stock\cmnlib.img" || @echo "Flash cmnlib_a error" && goto FlashStockError
-		%fastboot%  flash cmnlib_b "%~dp0\adb\stock\cmnlib.img" || @echo "Flash cmnlib_b error" && goto FlashStockError
-		%fastboot%  flash abl_a "%~dp0\adb\stock\abl.elf" || @echo "Flash abl_a error" && goto FlashStockError
-		%fastboot%  flash abl_b "%~dp0\adb\stock\abl.elf" || @echo "Flash abl_b error" && goto FlashStockError
-		%fastboot%  flash boot_a "%~dp0\adb\stock\boot.img" || @echo "Flash boot_a error" && goto FlashStockError
-		%fastboot%  flash boot_b "%~dp0\adb\stock\boot.img" || @echo "Flash boot_b error" && goto FlashStockError
-		%fastboot%  flash system_a "%~dp0\adb\stock\system.img" || @echo "Flash system_a error" && goto FlashStockError
-		%fastboot%  flash system_b "%~dp0\adb\stock\system.img" || @echo "Flash system_b error" && goto FlashStockError
-		%fastboot%  flash vendor_a "%~dp0\adb\stock\vendor.img" || @echo "Flash vendor_a error" && goto FlashStockError
-		%fastboot%  flash vendor_b "%~dp0\adb\stock\vendor.img" || @echo "Flash vendor_b error" && goto FlashStockError
-		%fastboot%  flash mdtp_a "%~dp0\adb\stock\mdtp.img" || @echo "Flash mdtp_a error" && goto FlashStockError
-		%fastboot%  flash mdtp_b "%~dp0\adb\stock\mdtp.img" || @echo "Flash mdtp_b error" && goto FlashStockError
-		%fastboot%  flash splash "%~dp0\adb\stock\splash.img" || @echo "Flash splash error" && goto FlashStockError
-		%fastboot%  flash mdtpsecapp_a "%~dp0\adb\stock\mdtpsecapp.img" || @echo "Flash mdtpsecapp_a error" && goto FlashStockError
-		%fastboot%  flash mdtpsecapp_b "%~dp0\adb\stock\mdtpsecapp.img" || @echo "Flash mdtpsecapp_b error" && goto FlashStockError
-		%fastboot%  flash storsec "%~dp0\adb\stock\storsec.mbn" || @echo "Flash storsec error" && goto FlashStockError
-		%fastboot% reboot-bootloader
-		%fastboot% -w
-		%fastboot% reboot 
+    %fastboot%  flash bluetooth_a "%~dp0\adb\stock\bluetooth.img" || @echo "Flash bluetooth_a error" && goto FlashStockError
+    %fastboot%  flash bluetooth_b "%~dp0\adb\stock\bluetooth.img" || @echo "Flash bluetooth_b error" && goto FlashStockError
+    %fastboot%  flash devcfg_a "%~dp0\adb\stock\devcfg.img" || @echo "Flash devcfg_a error" && goto FlashStockError
+    %fastboot%  flash devcfg_b "%~dp0\adb\stock\devcfg.img" || @echo "Flash devcfg_b error" && goto FlashStockError
+    %fastboot%  flash dsp_a "%~dp0\adb\stock\dsp.img" || @echo "Flash dsp_a error" && goto FlashStockError
+    %fastboot%  flash dsp_b "%~dp0\adb\stock\dsp.img" || @echo "Flash dsp_b error" && goto FlashStockError
+    %fastboot%  flash modem_a "%~dp0\adb\stock\modem.img" || @echo "Flash modem_a error" && goto FlashStockError
+    %fastboot%  flash modem_b "%~dp0\adb\stock\modem.img" || @echo "Flash modem_b error" && goto FlashStockError
+    %fastboot%  flash xbl_a "%~dp0\adb\stock\xbl.img" || @echo "Flash xbl_a error" && goto FlashStockError
+    %fastboot%  flash xbl_b "%~dp0\adb\stock\xbl.img" || @echo "Flash xbl_b error" && goto FlashStockError
+    %fastboot%  flash pmic_a "%~dp0\adb\stock\pmic.img" || @echo "Flash pmic_a error" && goto FlashStockError
+    %fastboot%  flash pmic_b "%~dp0\adb\stock\pmic.img" || @echo "Flash pmic_b error" && goto FlashStockError
+    %fastboot%  flash rpm_a "%~dp0\adb\stock\rpm.img" || @echo "Flash rpm_a error" && goto FlashStockError
+    %fastboot%  flash rpm_b "%~dp0\adb\stock\rpm.img" || @echo "Flash rpm_b error" && goto FlashStockError
+    %fastboot%  flash tz_a "%~dp0\adb\stock\tz.img" || @echo "Flash tz_a error" && goto FlashStockError
+    %fastboot%  flash tz_b "%~dp0\adb\stock\tz.img" || @echo "Flash tz_b error" && goto FlashStockError
+    %fastboot%  flash hyp_a "%~dp0\adb\stock\hyp.img" || @echo "Flash hyp_a error" && goto FlashStockError
+    %fastboot%  flash hyp_b "%~dp0\adb\stock\hyp.img" || @echo "Flash hyp_b error" && goto FlashStockError
+    %fastboot%  flash keymaster_a "%~dp0\adb\stock\keymaster.img" || @echo "Flash keymaster_a error" && goto FlashStockError
+    %fastboot%  flash keymaster_b "%~dp0\adb\stock\keymaster.img" || @echo "Flash keymaster_b error" && goto FlashStockError
+    %fastboot%  flash cmnlib64_a "%~dp0\adb\stock\cmnlib64.img" || @echo "Flash cmnlib64_a error" && goto FlashStockError
+    %fastboot%  flash cmnlib64_b "%~dp0\adb\stock\cmnlib64.img" || @echo "Flash cmnlib64_b error" && goto FlashStockError
+    %fastboot%  flash cmnlib_a "%~dp0\adb\stock\cmnlib.img" || @echo "Flash cmnlib_a error" && goto FlashStockError
+    %fastboot%  flash cmnlib_b "%~dp0\adb\stock\cmnlib.img" || @echo "Flash cmnlib_b error" && goto FlashStockError
+    %fastboot%  flash abl_a "%~dp0\adb\stock\abl.elf" || @echo "Flash abl_a error" && goto FlashStockError
+    %fastboot%  flash abl_b "%~dp0\adb\stock\abl.elf" || @echo "Flash abl_b error" && goto FlashStockError
+    %fastboot%  flash boot_a "%~dp0\adb\stock\boot.img" || @echo "Flash boot_a error" && goto FlashStockError
+    %fastboot%  flash boot_b "%~dp0\adb\stock\boot.img" || @echo "Flash boot_b error" && goto FlashStockError
+    %fastboot%  flash system_a "%~dp0\adb\stock\system.img" || @echo "Flash system_a error" && goto FlashStockError
+    %fastboot%  flash system_b "%~dp0\adb\stock\system.img" || @echo "Flash system_b error" && goto FlashStockError
+    %fastboot%  flash vendor_a "%~dp0\adb\stock\vendor.img" || @echo "Flash vendor_a error" && goto FlashStockError
+    %fastboot%  flash vendor_b "%~dp0\adb\stock\vendor.img" || @echo "Flash vendor_b error" && goto FlashStockError
+    %fastboot%  flash mdtp_a "%~dp0\adb\stock\mdtp.img" || @echo "Flash mdtp_a error" && goto FlashStockError
+    %fastboot%  flash mdtp_b "%~dp0\adb\stock\mdtp.img" || @echo "Flash mdtp_b error" && goto FlashStockError
+    %fastboot%  flash splash "%~dp0\adb\stock\splash.img" || @echo "Flash splash error" && goto FlashStockError
+    %fastboot%  flash mdtpsecapp_a "%~dp0\adb\stock\mdtpsecapp.img" || @echo "Flash mdtpsecapp_a error" && goto FlashStockError
+    %fastboot%  flash mdtpsecapp_b "%~dp0\adb\stock\mdtpsecapp.img" || @echo "Flash mdtpsecapp_b error" && goto FlashStockError
+    %fastboot%  flash storsec "%~dp0\adb\stock\storsec.mbn" || @echo "Flash storsec error" && goto FlashStockError
+    %fastboot% reboot-bootloader
+    %fastboot% -w
+    %fastboot% reboot 
 cls
 title Deu certo !
 echo.
@@ -943,41 +952,43 @@ echo      │      ┌───────────────────�
 echo      ├──────┤            Twrp jasmine_sprout            ├────────────┤                Twrp wayne                 │
 echo      │      └───────────────────────────────────────────┤    M  i    └───────────────────────────────────────────┤
 echo      │      ┌───────────────────────────────────────────┤  (A2  6X)  ┌───────────────────────────────────────────┤
-echo      ├──────┤ 1 ) TWRP 3.2.3-0                          ├────────────┤ 4 ) TWRP 3.2.3-0                          │
+echo      ├──────┤ 1 ) TWRP 3.2.3-0                          ├────────────┤ 7 ) TWRP 3.2.3-0                          │
 echo      │      └───────────────────────────────────────────┤            └───────────────────────────────────────────┤
 echo      │      ┌───────────────────────────────────────────┤            ┌───────────────────────────────────────────┤
-echo      ├──────┤ 2 ) TWRP 3.3.0-0                          ├────────────┤ 5 ) TWRP 3.2.3-1                          │
+echo      ├──────┤ 2 ) TWRP 3.3.0-0                          ├────────────┤ 8 ) TWRP 3.2.3-1                          │
 echo      │      └───────────────────────────────────────────┤            └───────────────────────────────────────────┤
 echo      │      ┌───────────────────────────────────────────┤            ┌───────────────────────────────────────────┤
-echo      ├──────┤ 3 ) TWRP 3.3.1-0                          ├────────────┤ 6 ) TWRP 3.3.0-0                          │
-echo      │      └───────────────────────────────────────────┘            └───────────────────────────────────────────┤
-echo      │                                                               ┌───────────────────────────────────────────┤
-echo      ├───────────────────────────────────────────────────────────────┤ 7 ) TWRP 3.3.1-0                          │
-echo      │                                                               └───────────────────────────────────────────┤
-echo      │                                                               ┌───────────────────────────────────────────┤
-echo      ├───────────────────────────────────────────────────────────────┤ 8 ) ORANGE FOX UNNOFICIAL                 │
-echo      │                                                               └───────────────────────────────────────────┤
-echo      │                                                                                                           │
-echo      │                                                                                                           │
+echo      ├──────┤ 3 ) TWRP 3.3.1-0                          ├────────────┤ 9 ) TWRP 3.3.0-0                          │
+echo      │      └───────────────────────────────────────────┤            └───────────────────────────────────────────┤
+echo      │      ┌───────────────────────────────────────────┤            ┌───────────────────────────────────────────┤
+echo      ├──────┤ 4 ) TWRP 3.3.1-5                          ├────────────┤ 10 ) TWRP 3.3.1-0                         │
+echo      │      └───────────────────────────────────────────┤            └───────────────────────────────────────────┤
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 5 ) TWRP 3.4.0-0                          │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 6 ) TWRP 3.5.0-0                          │                                                        │
+echo      │      └───────────────────────────────────────────┘                                                        │
 echo      │                                                               ┌───────────────────────────────────────────┤
 echo      └───────────────────────────────────────────────────────────────┤ E ) VOLTAR                                │
 echo                                                                      └───────────────────────────────────────────┘
-echo.
 set nb=
 set /p "nb=Digite o numero da opção que deseja %username% > "
- if '%nb%' == '1' goto TwrpBaguvix
- if '%nb%' == '2' goto TwrpHesoyan
- if '%nb%' == '3' goto TwrpUzumymw
- if '%nb%' == '4' goto TwrpOneway
- if '%nb%' == '5' goto TwrpRunway
- if '%nb%' == '6' goto TwrpKicogeco
- if '%nb%' == '7' goto TwrpAezakmi
- if '%nb%' == '8' goto Orange
+ if '%nb%' == '1' goto TwrpJasmineUm
+ if '%nb%' == '2' goto TwrpJasmineDois
+ if '%nb%' == '3' goto TwrpJasmineTres
+ if '%nb%' == '4' goto TwrpJasmineQuatro
+ if '%nb%' == '5' goto TwrpJasmineCinco
+ if '%nb%' == '6' goto TwrpJasmineSeis
+ if '%nb%' == '7' goto TwrpWayneUm
+ if '%nb%' == '8' goto TwrpWayneDois
+ if '%nb%' == '9' goto TwrpWayneTres
+ if '%nb%' == '10' goto TwrpWayneQuatro
  if '%nb%' == 'E' goto Menu
  if '%nb%' == 'e' goto Menu
 goto Twrp
-:Twrpbaguvix
-title Twrp jasmine Versão 3.2.3-0 !
+:TwrpJasmineUm
+title Twrp jasmine Versão 3.2.3-0
 %core%
 cls
 echo.
@@ -1011,26 +1022,26 @@ echo.
 echo.
 set nb= 
 set /p "nb=Digite algo aqui %username% >"
-if '%nb%' == '1' goto GotoTwrpbaguvix
-if '%nb%' == '2' goto DownTwrpbaguvix
-if '%nb%' == '3' goto DelTwrpbaguvix
-if '%nb%' == '4' goto VerTwrpbaguvix
-if '%nb%' == '5' goto RebootBaguvix
+if '%nb%' == '1' goto GotoTwrpJasmineUm
+if '%nb%' == '2' goto DownTwrpJasmineUm
+if '%nb%' == '3' goto DelTwrpJasmineUm
+if '%nb%' == '4' goto VerTwrpJasmineUm
+if '%nb%' == '5' goto RebootJasmineUm
 if '%nb%' == 'E' goto Twrp
 if '%nb%' == 'e' goto Twrp
-goto Twrpbaguvix
-:RebootBaguvix
+goto TwrpJasmineUm
+:RebootJasmineUm
 cls
 %fastboot% reboot
-goto TwrpBaguvix
+goto TwrpJasmineUm
 
 :: Boot no Twrp 
-:GotoTwrpbaguvix
+:GotoTwrpJasmineUm
 %core%
-title Boot no Twrp 3.2.3-0 jasmine_sprout
+title Boot no Twrp 3.2.3-0jasmine_sprout
 if exist "%cd%\adb\file\twrp\jasmine\3.2.3-0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto Twrpbaguvix  )
+goto TwrpJasmineUm  )
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
@@ -1045,20 +1056,20 @@ echo      │                                                                   
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
 echo.
-%fastboot% boot "%~dp0\adb\file\twrp\jasmine\3.2.3-0.img" || @echo "boot error" && goto TwrpbaguvixError
+%fastboot% boot "%~dp0\adb\file\twrp\jasmine\3.2.3-0.img" || @echo "boot error" && goto TwrpJasmineUmError
 echo.
 echo.
 echo.
 echo Pressione qualquer tecla para voltar
 echo.
 pause >nul
-goto Twrpbaguvix
-:DownTwrpbaguvix
+goto TwrpJasmineUm
+:DownTwrpJasmineUm
 color 30
-title Download Twrp 3.2.3-0 jasmine_sprout
+title Download Twrp 3.2.3-0jasmine_sprout
 if exist "%cd%\adb\file\twrp\jasmine\3.2.3-0.img" (  echo MsgBox "Pare de frescura, ce ja baixou o negocio e ta ai querendo baixar denovo, vai flashea isso ai rapa! ",16,"Vai canta seu bosta " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto Twrpbaguvix ) else ( echo . )
+goto TwrpJasmineUm ) else ( echo . )
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
@@ -1078,34 +1089,34 @@ echo      └──────────────────────�
 echo.
 echo.
 mkdir adb\file\twrp\jasmine\
-Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%baguvix%', 'adb\file\twrp\jasmine\3.2.3-0.img') }"
+Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%JasmineUm%', 'adb\file\twrp\jasmine\3.2.3-0.img') }"
 if exist "%cd%\adb\file\twrp\jasmine\3.2.3-0.img" ( echo. ) else (   echo MsgBox "Deu erro na parada, o arquivo nao foi baixado! ",16,"Deu erro, vishhh" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto Twrpbaguvix )
+goto TwrpJasmineUm )
 echo.
 echo MsgBox "Ok, arquivo baixado ",16,"Vai canta seu bosta" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 echo.
-goto Twrpbaguvix
-:DelTwrpbaguvix
+goto TwrpJasmineUm
+:DelTwrpJasmineUm
 title Deletando Twrp 3.2.3-0
 %core%
 cls
 if exist "%cd%\adb\file\twrp\jasmine\3.2.3-0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto Twrpbaguvix )
+goto TwrpJasmineUm )
 del adb\file\twrp\jasmine\3.2.3-0.img
 echo MsgBox "Ok, arquivo excluido ",16,"Excluir Twrp" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto Twrpbaguvix
-:VerTwrpbaguvix
+goto TwrpJasmineUm
+:VerTwrpJasmineUm
 cls
 if exist "%cd%\adb\file\twrp\jasmine\3.2.3-0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto Twrpbaguvix )
+goto TwrpJasmineUm )
 start %cd%\adb\file\twrp\jasmine\
-goto Twrpbaguvix
-:TwrpbaguvixError
+goto TwrpJasmineUm
+:TwrpJasmineUmError
 title ERROOOOOOOOOOOOOOOOOOOOOOOOOOOooooo !
 color 40
 cls
@@ -1139,9 +1150,9 @@ echo.
 pause>nul
 echo.
 echo.
-goto Twrpbaguvix
-:TwrpHesoyan
-title Twrp jasmine Versão 3.3.0-0 !
+goto TwrpJasmineUm
+:TwrpJasmineDois
+title Twrp jasmine Versão 3.3.0-0
 %core%
 cls
 echo.
@@ -1166,7 +1177,6 @@ echo      │      └───────────────────�
 echo      │      ┌───────────────────────────────────────────┤                                                        │
 echo      ├──────┤ 5 ) REBOOT SYSTEM                         │                                                        │
 echo      │      └───────────────────────────────────────────┘                                                        │
-echo      │                                                                                                           │
 echo      │                                                               ┌───────────────────────────────────────────┤
 echo      └───────────────────────────────────────────────────────────────┤ E ) VOLTAR                                │
 echo                                                                      └───────────────────────────────────────────┘
@@ -1176,25 +1186,26 @@ echo.
 echo.
 set nb= 
 set /p "nb=Digite algo aqui %username% >"
-if '%nb%' == '1' goto GotoTwrpHesoyan
-if '%nb%' == '2' goto DownTwrpHesoyan
-if '%nb%' == '3' goto DelTwrpHesoyan
-if '%nb%' == '4' goto VerTwrpHesoyan
-if '%nb%' == '5' goto RebootHesoyan
+if '%nb%' == '1' goto GotoTwrpJasmineDois
+if '%nb%' == '2' goto DownTwrpJasmineDois
+if '%nb%' == '3' goto DelTwrpJasmineDois
+if '%nb%' == '4' goto VerTwrpJasmineDois
+if '%nb%' == '5' goto RebootJasmineDois
 if '%nb%' == 'E' goto Twrp
 if '%nb%' == 'e' goto Twrp
-goto TwrpHesoyan
-:RebootHesoyan
+goto TwrpJasmineDois
+:RebootJasmineDois
 cls
 %fastboot% reboot
-goto TwrpHesoyan
+goto TwrpJasmineDois
+
 :: Boot no Twrp 
-:GotoTwrpHesoyan
+:GotoTwrpJasmineDois
 %core%
-title Boot no Twrp 3.3.0-0 jasmine_sprout
+title Boot no Twrp 3.3.0-0jasmine_sprout
 if exist "%cd%\adb\file\twrp\jasmine\3.3.0-0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpHesoyan  )
+goto TwrpJasmineDois  )
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
@@ -1209,20 +1220,20 @@ echo      │                                                                   
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
 echo.
-%fastboot% boot "%~dp0\adb\file\twrp\jasmine\3.3.0-0.img" || @echo "boot error" && goto TwrpHesoyanError
+%fastboot% boot "%~dp0\adb\file\twrp\jasmine\3.3.0-0.img" || @echo "boot error" && goto TwrpJasmineDoisError
 echo.
 echo.
 echo.
 echo Pressione qualquer tecla para voltar
 echo.
 pause >nul
-goto TwrpHesoyan
-:DownTwrpHesoyan
+goto TwrpJasmineDois
+:DownTwrpJasmineDois
 color 30
-title Download Twrp 3.3.0-0 jasmine_sprout
+title Download Twrp 3.3.0-0jasmine_sprout
 if exist "%cd%\adb\file\twrp\jasmine\3.3.0-0.img" (  echo MsgBox "Pare de frescura, ce ja baixou o negocio e ta ai querendo baixar denovo, vai flashea isso ai rapa! ",16,"Vai canta seu bosta " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpHesoyan ) else ( echo . )
+goto TwrpJasmineDois ) else ( echo . )
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
@@ -1242,34 +1253,34 @@ echo      └──────────────────────�
 echo.
 echo.
 mkdir adb\file\twrp\jasmine\
-Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%hesoyan%', 'adb\file\twrp\jasmine\3.3.0-0.img') }"
+Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%JasmineDois%', 'adb\file\twrp\jasmine\3.3.0-0.img') }"
 if exist "%cd%\adb\file\twrp\jasmine\3.3.0-0.img" ( echo. ) else (   echo MsgBox "Deu erro na parada, o arquivo nao foi baixado! ",16,"Deu erro, vishhh" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpHesoyan )
+goto TwrpJasmineDois )
 echo.
 echo MsgBox "Ok, arquivo baixado ",16,"Vai canta seu bosta" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 echo.
-goto TwrpHesoyan
-:DelTwrpHesoyan
+goto TwrpJasmineDois
+:DelTwrpJasmineDois
 title Deletando Twrp 3.3.0-0
 %core%
 cls
 if exist "%cd%\adb\file\twrp\jasmine\3.3.0-0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpHesoyan )
+goto TwrpJasmineDois )
 del adb\file\twrp\jasmine\3.3.0-0.img
 echo MsgBox "Ok, arquivo excluido ",16,"Excluir Twrp" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpHesoyan
-:VerTwrpHesoyan
+goto TwrpJasmineDois
+:VerTwrpJasmineDois
 cls
 if exist "%cd%\adb\file\twrp\jasmine\3.3.0-0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpHesoyan )
+goto TwrpJasmineDois )
 start %cd%\adb\file\twrp\jasmine\
-goto TwrpHesoyan
-:TwrpHesoyanError
+goto TwrpJasmineDois
+:TwrpJasmineDoisError
 title ERROOOOOOOOOOOOOOOOOOOOOOOOOOOooooo !
 color 40
 cls
@@ -1303,9 +1314,9 @@ echo.
 pause>nul
 echo.
 echo.
-goto TwrpHesoyan
-:TwrpUzumymw
-title Twrp jasmine Versão 3.3.1-0 !
+goto TwrpJasmineDois
+:TwrpJasmineTres
+title Twrp jasmine Versão 3.3.1-0
 %core%
 cls
 echo.
@@ -1330,7 +1341,6 @@ echo      │      └───────────────────�
 echo      │      ┌───────────────────────────────────────────┤                                                        │
 echo      ├──────┤ 5 ) REBOOT SYSTEM                         │                                                        │
 echo      │      └───────────────────────────────────────────┘                                                        │
-echo      │                                                                                                           │
 echo      │                                                               ┌───────────────────────────────────────────┤
 echo      └───────────────────────────────────────────────────────────────┤ E ) VOLTAR                                │
 echo                                                                      └───────────────────────────────────────────┘
@@ -1340,25 +1350,26 @@ echo.
 echo.
 set nb= 
 set /p "nb=Digite algo aqui %username% >"
-if '%nb%' == '1' goto GotoTwrpUzumymw
-if '%nb%' == '2' goto DownTwrpUzumymw
-if '%nb%' == '3' goto DelTwrpUzumymw
-if '%nb%' == '4' goto VerTwrpUzumymw
-if '%nb%' == '5' goto RebootUzumymw
+if '%nb%' == '1' goto GotoTwrpJasmineTres
+if '%nb%' == '2' goto DownTwrpJasmineTres
+if '%nb%' == '3' goto DelTwrpJasmineTres
+if '%nb%' == '4' goto VerTwrpJasmineTres
+if '%nb%' == '5' goto RebootJasmineTres
 if '%nb%' == 'E' goto Twrp
 if '%nb%' == 'e' goto Twrp
-goto TwrpUzumymw
-:: Boot no Twrp 
-:RebootUzumymw
+goto TwrpJasmineTres
+:RebootJasmineTres
 cls
-%fasboot% reboot
-goto TwrpUzumymw
-:GotoTwrpUzumymw
+%fastboot% reboot
+goto TwrpJasmineTres
+
+:: Boot no Twrp 
+:GotoTwrpJasmineTres
 %core%
-title Boot no Twrp 3.3.1-0 jasmine_sprout
+title Boot no Twrp 3.3.1-0jasmine_sprout
 if exist "%cd%\adb\file\twrp\jasmine\3.3.1-0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpUzumymw  )
+goto TwrpJasmineTres  )
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
@@ -1373,20 +1384,20 @@ echo      │                                                                   
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
 echo.
-%fastboot% boot "%~dp0\adb\file\twrp\jasmine\3.3.1-0.img" || @echo "boot error" && goto TwrpUzumymwError
+%fastboot% boot "%~dp0\adb\file\twrp\jasmine\3.3.1-0.img" || @echo "boot error" && goto TwrpJasmineTresError
 echo.
 echo.
 echo.
 echo Pressione qualquer tecla para voltar
 echo.
 pause >nul
-goto TwrpUzumymw
-:DownTwrpUzumymw
+goto TwrpJasmineTres
+:DownTwrpJasmineTres
 color 30
-title Download Twrp 3.3.1-0 jasmine_sprout
+title Download Twrp 3.3.1-0jasmine_sprout
 if exist "%cd%\adb\file\twrp\jasmine\3.3.1-0.img" (  echo MsgBox "Pare de frescura, ce ja baixou o negocio e ta ai querendo baixar denovo, vai flashea isso ai rapa! ",16,"Vai canta seu bosta " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpUzumymw ) else ( echo . )
+goto TwrpJasmineTres ) else ( echo . )
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
@@ -1406,34 +1417,34 @@ echo      └──────────────────────�
 echo.
 echo.
 mkdir adb\file\twrp\jasmine\
-Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%Uzumymw%', 'adb\file\twrp\jasmine\3.3.1-0.img') }"
+Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%JasmineTres%', 'adb\file\twrp\jasmine\3.3.1-0.img') }"
 if exist "%cd%\adb\file\twrp\jasmine\3.3.1-0.img" ( echo. ) else (   echo MsgBox "Deu erro na parada, o arquivo nao foi baixado! ",16,"Deu erro, vishhh" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpUzumymw )
+goto TwrpJasmineTres )
 echo.
 echo MsgBox "Ok, arquivo baixado ",16,"Vai canta seu bosta" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 echo.
-goto TwrpUzumymw
-:DelTwrpUzumymw
+goto TwrpJasmineTres
+:DelTwrpJasmineTres
 title Deletando Twrp 3.3.1-0
 %core%
 cls
 if exist "%cd%\adb\file\twrp\jasmine\3.3.1-0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpUzumymw )
+goto TwrpJasmineTres )
 del adb\file\twrp\jasmine\3.3.1-0.img
 echo MsgBox "Ok, arquivo excluido ",16,"Excluir Twrp" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpUzumymw
-:VerTwrpUzumymw
+goto TwrpJasmineTres
+:VerTwrpJasmineTres
 cls
 if exist "%cd%\adb\file\twrp\jasmine\3.3.1-0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpUzumymw )
+goto TwrpJasmineTres )
 start %cd%\adb\file\twrp\jasmine\
-goto TwrpUzumymw
-:TwrpUzumymwError
+goto TwrpJasmineTres
+:TwrpJasmineTresError
 title ERROOOOOOOOOOOOOOOOOOOOOOOOOOOooooo !
 color 40
 cls
@@ -1467,8 +1478,500 @@ echo.
 pause>nul
 echo.
 echo.
-goto TwrpUzumymw
-:TwrpOneway
+goto TwrpJasmineTres
+:TwrpJasmineQuatro
+title Twrp jasmine Versão 3.3.1-5
+%core%
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │      ┌───────────────────────────────────────────┐                                                        │
+echo      ├──────┤ 1 ) BOOT NO TWRP 3.3.1-5                  │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 2 ) DOWNLOAD PARA CASO ESTAR CORROMPIDO   │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 3 ) DELETAR ARQUIVO                       │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 4 ) VERIFICAR ARQUIVO                     │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 5 ) REBOOT SYSTEM                         │                                                        │
+echo      │      └───────────────────────────────────────────┘                                                        │
+echo      │                                                               ┌───────────────────────────────────────────┤
+echo      └───────────────────────────────────────────────────────────────┤ E ) VOLTAR                                │
+echo                                                                      └───────────────────────────────────────────┘
+echo.
+if exist "%cd%\adb\file\twrp\jasmine\3.3.1-5.img" ( call :cortexto 0a " Ok, parece que o arquivo existe. " ) else ( call :cortexto 0c "Baixe o arquivo. " )
+echo.
+echo.
+set nb= 
+set /p "nb=Digite algo aqui %username% >"
+if '%nb%' == '1' goto GotoTwrpJasmineQuatro
+if '%nb%' == '2' goto DownTwrpJasmineQuatro
+if '%nb%' == '3' goto DelTwrpJasmineQuatro
+if '%nb%' == '4' goto VerTwrpJasmineQuatro
+if '%nb%' == '5' goto RebootJasmineQuatro
+if '%nb%' == 'E' goto Twrp
+if '%nb%' == 'e' goto Twrp
+goto TwrpJasmineQuatro
+:RebootJasmineQuatro
+cls
+%fastboot% reboot
+goto TwrpJasmineQuatro
+
+:: Boot no Twrp 
+:GotoTwrpJasmineQuatro
+%core%
+title Boot no Twrp 3.3.1-5jasmine_sprout
+if exist "%cd%\adb\file\twrp\jasmine\3.3.1-5.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto TwrpJasmineQuatro  )
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █  
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │                                                                                                           │
+echo      │           Boot no twrp jasmine_sprout  v 3.3.1-5                                                          │
+echo      │                                                                                                           │
+echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+echo.
+echo.
+%fastboot% boot "%~dp0\adb\file\twrp\jasmine\3.3.1-5.img" || @echo "boot error" && goto TwrpJasmineQuatroError
+echo.
+echo.
+echo.
+echo Pressione qualquer tecla para voltar
+echo.
+pause >nul
+goto TwrpJasmineQuatro
+:DownTwrpJasmineQuatro
+color 30
+title Download Twrp 3.3.1-5jasmine_sprout
+if exist "%cd%\adb\file\twrp\jasmine\3.3.1-5.img" (  echo MsgBox "Pare de frescura, ce ja baixou o negocio e ta ai querendo baixar denovo, vai flashea isso ai rapa! ",16,"Vai canta seu bosta " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto TwrpJasmineQuatro ) else ( echo . )
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █   
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │                                                                                                           │
+echo      │                          Baixando twrp jasmine_sprout v 3.3.1-5 aguarde...                                │
+echo      │                                                                                                           │
+echo      │               Eu vou te avisar quando o Download terminar, apenas aguarde e relaxa a ppk.                 │
+echo      │                                                                                                           │
+echo      │                                                                                                           │
+echo      │                                                                                                           │
+echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+echo.
+echo.
+mkdir adb\file\twrp\jasmine\
+Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%JasmineQuatro%', 'adb\file\twrp\jasmine\3.3.1-5.img') }"
+if exist "%cd%\adb\file\twrp\jasmine\3.3.1-5.img" ( echo. ) else (   echo MsgBox "Deu erro na parada, o arquivo nao foi baixado! ",16,"Deu erro, vishhh" >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto TwrpJasmineQuatro )
+echo.
+echo MsgBox "Ok, arquivo baixado ",16,"Vai canta seu bosta" >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+echo.
+goto TwrpJasmineQuatro
+:DelTwrpJasmineQuatro
+title Deletando Twrp 3.3.1-5
+%core%
+cls
+if exist "%cd%\adb\file\twrp\jasmine\3.3.1-5.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto TwrpJasmineQuatro )
+del adb\file\twrp\jasmine\3.3.1-5.img
+echo MsgBox "Ok, arquivo excluido ",16,"Excluir Twrp" >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto TwrpJasmineQuatro
+:VerTwrpJasmineQuatro
+cls
+if exist "%cd%\adb\file\twrp\jasmine\3.3.1-5.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto TwrpJasmineQuatro )
+start %cd%\adb\file\twrp\jasmine\
+goto TwrpJasmineQuatro
+:TwrpJasmineQuatroError
+title ERROOOOOOOOOOOOOOOOOOOOOOOOOOOooooo !
+color 40
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █  
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │                                                                                                           │
+echo      │           Errooooooooooooooooooooooooooooooooooooooooooooo.                                               │
+echo      │                                                                                                           │
+echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+echo.
+echo.
+echo.
+echo.
+echo.
+echo Deu erro, eu não sei direito o que pode ter acontecido, mas to aqui ! Posso te ajudar !
+echo.
+echo.
+echo.
+echo MsgBox " Deu erro amigo, clique em ok e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs  
+echo.
+echo.
+echo Pressione qualquer tecla para voltar !
+echo.
+echo.
+pause>nul
+echo.
+echo.
+goto TwrpJasmineQuatro
+:TwrpJasmineCinco
+title Twrp jasmine Versão 3.4.0-0
+%core%
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │      ┌───────────────────────────────────────────┐                                                        │
+echo      ├──────┤ 1 ) BOOT NO TWRP 3.4.0-0                  │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 2 ) DOWNLOAD PARA CASO ESTAR CORROMPIDO   │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 3 ) DELETAR ARQUIVO                       │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 4 ) VERIFICAR ARQUIVO                     │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 5 ) REBOOT SYSTEM                         │                                                        │
+echo      │      └───────────────────────────────────────────┘                                                        │
+echo      │                                                               ┌───────────────────────────────────────────┤
+echo      └───────────────────────────────────────────────────────────────┤ E ) VOLTAR                                │
+echo                                                                      └───────────────────────────────────────────┘
+echo.
+if exist "%cd%\adb\file\twrp\jasmine\3.4.0-0.img" ( call :cortexto 0a " Ok, parece que o arquivo existe. " ) else ( call :cortexto 0c "Baixe o arquivo. " )
+echo.
+echo.
+set nb= 
+set /p "nb=Digite algo aqui %username% >"
+if '%nb%' == '1' goto GotoTwrpJasmineCinco
+if '%nb%' == '2' goto DownTwrpJasmineCinco
+if '%nb%' == '3' goto DelTwrpJasmineCinco
+if '%nb%' == '4' goto VerTwrpJasmineCinco
+if '%nb%' == '5' goto RebootJasmineCinco
+if '%nb%' == 'E' goto Twrp
+if '%nb%' == 'e' goto Twrp
+goto TwrpJasmineCinco
+:RebootJasmineCinco
+cls
+%fastboot% reboot
+goto TwrpJasmineCinco
+
+:: Boot no Twrp 
+:GotoTwrpJasmineCinco
+%core%
+title Boot no Twrp 3.4.0-0jasmine_sprout
+if exist "%cd%\adb\file\twrp\jasmine\3.4.0-0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto TwrpJasmineCinco  )
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █  
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │                                                                                                           │
+echo      │           Boot no twrp jasmine_sprout  v 3.4.0-0                                                          │
+echo      │                                                                                                           │
+echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+echo.
+echo.
+%fastboot% boot "%~dp0\adb\file\twrp\jasmine\3.4.0-0.img" || @echo "boot error" && goto TwrpJasmineCincoError
+echo.
+echo.
+echo.
+echo Pressione qualquer tecla para voltar
+echo.
+pause >nul
+goto TwrpJasmineCinco
+:DownTwrpJasmineCinco
+color 30
+title Download Twrp 3.4.0-0jasmine_sprout
+if exist "%cd%\adb\file\twrp\jasmine\3.4.0-0.img" (  echo MsgBox "Pare de frescura, ce ja baixou o negocio e ta ai querendo baixar denovo, vai flashea isso ai rapa! ",16,"Vai canta seu bosta " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto TwrpJasmineCinco ) else ( echo . )
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █   
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │                                                                                                           │
+echo      │                          Baixando twrp jasmine_sprout v 3.4.0-0 aguarde...                                │
+echo      │                                                                                                           │
+echo      │               Eu vou te avisar quando o Download terminar, apenas aguarde e relaxa a ppk.                 │
+echo      │                                                                                                           │
+echo      │                                                                                                           │
+echo      │                                                                                                           │
+echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+echo.
+echo.
+mkdir adb\file\twrp\jasmine\
+Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%JasmineCinco%', 'adb\file\twrp\jasmine\3.4.0-0.img') }"
+if exist "%cd%\adb\file\twrp\jasmine\3.4.0-0.img" ( echo. ) else (   echo MsgBox "Deu erro na parada, o arquivo nao foi baixado! ",16,"Deu erro, vishhh" >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto TwrpJasmineCinco )
+echo.
+echo MsgBox "Ok, arquivo baixado ",16,"Vai canta seu bosta" >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+echo.
+goto TwrpJasmineCinco
+:DelTwrpJasmineCinco
+title Deletando Twrp 3.4.0-0
+%core%
+cls
+if exist "%cd%\adb\file\twrp\jasmine\3.4.0-0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto TwrpJasmineCinco )
+del adb\file\twrp\jasmine\3.4.0-0.img
+echo MsgBox "Ok, arquivo excluido ",16,"Excluir Twrp" >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto TwrpJasmineCinco
+:VerTwrpJasmineCinco
+cls
+if exist "%cd%\adb\file\twrp\jasmine\3.4.0-0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto TwrpJasmineCinco )
+start %cd%\adb\file\twrp\jasmine\
+goto TwrpJasmineCinco
+:TwrpJasmineCincoError
+title ERROOOOOOOOOOOOOOOOOOOOOOOOOOOooooo !
+color 40
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █  
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │                                                                                                           │
+echo      │           Errooooooooooooooooooooooooooooooooooooooooooooo.                                               │
+echo      │                                                                                                           │
+echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+echo.
+echo.
+echo.
+echo.
+echo.
+echo Deu erro, eu não sei direito o que pode ter acontecido, mas to aqui ! Posso te ajudar !
+echo.
+echo.
+echo.
+echo MsgBox " Deu erro amigo, clique em ok e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs  
+echo.
+echo.
+echo Pressione qualquer tecla para voltar !
+echo.
+echo.
+pause>nul
+echo.
+echo.
+goto TwrpJasmineCinco
+:TwrpJasmineSeis
+title Twrp jasmine Versão 3.5.0-0
+%core%
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │      ┌───────────────────────────────────────────┐                                                        │
+echo      ├──────┤ 1 ) BOOT NO TWRP 3.5.0-0                  │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 2 ) DOWNLOAD PARA CASO ESTAR CORROMPIDO   │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 3 ) DELETAR ARQUIVO                       │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 4 ) VERIFICAR ARQUIVO                     │                                                        │
+echo      │      └───────────────────────────────────────────┤                                                        │
+echo      │      ┌───────────────────────────────────────────┤                                                        │
+echo      ├──────┤ 5 ) REBOOT SYSTEM                         │                                                        │
+echo      │      └───────────────────────────────────────────┘                                                        │
+echo      │                                                               ┌───────────────────────────────────────────┤
+echo      └───────────────────────────────────────────────────────────────┤ E ) VOLTAR                                │
+echo                                                                      └───────────────────────────────────────────┘
+echo.
+if exist "%cd%\adb\file\twrp\jasmine\3.5.0-0.img" ( call :cortexto 0a " Ok, parece que o arquivo existe. " ) else ( call :cortexto 0c "Baixe o arquivo. " )
+echo.
+echo.
+set nb= 
+set /p "nb=Digite algo aqui %username% >"
+if '%nb%' == '1' goto GotoTwrpJasmineSeis
+if '%nb%' == '2' goto DownTwrpJasmineSeis
+if '%nb%' == '3' goto DelTwrpJasmineSeis
+if '%nb%' == '4' goto VerTwrpJasmineSeis
+if '%nb%' == '5' goto RebootJasmineSeis
+if '%nb%' == 'E' goto Twrp
+if '%nb%' == 'e' goto Twrp
+goto TwrpJasmineSeis
+:RebootJasmineSeis
+cls
+%fastboot% reboot
+goto TwrpJasmineSeis
+
+:: Boot no Twrp 
+:GotoTwrpJasmineSeis
+%core%
+title Boot no Twrp 3.5.0-0jasmine_sprout
+if exist "%cd%\adb\file\twrp\jasmine\3.5.0-0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto TwrpJasmineSeis  )
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █  
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │                                                                                                           │
+echo      │           Boot no twrp jasmine_sprout  v 3.5.0-0                                                          │
+echo      │                                                                                                           │
+echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+echo.
+echo.
+%fastboot% boot "%~dp0\adb\file\twrp\jasmine\3.5.0-0.img" || @echo "boot error" && goto TwrpJasmineSeisError
+echo.
+echo.
+echo.
+echo Pressione qualquer tecla para voltar
+echo.
+pause >nul
+goto TwrpJasmineSeis
+:DownTwrpJasmineSeis
+color 30
+title Download Twrp 3.5.0-0jasmine_sprout
+if exist "%cd%\adb\file\twrp\jasmine\3.5.0-0.img" (  echo MsgBox "Pare de frescura, ce ja baixou o negocio e ta ai querendo baixar denovo, vai flashea isso ai rapa! ",16,"Vai canta seu bosta " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto TwrpJasmineSeis ) else ( echo . )
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █   
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │                                                                                                           │
+echo      │                          Baixando twrp jasmine_sprout v 3.5.0-0 aguarde...                                │
+echo      │                                                                                                           │
+echo      │               Eu vou te avisar quando o Download terminar, apenas aguarde e relaxa a ppk.                 │
+echo      │                                                                                                           │
+echo      │                                                                                                           │
+echo      │                                                                                                           │
+echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+echo.
+echo.
+mkdir adb\file\twrp\jasmine\
+Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%JasmineSeis%', 'adb\file\twrp\jasmine\3.5.0-0.img') }"
+if exist "%cd%\adb\file\twrp\jasmine\3.5.0-0.img" ( echo. ) else (   echo MsgBox "Deu erro na parada, o arquivo nao foi baixado! ",16,"Deu erro, vishhh" >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto TwrpJasmineSeis )
+echo.
+echo MsgBox "Ok, arquivo baixado ",16,"Vai canta seu bosta" >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+echo.
+goto TwrpJasmineSeis
+:DelTwrpJasmineSeis
+title Deletando Twrp 3.5.0-0
+%core%
+cls
+if exist "%cd%\adb\file\twrp\jasmine\3.5.0-0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto TwrpJasmineSeis )
+del adb\file\twrp\jasmine\3.5.0-0.img
+echo MsgBox "Ok, arquivo excluido ",16,"Excluir Twrp" >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto TwrpJasmineSeis
+:VerTwrpJasmineSeis
+cls
+if exist "%cd%\adb\file\twrp\jasmine\3.5.0-0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs
+goto TwrpJasmineSeis )
+start %cd%\adb\file\twrp\jasmine\
+goto TwrpJasmineSeis
+:TwrpJasmineSeisError
+title ERROOOOOOOOOOOOOOOOOOOOOOOOOOOooooo !
+color 40
+cls
+echo.
+echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
+echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
+echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █  
+echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
+echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
+echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
+echo      │                                                                                                           │
+echo      │           Errooooooooooooooooooooooooooooooooooooooooooooo.                                               │
+echo      │                                                                                                           │
+echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+echo.
+echo.
+echo.
+echo.
+echo.
+echo Deu erro, eu não sei direito o que pode ter acontecido, mas to aqui ! Posso te ajudar !
+echo.
+echo.
+echo.
+echo MsgBox " Deu erro amigo, clique em ok e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
+start %cd%\adb\wyz.vbs  
+echo.
+echo.
+echo Pressione qualquer tecla para voltar !
+echo.
+echo.
+pause>nul
+echo.
+echo.
+goto TwrpJasmineSeis
+:TwrpWayneUm
 title Twrp wayne Versão 3.2.3-0 !
 %core%
 cls
@@ -1506,27 +2009,27 @@ echo.
 echo.
 set nb= 
 set /p "nb=Digite algo aqui %username% >"
-if '%nb%' == '1' goto GotoTwrpOneway
-if '%nb%' == '2' goto DownTwrpOneway
-if '%nb%' == '3' goto DelTwrpOneway
-if '%nb%' == '4' goto VerTwrpOneway
-if '%nb%' == '5' goto FlashTwrpOneway
-if '%nb%' == '6' goto RebootOneway
+if '%nb%' == '1' goto GotoTwrpWayneUm
+if '%nb%' == '2' goto DownTwrpWayneUm
+if '%nb%' == '3' goto DelTwrpWayneUm
+if '%nb%' == '4' goto VerTwrpWayneUm
+if '%nb%' == '5' goto FlashTwrpWayneUm
+if '%nb%' == '6' goto RebootWayneUm
 if '%nb%' == 'E' goto Twrp
 if '%nb%' == 'e' goto Twrp
-goto TwrpOneway
-:RebootOneway
+goto TwrpWayneUm
+:RebootWayneUm
 cls 
 %fastboot% reboot 
-goto TwrpOneway
+goto TwrpWayneUm
 
 :: Boot no Twrp 
-:GotoTwrpOneway
+:GotoTwrpWayneUm
 %core%
 title Boot no Twrp 3.2.3-0 wayne
 if exist "%cd%\adb\file\twrp\wayne\3.2.3-0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpOneway  )
+goto TwrpWayneUm  )
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
@@ -1541,20 +2044,20 @@ echo      │                                                                   
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
 echo.
-%fastboot% boot "%~dp0\adb\file\twrp\wayne\3.2.3-0.img" || @echo "boot error" && goto TwrpOnewayError
+%fastboot% boot "%~dp0\adb\file\twrp\wayne\3.2.3-0.img" || @echo "boot error" && goto TwrpWayneUmError
 echo.
 echo.
 echo.
 echo Pressione qualquer tecla para voltar
 echo.
 pause >nul
-goto TwrpOneway
-:DownTwrpOneway
+goto TwrpWayneUm
+:DownTwrpWayneUm
 color 30
 title Download Twrp 3.2.3-0 wayne
 if exist "%cd%\adb\file\twrp\wayne\3.2.3-0.img" (  echo MsgBox "Pare de frescura, ce ja baixou o negocio e ta ai querendo baixar denovo, vai flashea isso ai rapa! ",16,"Vai canta seu bosta " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpOneway ) else ( echo . )
+goto TwrpWayneUm ) else ( echo . )
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
@@ -1574,34 +2077,34 @@ echo      └──────────────────────�
 echo.
 echo.
 mkdir adb\file\twrp\wayne\
-Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%Oneway%', 'adb\file\twrp\wayne\3.2.3-0.img') }"
+Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%WayneUm%', 'adb\file\twrp\wayne\3.2.3-0.img') }"
 if exist "%cd%\adb\file\twrp\wayne\3.2.3-0.img" ( echo. ) else (   echo MsgBox "Deu erro na parada, o arquivo nao foi baixado! ",16,"Deu erro, vishhh" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpOneway )
+goto TwrpWayneUm )
 echo.
 echo MsgBox "Ok, arquivo baixado ",16,"Vai canta seu bosta" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 echo.
-goto TwrpOneway
-:DelTwrpOneway
+goto TwrpWayneUm
+:DelTwrpWayneUm
 title Deletando Twrp 3.2.3-0
 %core%
 cls
 if exist "%cd%\adb\file\twrp\wayne\3.2.3-0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpOneway )
+goto TwrpWayneUm )
 del adb\file\twrp\wayne\3.2.3-0.img
 echo MsgBox "Ok, arquivo excluido ",16,"Excluir Twrp" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpOneway
-:VerTwrpOneway
+goto TwrpWayneUm
+:VerTwrpWayneUm
 cls
 if exist "%cd%\adb\file\twrp\wayne\3.2.3-0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpOneway )
+goto TwrpWayneUm )
 start %cd%\adb\file\twrp\wayne\
-goto TwrpOneway
-:TwrpOnewayError
+goto TwrpWayneUm
+:TwrpWayneUmError
 title ERROOOOOOOOOOOOOOOOOOOOOOOOOOOooooo !
 color 40
 cls
@@ -1635,13 +2138,13 @@ echo.
 pause>nul
 echo.
 echo.
-goto TwrpOneway
-:FlashTwrpOneway
+goto TwrpWayneUm
+:FlashTwrpWayneUm
 %core%
 title Flash do Twrp 3.2.3-0 wayne
 if exist "%cd%\adb\file\twrp\wayne\3.2.3-0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpOneway  )
+goto TwrpWayneUm  )
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
@@ -1656,15 +2159,15 @@ echo      │                                                                   
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
 echo.
-%fastboot% flash recovery "%~dp0\adb\file\twrp\wayne\3.2.3-0.img" || @echo "flash recovery error" && goto TwrpOnewayError
+%fastboot% flash recovery "%~dp0\adb\file\twrp\wayne\3.2.3-0.img" || @echo "flash recovery error" && goto TwrpWayneUmError
 echo.
 echo.
 echo.
 echo Pressione qualquer tecla para voltar
 echo.
 pause >nul
-goto TwrpOneway
-:TwrpRunway
+goto TwrpWayneUm
+:TwrpWayneDois
 title Twrp wayne Versão 3.2.3-1 !
 %core%
 cls
@@ -1702,27 +2205,27 @@ echo.
 echo.
 set nb= 
 set /p "nb=Digite algo aqui %username% >"
-if '%nb%' == '1' goto GotoTwrpRunway
-if '%nb%' == '2' goto DownTwrpRunway
-if '%nb%' == '3' goto DelTwrpRunway
-if '%nb%' == '4' goto VerTwrpRunway
-if '%nb%' == '5' goto FlashTwrpRunway
-if '%nb%' == '6' goto RebootRunway
+if '%nb%' == '1' goto GotoTwrpWayneDois
+if '%nb%' == '2' goto DownTwrpWayneDois
+if '%nb%' == '3' goto DelTwrpWayneDois
+if '%nb%' == '4' goto VerTwrpWayneDois
+if '%nb%' == '5' goto FlashTwrpWayneDois
+if '%nb%' == '6' goto RebootWayneDois
 if '%nb%' == 'E' goto Twrp
 if '%nb%' == 'e' goto Twrp
-goto TwrpRunway
-:RebootRunway
+goto TwrpWayneDois
+:RebootWayneDois
 cls 
 %fastboot% reboot 
-goto TwrpRunway
+goto TwrpWayneDois
 
 :: Boot no Twrp 
-:GotoTwrpRunway
+:GotoTwrpWayneDois
 %core%
 title Boot no Twrp 3.2.3-1 wayne
 if exist "%cd%\adb\file\twrp\wayne\3.2.3-1.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpRunway  )
+goto TwrpWayneDois  )
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
@@ -1737,20 +2240,20 @@ echo      │                                                                   
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
 echo.
-%fastboot% boot "%~dp0\adb\file\twrp\wayne\3.2.3-1.img" || @echo "boot error" && goto TwrpRunwayError
+%fastboot% boot "%~dp0\adb\file\twrp\wayne\3.2.3-1.img" || @echo "boot error" && goto TwrpWayneDoisError
 echo.
 echo.
 echo.
 echo Pressione qualquer tecla para voltar
 echo.
 pause >nul
-goto TwrpRunway
-:DownTwrpRunway
+goto TwrpWayneDois
+:DownTwrpWayneDois
 color 30
 title Download Twrp 3.2.3-1 wayne
 if exist "%cd%\adb\file\twrp\wayne\3.2.3-1.img" (  echo MsgBox "Pare de frescura, ce ja baixou o negocio e ta ai querendo baixar denovo, vai flashea isso ai rapa! ",16,"Vai canta seu bosta " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpRunway ) else ( echo . )
+goto TwrpWayneDois ) else ( echo . )
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
@@ -1770,34 +2273,34 @@ echo      └──────────────────────�
 echo.
 echo.
 mkdir adb\file\twrp\wayne\
-Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%Runway%', 'adb\file\twrp\wayne\3.2.3-1.img') }"
+Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%WayneDois%', 'adb\file\twrp\wayne\3.2.3-1.img') }"
 if exist "%cd%\adb\file\twrp\wayne\3.2.3-1.img" ( echo. ) else (   echo MsgBox "Deu erro na parada, o arquivo nao foi baixado! ",16,"Deu erro, vishhh" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpRunway )
+goto TwrpWayneDois )
 echo.
 echo MsgBox "Ok, arquivo baixado ",16,"Vai canta seu bosta" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 echo.
-goto TwrpRunway
-:DelTwrpRunway
+goto TwrpWayneDois
+:DelTwrpWayneDois
 title Deletando Twrp 3.2.3-1
 %core%
 cls
 if exist "%cd%\adb\file\twrp\wayne\3.2.3-1.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpRunway )
+goto TwrpWayneDois )
 del adb\file\twrp\wayne\3.2.3-1.img
 echo MsgBox "Ok, arquivo excluido ",16,"Excluir Twrp" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpRunway
-:VerTwrpRunway
+goto TwrpWayneDois
+:VerTwrpWayneDois
 cls
 if exist "%cd%\adb\file\twrp\wayne\3.2.3-1.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpRunway )
+goto TwrpWayneDois )
 start %cd%\adb\file\twrp\wayne\
-goto TwrpRunway
-:TwrpRunwayError
+goto TwrpWayneDois
+:TwrpWayneDoisError
 title ERROOOOOOOOOOOOOOOOOOOOOOOOOOOooooo !
 color 40
 cls
@@ -1831,13 +2334,13 @@ echo.
 pause>nul
 echo.
 echo.
-goto TwrpRunway
-:FlashTwrpRunway
+goto TwrpWayneDois
+:FlashTwrpWayneDois
 %core%
 title Flash do Twrp 3.2.3-1 wayne
 if exist "%cd%\adb\file\twrp\wayne\3.2.3-1.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpRunway  )
+goto TwrpWayneDois  )
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
@@ -1852,15 +2355,16 @@ echo      │                                                                   
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
 echo.
-%fastboot% flash recovery "%~dp0\adb\file\twrp\wayne\3.2.3-1.img" || @echo "flash recovery error" && goto TwrpRunwayError
+%fastboot% flash recovery "%~dp0\adb\file\twrp\wayne\3.2.3-1.img" || @echo "flash recovery error" && goto TwrpWayneDoisError
 echo.
 echo.
 echo.
 echo Pressione qualquer tecla para voltar
 echo.
 pause >nul
-goto TwrpRunway
-:TwrpKicogeco
+goto TwrpWayneDois
+
+:TwrpWayneTres
 title Twrp wayne Versão 3.3.0-0 !
 %core%
 cls
@@ -1898,27 +2402,27 @@ echo.
 echo.
 set nb= 
 set /p "nb=Digite algo aqui %username% >"
-if '%nb%' == '1' goto GotoTwrpKicogeco
-if '%nb%' == '2' goto DownTwrpKicogeco
-if '%nb%' == '3' goto DelTwrpKicogeco
-if '%nb%' == '4' goto VerTwrpKicogeco
-if '%nb%' == '5' goto FlashTwrpKicogeco
-if '%nb%' == '6' goto RebootKicogeco
+if '%nb%' == '1' goto GotoTwrpWayneTres
+if '%nb%' == '2' goto DownTwrpWayneTres
+if '%nb%' == '3' goto DelTwrpWayneTres
+if '%nb%' == '4' goto VerTwrpWayneTres
+if '%nb%' == '5' goto FlashTwrpWayneTres
+if '%nb%' == '6' goto RebootWayneTres
 if '%nb%' == 'E' goto Twrp
 if '%nb%' == 'e' goto Twrp
-goto TwrpKicogeco
-:RebootKicogeco
+goto TwrpWayneTres
+:RebootWayneTres
 cls 
 %fastboot% reboot 
-goto TwrpKicogeco
+goto TwrpWayneTres
 
 :: Boot no Twrp 
-:GotoTwrpKicogeco
+:GotoTwrpWayneTres
 %core%
 title Boot no Twrp 3.3.0-0 wayne
 if exist "%cd%\adb\file\twrp\wayne\3.3.0-0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpKicogeco  )
+goto TwrpWayneTres  )
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
@@ -1933,20 +2437,20 @@ echo      │                                                                   
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
 echo.
-%fastboot% boot "%~dp0\adb\file\twrp\wayne\3.3.0-0.img" || @echo "boot error" && goto TwrpKicogecoError
+%fastboot% boot "%~dp0\adb\file\twrp\wayne\3.3.0-0.img" || @echo "boot error" && goto TwrpWayneTresError
 echo.
 echo.
 echo.
 echo Pressione qualquer tecla para voltar
 echo.
 pause >nul
-goto TwrpKicogeco
-:DownTwrpKicogeco
+goto TwrpWayneTres
+:DownTwrpWayneTres
 color 30
 title Download Twrp 3.3.0-0 wayne
 if exist "%cd%\adb\file\twrp\wayne\3.3.0-0.img" (  echo MsgBox "Pare de frescura, ce ja baixou o negocio e ta ai querendo baixar denovo, vai flashea isso ai rapa! ",16,"Vai canta seu bosta " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpKicogeco ) else ( echo . )
+goto TwrpWayneTres ) else ( echo . )
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
@@ -1966,34 +2470,34 @@ echo      └──────────────────────�
 echo.
 echo.
 mkdir adb\file\twrp\wayne\
-Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%Kicogeco%', 'adb\file\twrp\wayne\3.3.0-0.img') }"
+Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%WayneTres%', 'adb\file\twrp\wayne\3.3.0-0.img') }"
 if exist "%cd%\adb\file\twrp\wayne\3.3.0-0.img" ( echo. ) else (   echo MsgBox "Deu erro na parada, o arquivo nao foi baixado! ",16,"Deu erro, vishhh" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpKicogeco )
+goto TwrpWayneTres )
 echo.
 echo MsgBox "Ok, arquivo baixado ",16,"Vai canta seu bosta" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 echo.
-goto TwrpKicogeco
-:DelTwrpKicogeco
+goto TwrpWayneTres
+:DelTwrpWayneTres
 title Deletando Twrp 3.3.0-0
 %core%
 cls
 if exist "%cd%\adb\file\twrp\wayne\3.3.0-0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpKicogeco )
+goto TwrpWayneTres )
 del adb\file\twrp\wayne\3.3.0-0.img
 echo MsgBox "Ok, arquivo excluido ",16,"Excluir Twrp" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpKicogeco
-:VerTwrpKicogeco
+goto TwrpWayneTres
+:VerTwrpWayneTres
 cls
 if exist "%cd%\adb\file\twrp\wayne\3.3.0-0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpKicogeco )
+goto TwrpWayneTres )
 start %cd%\adb\file\twrp\wayne\
-goto TwrpKicogeco
-:TwrpKicogecoError
+goto TwrpWayneTres
+:TwrpWayneTresError
 title ERROOOOOOOOOOOOOOOOOOOOOOOOOOOooooo !
 color 40
 cls
@@ -2027,13 +2531,13 @@ echo.
 pause>nul
 echo.
 echo.
-goto TwrpKicogeco
-:FlashTwrpKicogeco
+goto TwrpWayneTres
+:FlashTwrpWayneTres
 %core%
 title Flash do Twrp 3.3.0-0 wayne
 if exist "%cd%\adb\file\twrp\wayne\3.3.0-0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpKicogeco  )
+goto TwrpWayneTres  )
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
@@ -2043,21 +2547,22 @@ echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀   
 echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
 echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
 echo      │                                                                                                           │
-echo      │           Flash do twrp wayn v 3.3.0-0                                                                    │
+echo      │           Flash do twrp wayne  v 3.3.0-0                                                                  │
 echo      │                                                                                                           │
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
 echo.
-%fastboot% flash recovery "%~dp0\adb\file\twrp\wayne\3.3.0-0.img" || @echo "flash recovery error" && goto TwrpKicogecoError
+%fastboot% flash recovery "%~dp0\adb\file\twrp\wayne\3.3.0-0.img" || @echo "flash recovery error" && goto TwrpWayneTresError
 echo.
 echo.
 echo.
 echo Pressione qualquer tecla para voltar
 echo.
 pause >nul
-goto TwrpKicogeco
-:TwrpAezakmi
-title Twrp wayne Versão 3.3.1 !
+goto TwrpWayneTres
+
+:TwrpWayneQuatro
+title Twrp wayne Versão 3.3.1-0 !
 %core%
 cls
 echo.
@@ -2068,7 +2573,7 @@ echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀   
 echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
 echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
 echo      │      ┌───────────────────────────────────────────┐                                                        │
-echo      ├──────┤ 1 ) BOOT NO TWRP 3.3.1                    │                                                        │
+echo      ├──────┤ 1 ) BOOT NO TWRP 3.3.1-0                  │                                                        │
 echo      │      └───────────────────────────────────────────┤                                                        │
 echo      │      ┌───────────────────────────────────────────┤                                                        │
 echo      ├──────┤ 2 ) DOWNLOAD PARA CASO ESTAR CORROMPIDO   │                                                        │
@@ -2080,41 +2585,41 @@ echo      │      ┌───────────────────�
 echo      ├──────┤ 4 ) VERIFICAR ARQUIVO                     │                                                        │
 echo      │      └───────────────────────────────────────────┤                                                        │
 echo      │      ┌───────────────────────────────────────────┤                                                        │
-echo      ├──────┤ 5 ) FLASH DO TWRP 3.3.1 WAYNE             │                                                        │
+echo      ├──────┤ 5 ) FLASH DO TWRP 3.3.1-0 WAYNE           │                                                        │
 echo      │      └───────────────────────────────────────────┤                                                        │
 echo      │      ┌───────────────────────────────────────────┤                                                        │
-echo      ├──────┤ 5 ) REBOOT SYSTEM                         │                                                        │
+echo      ├──────┤ 6 ) REBOOT SYSTEM                         │                                                        │
 echo      │      └───────────────────────────────────────────┘                                                        │
 echo      │                                                               ┌───────────────────────────────────────────┤
 echo      └───────────────────────────────────────────────────────────────┤ E ) VOLTAR                                │
 echo                                                                      └───────────────────────────────────────────┘
 echo.
-if exist "%cd%\adb\file\twrp\wayne\3.3.1.img" ( call :cortexto 0a " Ok, parece que o arquivo existe. " ) else ( call :cortexto 0c "Baixe o arquivo. " )
+if exist "%cd%\adb\file\twrp\wayne\3.3.1-0.img" ( call :cortexto 0a " Ok, parece que o arquivo existe. " ) else ( call :cortexto 0c "Baixe o arquivo. " )
 echo.
 echo.
 set nb= 
 set /p "nb=Digite algo aqui %username% >"
-if '%nb%' == '1' goto GotoTwrpAezakmi
-if '%nb%' == '2' goto DownTwrpAezakmi
-if '%nb%' == '3' goto DelTwrpAezakmi
-if '%nb%' == '4' goto VerTwrpAezakmi
-if '%nb%' == '5' goto FlashTwrpAezakmi
-if '%nb%' == '6' goto RebootAezakmi
+if '%nb%' == '1' goto GotoTwrpWayneQuatro
+if '%nb%' == '2' goto DownTwrpWayneQuatro
+if '%nb%' == '3' goto DelTwrpWayneQuatro
+if '%nb%' == '4' goto VerTwrpWayneQuatro
+if '%nb%' == '5' goto FlashTwrpWayneQuatro
+if '%nb%' == '6' goto RebootWayneQuatro
 if '%nb%' == 'E' goto Twrp
 if '%nb%' == 'e' goto Twrp
-goto TwrpAezakmi
-:RebootAezakmi
-cls
-%fastboot% reboot
-goto TwrpAezakmi
+goto TwrpWayneQuatro
+:RebootWayneQuatro
+cls 
+%fastboot% reboot 
+goto TwrpWayneQuatro
 
 :: Boot no Twrp 
-:GotoTwrpAezakmi
+:GotoTwrpWayneQuatro
 %core%
-title Boot no Twrp 3.3.1 wayne
-if exist "%cd%\adb\file\twrp\wayne\3.3.1.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
+title Boot no Twrp 3.3.1-0 wayne
+if exist "%cd%\adb\file\twrp\wayne\3.3.1-0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpAezakmi  )
+goto TwrpWayneQuatro  )
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
@@ -2124,25 +2629,25 @@ echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀   
 echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
 echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
 echo      │                                                                                                           │
-echo      │           Boot no twrp wayne  v 3.3.1                                                                     │
+echo      │           Boot no twrp wayne  v 3.3.1-0                                                                   │
 echo      │                                                                                                           │
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
 echo.
-%fastboot% boot "%~dp0\adb\file\twrp\wayne\3.3.1.img" || @echo "boot error" && goto TwrpAezakmiError
+%fastboot% boot "%~dp0\adb\file\twrp\wayne\3.3.1-0.img" || @echo "boot error" && goto TwrpWayneQuatroError
 echo.
 echo.
 echo.
 echo Pressione qualquer tecla para voltar
 echo.
 pause >nul
-goto TwrpAezakmi
-:DownTwrpAezakmi
+goto TwrpWayneQuatro
+:DownTwrpWayneQuatro
 color 30
-title Download Twrp 3.3.1 wayne
-if exist "%cd%\adb\file\twrp\wayne\3.3.1.img" (  echo MsgBox "Pare de frescura, ce ja baixou o negocio e ta ai querendo baixar denovo, vai flashea isso ai rapa! ",16,"Vai canta seu bosta " >%cd%\adb\wyz.vbs  
+title Download Twrp 3.3.1-0 wayne
+if exist "%cd%\adb\file\twrp\wayne\3.3.1-0.img" (  echo MsgBox "Pare de frescura, ce ja baixou o negocio e ta ai querendo baixar denovo, vai flashea isso ai rapa! ",16,"Vai canta seu bosta " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpAezakmi ) else ( echo . )
+goto TwrpWayneQuatro ) else ( echo . )
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
@@ -2152,7 +2657,7 @@ echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀   
 echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
 echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
 echo      │                                                                                                           │
-echo      │                          Baixando twrp wayne v 3.3.1 aguarde...                                           │
+echo      │                          Baixando twrp wayne v 3.3.1-0 aguarde...                                         │
 echo      │                                                                                                           │
 echo      │               Eu vou te avisar quando o Download terminar, apenas aguarde e relaxa a ppk.                 │
 echo      │                                                                                                           │
@@ -2162,34 +2667,34 @@ echo      └──────────────────────�
 echo.
 echo.
 mkdir adb\file\twrp\wayne\
-Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%Aezakmi%', 'adb\file\twrp\wayne\3.3.1.img') }"
-if exist "%cd%\adb\file\twrp\wayne\3.3.1.img" ( echo. ) else (   echo MsgBox "Deu erro na parada, o arquivo nao foi baixado! ",16,"Deu erro, vishhh" >%cd%\adb\wyz.vbs  
+Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%WayneQuatro%', 'adb\file\twrp\wayne\3.3.1-0.img') }"
+if exist "%cd%\adb\file\twrp\wayne\3.3.1-0.img" ( echo. ) else (   echo MsgBox "Deu erro na parada, o arquivo nao foi baixado! ",16,"Deu erro, vishhh" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpAezakmi )
+goto TwrpWayneQuatro )
 echo.
 echo MsgBox "Ok, arquivo baixado ",16,"Vai canta seu bosta" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 echo.
-goto TwrpAezakmi
-:DelTwrpAezakmi
-title Deletando Twrp 3.3.1
+goto TwrpWayneQuatro
+:DelTwrpWayneQuatro
+title Deletando Twrp 3.3.1-0
 %core%
 cls
-if exist "%cd%\adb\file\twrp\wayne\3.3.1.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+if exist "%cd%\adb\file\twrp\wayne\3.3.1-0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpAezakmi )
-del adb\file\twrp\wayne\3.3.1.img
+goto TwrpWayneQuatro )
+del adb\file\twrp\wayne\3.3.1-0.img
 echo MsgBox "Ok, arquivo excluido ",16,"Excluir Twrp" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpAezakmi
-:VerTwrpAezakmi
+goto TwrpWayneQuatro
+:VerTwrpWayneQuatro
 cls
-if exist "%cd%\adb\file\twrp\wayne\3.3.1.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
+if exist "%cd%\adb\file\twrp\wayne\3.3.1-0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpAezakmi )
+goto TwrpWayneQuatro )
 start %cd%\adb\file\twrp\wayne\
-goto TwrpAezakmi
-:TwrpAezakmiError
+goto TwrpWayneQuatro
+:TwrpWayneQuatroError
 title ERROOOOOOOOOOOOOOOOOOOOOOOOOOOooooo !
 color 40
 cls
@@ -2223,13 +2728,13 @@ echo.
 pause>nul
 echo.
 echo.
-goto TwrpAezakmi
-:FlashTwrpAezakmi
+goto TwrpWayneQuatro
+:FlashTwrpWayneQuatro
 %core%
-title Flash do Twrp 3.3.1 wayne
-if exist "%cd%\adb\file\twrp\wayne\3.3.1.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
+title Flash do Twrp 3.3.1-0 wayne
+if exist "%cd%\adb\file\twrp\wayne\3.3.1-0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpAezakmi  )
+goto TwrpWayneQuatro  )
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
@@ -2239,215 +2744,19 @@ echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀   
 echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
 echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
 echo      │                                                                                                           │
-echo      │           Flash do twrp wayn v 3.3.1                                                                      │
+echo      │           Flash do twrp wayne  v 3.3.1-0                                                                  │
 echo      │                                                                                                           │
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
 echo.
-%fastboot% flash recovery "%~dp0\adb\file\twrp\wayne\3.3.1.img" || @echo "flash recovery error" && goto TwrpAezakmiError
+%fastboot% flash recovery "%~dp0\adb\file\twrp\wayne\3.3.1-0.img" || @echo "flash recovery error" && goto TwrpWayneQuatroError
 echo.
 echo.
 echo.
 echo Pressione qualquer tecla para voltar
 echo.
 pause >nul
-goto TwrpAezakmi
-:Orange
-title Orange wayne Versão UNNOFICIAL !
-%core%
-cls
-echo.
-echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
-echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █
-echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █
-echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
-echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
-echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
-echo      │      ┌───────────────────────────────────────────┐                                                        │
-echo      ├──────┤ 1 ) BOOT NO ORANGEFOX UNNOFICIAL          │                                                        │
-echo      │      └───────────────────────────────────────────┤                                                        │
-echo      │      ┌───────────────────────────────────────────┤                                                        │
-echo      ├──────┤ 2 ) DOWNLOAD                              │                                                        │
-echo      │      └───────────────────────────────────────────┤                                                        │
-echo      │      ┌───────────────────────────────────────────┤                                                        │
-echo      ├──────┤ 3 ) DELETAR                               │                                                        │
-echo      │      └───────────────────────────────────────────┤                                                        │
-echo      │      ┌───────────────────────────────────────────┤                                                        │
-echo      ├──────┤ 4 ) VERIFICAR ARQUIVO                     │                                                        │
-echo      │      └───────────────────────────────────────────┤                                                        │
-echo      │      ┌───────────────────────────────────────────┤                                                        │
-echo      ├──────┤ 5 ) FLASH DO ORANGEFOX UNNOFICIAL WAYNE   │                                                        │
-echo      │      └───────────────────────────────────────────┤                                                        │
-echo      │      ┌───────────────────────────────────────────┤                                                        │
-echo      ├──────┤ 5 ) REBOOT SYSTEM                         │                                                        │
-echo      │      └───────────────────────────────────────────┘                                                        │
-echo      │                                                               ┌───────────────────────────────────────────┤
-echo      └───────────────────────────────────────────────────────────────┤ E ) VOLTAR                                │
-echo                                                                      └───────────────────────────────────────────┘
-echo.
-if exist "%cd%\adb\file\Orange\wayne\unnoficial.img" ( call :cortexto 0a " Ok, parece que o arquivo existe. " ) else ( call :cortexto 0c "Baixe o arquivo. " )
-echo.
-echo.
-set nb= 
-set /p "nb=Digite algo aqui %username% >"
-if '%nb%' == '1' goto GotoOrange
-if '%nb%' == '2' goto DownOrange
-if '%nb%' == '3' goto DelOrange
-if '%nb%' == '4' goto VerOrange
-if '%nb%' == '5' goto FlashOrange
-if '%nb%' == '6' goto RebootOrange
-if '%nb%' == 'E' goto Menu
-if '%nb%' == 'e' goto Menu
-goto Orange
-:RebootOrange
-cls
-%fastboot% reboot 
-goto Orange
-
-:: Boot no Orange 
-:GotoOrange
-%core%
-title Boot no Orange unnoficial wayne
-if exist "%cd%\adb\file\Orange\wayne\unnoficial.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
-start %cd%\adb\wyz.vbs
-goto Orange  )
-cls
-echo.
-echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
-echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
-echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █  
-echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
-echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
-echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
-echo      │                                                                                                           │
-echo      │           Boot no Orange wayne unnoficial                                                                 │
-echo      │                                                                                                           │
-echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-echo.
-echo.
-%fastboot% boot "%~dp0\adb\file\Orange\wayne\unnoficial.img" || @echo "boot error" && goto OrangeError
-echo.
-echo.
-echo.
-echo Pressione qualquer tecla para voltar
-echo.
-pause >nul
-goto Orange
-:DownOrange
-color 30
-title Download Orange unnoficial wayne
-if exist "%cd%\adb\file\Orange\wayne\unnoficial.img" (  echo MsgBox "Pare de frescura, ce ja baixou o negocio e ta ai querendo baixar denovo, vai flashea isso ai rapa! ",16,"Vai canta seu bosta " >%cd%\adb\wyz.vbs  
-start %cd%\adb\wyz.vbs
-goto Orange ) else ( echo . )
-cls
-echo.
-echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
-echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
-echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █   
-echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
-echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
-echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
-echo      │                                                                                                           │
-echo      │                          Baixando Orange wayne unnoficial aguarde...                                      │
-echo      │                                                                                                           │
-echo      │               Eu vou te avisar quando o Download terminar, apenas aguarde e relaxa a ppk.                 │
-echo      │                                                                                                           │
-echo      │                                                                                                           │
-echo      │                                                                                                           │
-echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-echo.
-echo.
-mkdir adb\file\Orange\wayne\
-Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%Orange%', 'adb\file\Orange\wayne\unnoficial.img') }"
-if exist "%cd%\adb\file\Orange\wayne\unnoficial.img" ( echo. ) else (   echo MsgBox "Deu erro na parada, o arquivo nao foi baixado! ",16,"Deu erro, vishhh" >%cd%\adb\wyz.vbs  
-start %cd%\adb\wyz.vbs
-goto Orange )
-echo.
-echo MsgBox "Ok, arquivo baixado ",16,"Vai canta seu bosta" >%cd%\adb\wyz.vbs  
-start %cd%\adb\wyz.vbs
-echo.
-goto Orange
-:DelOrange
-title Deletando Orange unnoficial
-%core%
-cls
-if exist "%cd%\adb\file\Orange\wayne\unnoficial.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
-start %cd%\adb\wyz.vbs
-goto Orange )
-del adb\file\Orange\wayne\unnoficial.img
-echo MsgBox "Ok, arquivo excluido ",16,"Excluir Orange" >%cd%\adb\wyz.vbs  
-start %cd%\adb\wyz.vbs
-goto Orange
-:VerOrange
-cls
-if exist "%cd%\adb\file\Orange\wayne\unnoficial.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo ja foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
-start %cd%\adb\wyz.vbs
-goto Orange )
-start %cd%\adb\file\Orange\wayne\
-goto Orange
-:OrangeError
-title ERROOOOOOOOOOOOOOOOOOOOOOOOOOOooooo !
-color 40
-cls
-echo.
-echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
-echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
-echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █  
-echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
-echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
-echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
-echo      │                                                                                                           │
-echo      │           Errooooooooooooooooooooooooooooooooooooooooooooo.                                               │
-echo      │                                                                                                           │
-echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-echo.
-echo.
-echo.
-echo.
-echo.
-echo Deu erro, eu não sei direito o que pode ter acontecido, mas to aqui ! Posso te ajudar !
-echo.
-echo.
-echo.
-echo MsgBox " Deu erro amigo, clique em ok e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
-start %cd%\adb\wyz.vbs  
-echo.
-echo.
-echo Pressione qualquer tecla para voltar !
-echo.
-echo.
-pause>nul
-echo.
-echo.
-goto Orange
-:FlashOrange
-%core%
-title Flash do Orange unnoficial wayne
-if exist "%cd%\adb\file\Orange\wayne\unnoficial.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
-start %cd%\adb\wyz.vbs
-goto Orange  )
-cls
-echo.
-echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
-echo          █   █  ▄  ▄▄    ▄▄   ▄▄▄     █▄   ▄█  ▄▄   ▄▄▄▄ ▄▄▄▄▄ ▄▄▄  ▄▄▄▄    █   
-echo          █   █▀▄█ █  █  █  █  █▄▄▀    █ ▀▄▀ █ █▄▄█  █▄▄▄   █   █■■■  █▄▄▀   █  
-echo      ┌───█   █  █ ▀▄▄▀  ▀▄▄▀  █▄▄▀    █     █ █  █  ▄▄▄█   █   █▄▄▄▄ █ ▀▄▄  █  ┌─────────────────────────────────┐
-echo      │   █                                                                  █  │  bY: Rodrigo Pires da Silva     │
-echo      │   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  └─────────────────────────────────┤
-echo      │                                                                                                           │
-echo      │           Flash do Orange wayne unnoficial                                                                │
-echo      │                                                                                                           │
-echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-echo.
-echo.
-%fastboot% flash recovery "%~dp0\adb\file\Orange\wayne\unnoficial.img" || @echo "flash recovery error" && goto OrangeError
-echo.
-echo.
-echo.
-echo Pressione qualquer tecla para voltar
-echo.
-pause >nul
-goto Orange
+goto TwrpWayneQuatro
 :Patched
 title Patched boot para root na stock rom !
 %core%

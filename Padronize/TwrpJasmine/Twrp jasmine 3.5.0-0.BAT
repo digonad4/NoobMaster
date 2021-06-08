@@ -40,14 +40,14 @@ set "ver= 7.0.1.4 "
 
 ::::::: Aqui começa o scrript de fato, seguindo um padrão.
 ::::::: Edite a versão, a variavel do link e o nome da função 
-::::::: Voce deve editar no script todo, esse nome setará a função no script principal>>> JasmineCinco 
+::::::: Voce deve editar no script todo, esse nome setará a função no script principal>>> JasmineSeis 
 ::::::: Edite a versão e mantenha este padrão >>> 3.5.0-0 
 
 
 
 
-set JasmineCinco=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/jasmine/3.5.0-0.img
-:TwrpJasmineCinco
+set JasmineSeis=https://raw.githubusercontent.com/devrodrigopires/NoobMaster/master/adb/file/twrp/jasmine/3.5.0-0.img
+:TwrpJasmineSeis
 title Twrp jasmine Versão 3.5.0-0
 %core%
 cls
@@ -82,26 +82,26 @@ echo.
 echo.
 set nb= 
 set /p "nb=Digite algo aqui %username% >"
-if '%nb%' == '1' goto GotoTwrpJasmineCinco
-if '%nb%' == '2' goto DownTwrpJasmineCinco
-if '%nb%' == '3' goto DelTwrpJasmineCinco
-if '%nb%' == '4' goto VerTwrpJasmineCinco
-if '%nb%' == '5' goto RebootJasmineCinco
+if '%nb%' == '1' goto GotoTwrpJasmineSeis
+if '%nb%' == '2' goto DownTwrpJasmineSeis
+if '%nb%' == '3' goto DelTwrpJasmineSeis
+if '%nb%' == '4' goto VerTwrpJasmineSeis
+if '%nb%' == '5' goto RebootJasmineSeis
 if '%nb%' == 'E' goto Twrp
 if '%nb%' == 'e' goto Twrp
-goto TwrpJasmineCinco
-:RebootJasmineCinco
+goto TwrpJasmineSeis
+:RebootJasmineSeis
 cls
 %fastboot% reboot
-goto TwrpJasmineCinco
+goto TwrpJasmineSeis
 
 :: Boot no Twrp 
-:GotoTwrpJasmineCinco
+:GotoTwrpJasmineSeis
 %core%
 title Boot no Twrp 3.5.0-0jasmine_sprout
 if exist "%cd%\adb\file\twrp\jasmine\3.5.0-0.img" ( echo . ) else ( echo MsgBox " Baixe o arquivo e tente novamente ! ",16,"ERRO " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpJasmineCinco  )
+goto TwrpJasmineSeis  )
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
@@ -116,20 +116,20 @@ echo      │                                                                   
 echo      └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 echo.
 echo.
-%fastboot% boot "%~dp0\adb\file\twrp\jasmine\3.5.0-0.img" || @echo "boot error" && goto TwrpJasmineCincoError
+%fastboot% boot "%~dp0\adb\file\twrp\jasmine\3.5.0-0.img" || @echo "boot error" && goto TwrpJasmineSeisError
 echo.
 echo.
 echo.
 echo Pressione qualquer tecla para voltar
 echo.
 pause >nul
-goto TwrpJasmineCinco
-:DownTwrpJasmineCinco
+goto TwrpJasmineSeis
+:DownTwrpJasmineSeis
 color 30
 title Download Twrp 3.5.0-0jasmine_sprout
 if exist "%cd%\adb\file\twrp\jasmine\3.5.0-0.img" (  echo MsgBox "Pare de frescura, ce ja baixou o negocio e ta ai querendo baixar denovo, vai flashea isso ai rapa! ",16,"Vai canta seu bosta " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpJasmineCinco ) else ( echo . )
+goto TwrpJasmineSeis ) else ( echo . )
 cls
 echo.
 echo          █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█   
@@ -149,34 +149,34 @@ echo      └──────────────────────�
 echo.
 echo.
 mkdir adb\file\twrp\jasmine\
-Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%JasmineCinco%', 'adb\file\twrp\jasmine\3.5.0-0.img') }"
+Powershell -command "& { (New-Object Net.WebClient).DownloadFile('%JasmineSeis%', 'adb\file\twrp\jasmine\3.5.0-0.img') }"
 if exist "%cd%\adb\file\twrp\jasmine\3.5.0-0.img" ( echo. ) else (   echo MsgBox "Deu erro na parada, o arquivo nao foi baixado! ",16,"Deu erro, vishhh" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpJasmineCinco )
+goto TwrpJasmineSeis )
 echo.
 echo MsgBox "Ok, arquivo baixado ",16,"Vai canta seu bosta" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
 echo.
-goto TwrpJasmineCinco
-:DelTwrpJasmineCinco
+goto TwrpJasmineSeis
+:DelTwrpJasmineSeis
 title Deletando Twrp 3.5.0-0
 %core%
 cls
 if exist "%cd%\adb\file\twrp\jasmine\3.5.0-0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpJasmineCinco )
+goto TwrpJasmineSeis )
 del adb\file\twrp\jasmine\3.5.0-0.img
 echo MsgBox "Ok, arquivo excluido ",16,"Excluir Twrp" >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpJasmineCinco
-:VerTwrpJasmineCinco
+goto TwrpJasmineSeis
+:VerTwrpJasmineSeis
 cls
 if exist "%cd%\adb\file\twrp\jasmine\3.5.0-0.img" ( echo.) else ( echo MsgBox "Pare ome, o arquivo foi excluido, nao tem nada aqui.",16,"Tu ja excluiu carai ? " >%cd%\adb\wyz.vbs  
 start %cd%\adb\wyz.vbs
-goto TwrpJasmineCinco )
+goto TwrpJasmineSeis )
 start %cd%\adb\file\twrp\jasmine\
-goto TwrpJasmineCinco
-:TwrpJasmineCincoError
+goto TwrpJasmineSeis
+:TwrpJasmineSeisError
 title ERROOOOOOOOOOOOOOOOOOOOOOOOOOOooooo !
 color 40
 cls
@@ -210,4 +210,4 @@ echo.
 pause>nul
 echo.
 echo.
-goto TwrpJasmineCinco
+goto TwrpJasmineSeis

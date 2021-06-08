@@ -1,0 +1,14 @@
+adb shell
+
+pm uninstall -k --user 0 com.google.android.youtube
+pm uninstall -k --user 0 com.google.android.videos
+pm uninstall -k --user 0 com.google.android.music
+pm uninstall -k --user 0 com.facebook.system
+pm uninstall -k --user 0 com.facebook.appmanager
+pm uninstall -k --user 0 com.facebook.services
+pm uninstall -k --user 0 com.google.android.apps.tachyon
+pm uninstall -k --user 0 com.google.android.apps.docs
+pm uninstall -k --user 0 com.google.android.apps.docs.editors.slides
+
+exit 
+exit
