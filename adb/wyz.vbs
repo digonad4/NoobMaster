@@ -1,1 +1,1 @@
-MsgBox "Parece que vc ja desbloqueou o bootloader ",16,"Erro" 
+MsgBox " Deu erro amigo, clique em ok e tente novamente  ",16,"ERRO "   
