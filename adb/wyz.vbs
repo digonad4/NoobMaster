@@ -1,1 +1,1 @@
-MsgBox " Deu erro amigo, clique em ok e tente novamente  ",16,"ERRO "   
+MsgBox "O arquivo foi criado, que legal  ",16,"TOOOOOOOPPPPP "   
